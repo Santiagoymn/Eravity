@@ -24,9 +24,12 @@ h1{
 
 
 header{
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 10rem;
+    height: 146px;
+    left: 0;
+    top: 0;
+
     background: #274C77;
 }
 
@@ -35,7 +38,7 @@ header{
     display: inline-flex;
     list-style: none;
     float: right;
-    top: -1rem;
+    top: -2rem;
 }
 
 .apartadoBarraNavegacion{
@@ -43,7 +46,7 @@ header{
     width: auto;
     height: 2.9375rem;
     float: right;
-    margin-left: 5rem;
+    margin-left: 3rem;
 
 
     font-family: 'Droid Sans';
