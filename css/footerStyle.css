@@ -35,6 +35,10 @@ footer{
 }
 
 .logoTwitter{
-    width: 3.125rem;
+    width: 3.56rem;
     height: 3.125rem;
+}
+
+.inputBuscador{
+    outline: none;
 }
