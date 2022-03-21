@@ -19,7 +19,6 @@ h1{
     line-height: 7.6875rem;
     /* identical to box height */
 
-    color: #FFFFFF;
 }
 
 
@@ -79,4 +78,9 @@ header{
     list-style: none;
     float: right;
     top: -2rem;
+}
+
+#title{
+    text-decoration: none;
+    color: #FFFFFF;
 }

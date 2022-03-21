@@ -19,7 +19,7 @@ h1{
     line-height: 7.6875rem;
     /* identical to box height */
 
-    color: #FFFFFF;
+
 }
 
 
@@ -71,4 +71,10 @@ header{
     top: -1rem;
     width: 3.5rem;
     margin-right: 1rem;
+}
+
+
+#title{
+    text-decoration: none;
+    color: #FFFFFF;
 }
