@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Login Page</title>
         <meta charset="UTF-8">
@@ -10,29 +10,31 @@
     <body>
         <section class="container">
 			<div class="left">
-				<div id="contentLeft" align="center">
+				<div id="contentLeft" class="centrado">
 					<h1 id="white">Join us!</h1><br><br><br>
-					<h2 id="white">The easiest way<br>to go on Erasmus</h2>
+					<h2 class="subtitle">The easiest way<br>to go on Erasmus</h2>
 				</div>
 			</div>
 			<div class="right">
 				<div id="contentRight" align="center">
+					<h1 id="black">Eravity</h1>
 					<form class="login">
-						<h1 id="black">Eravity</h3>
-						<div class="login__field">
-							<i class="login__icon fas fa-user"></i>
-							<input type="text" class="login__input" placeholder="Email">
-						</div>
-						<div class="login__field">
-							<i class="login__icon fas fa-lock"></i>
-							<input type="password" class="login__input" placeholder="Password">
+						<div class="loginLocalization">
+							<div class="email__field">
+								<i class="login__icon fas fa-user fa-2xl"></i>
+								<input type="text" class="login__input" placeholder="Email">
+							</div>
+							<div class="password__field">
+								<i class="login__icon fas fa-lock fa-2xl"></i>
+								<input type="password" class="login__input" placeholder="Password">
+							</div>
 						</div>
 						<button class="button login__submit">
 							<span>Log In</span>
 						</button>
 					</form>
 					<form class="login">
-						<h3 id="black">If you don't have an account:</h3>
+						<h3 id="coloBlack">If you don't have an account:</h3>
 						<button class="button login__submit">
 							<span>Sign up</span>
 						</button>
