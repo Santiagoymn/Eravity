@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../css/userOwnProfileStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/generalStyle.css" type="text/css">
+
+</head>
+
+<script>
+    $(function(){
+        $("#header").load("headerLogueado.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+<div id="header"></div>
+<body>
+    <div class="perfil">
+            <div class="userInfo">
+                <img src="images/imagenUsuario.png" class="fotoUsuario">
+                <p class="nombreUsuario">Noe Cuevas</p>
+            </div>
+            <div class="infoUniversidad">
+                <p class="infoUni" id="nombreUniversidad">Universidad de Las Palmas de Gran Canaria</p>
+                <p class="infoUni" id="carreraUniversidad">Computer Science Engineering</p>
+            </div>
+            <div class="infoEmail">
+                <p class="emailUsuario">email: noe.cuevas@hotmail.com</p>
+            </div>
+            <div class="infoRate">
+                <p class="ratings">RATINGS TO YOUR UNIVERSITY</p>
+            </div>
+
+            <div class="rates">
+                <div class="qualifying">
+                    <div class="titleQualifying">Accesibility</div>
+                    <div class="textQualifying" id="centradoIzquierda">It is easy to arrive to the university by public transport ?<br>Are there ramps?</div>
+                    <div class="my-rating-4" data-rating="0">
+                        <script>
+                            $(".my-rating-4").starRating({
+                                totalStars: 5,
+                                starShape: 'rounded',
+                                starSize: 40,
+                                emptyColor: 'lightgray',
+                                hoverColor: '#6096BA',
+                                activeColor: 'green',
+                                useGradient: false
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="qualifying">
+                    <div class="titleQualifying">Installations</div>
+                    <div class="textQualifying">Library, cafeteria, bathrooms, laboratories, study rooms...</div>
+                </div>
+                <div class="qualifying">
+                    <div class="titleQualifying">Environment</div>
+                </div>
+            </div>
+
+            <div class="beenErasmus">
+                <label class="textoErasmus" for="cbox1">Have you been on Erasmus?</label><input type="checkbox" class="checkBoxErasmus" id="cbox1" value="second_checkbox">
+            </div>
+
+
+    </div>
+
+</body>
+<div id="footer" class="localizacionFooter"></div>
+</html>

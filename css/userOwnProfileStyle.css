@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+.perfil{
+    padding: 20em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.fotoUsuario{
+    height: 170px;
+    width: 170px;
+    align-self: center;
+}
+
+.localizacionFooter{
+    margin-top: 18rem;
+}
+
+.nombreUsuario{
+    width: 341px;
+    height: 77px;
+
+    font-family: 'Sanchez';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 77px;
+    /* identical to box height */
+
+    color: #000000;
+    align-self: center;
+}
+
+.userInfo{
+    display:flex;
+    flex-direction: column;
+}
+
+.infoUni{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
+
+#nombreUniversidad{
+    color: black;
+}
+
+#carreraUniversidad{
+    color: #8B8C89;
+}
+
+.infoUniversidad{
+    margin-top: 2rem;
+}
+
+.emailUsuario{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+}
+
+.infoEmail{
+    margin-top: 3rem;
+}
+
+.ratings{
+    ont-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: #000000;
+}
+
+.infoRate{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+
+.rates{
+    width: 50rem;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#centradoIzquierda{
+    text-align: left;
+}
+
+.textoErasmus{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    margin-right: 1rem;
+
+    color: #000000;
+}
+
+.beenErasmus{
+    margin-top: 5rem;
+}
+
+.checkBoxErasmus{
+    height:22px;
+    width: 22px;
+}
