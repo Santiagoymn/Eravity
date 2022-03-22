@@ -16,20 +16,26 @@
 <div id="header"></div>
 <body>
 <form>
-    <input type="text" placeholder="id" id="id" class="inputShortText"required>
-    <input type="text" placeholder="name" id="name" class="inputShortText" required>
-    <input type="text" placeholder="ects" id="ects" class="inputShortText" required>
-    <input type="text" placeholder="year" id="year" class="inputShortText" required>
-    <input type="text" placeholder="semester" id="semester" class="inputShortText" required>
+    <div class="firstLineInputs">
+        <input type="text" placeholder="id" id="id" class="inputShortText" required>
+        <input type="text" placeholder="name" id="name" class="inputShortText" required>
+    </div>
+    <div class="secondLineInputs">
+        <input type="text" placeholder="ects" id="ects" class="inputShortText" required>
+        <input type="text" placeholder="year" id="year" class="inputShortText" required>
+        <input type="text" placeholder="semester" id="semester" class="inputShortText" required>
+    </div>
     <input type="text" placeholder="degree" id="degree" class="inputShortText" required>
     <input type="text" placeholder="university" id="university" class="inputShortText" required>
-    <label>languages</label>
-    <input type="checkbox" id="englishCB" value="languageCB"> <label for="englishCB">english</label>
-    <input type="checkbox" id="frenchCB" value="languageCB"> <label for="frenchCB">french</label>
-    <input type="checkbox" id="dutchCB" value="languageCB"> <label for="dutchCB">dutch</label>
-    <input type="checkbox" id="spanishCB" value="languageCB"> <label for="spanishCB">spanish</label>
-    <input type="checkbox" id="germanCB" value="languageCB"> <label for="germanCB">german</label>
-    <input type="checkbox" id="otherCB" value="languageCB"> <label for="otherCB">other</label>
+    <div class="text" id="labelLanguages">languages</div>
+    <div class="languagesCB">
+        <div class="languageDivCB"><input type="checkbox" id="englishCB" class="languageCB"><label for="englishCB">english</label></div>
+        <div class="languageDivCB"><input type="checkbox" id="frenchCB" class="languageCB"><label for="frenchCB">french</label></div>
+        <div class="languageDivCB"><input type="checkbox" id="dutchCB" class="languageCB"><label for="dutchCB">dutch</label></div>
+        <div class="languageDivCB"><input type="checkbox" id="spanishCB" class="languageCB"><label for="spanishCB">spanish</label></div>
+        <div class="languageDivCB"><input type="checkbox" id="germanCB" class="languageCB"><label for="germanCB">german</label></div>
+        <div class="languageDivCB"><input type="checkbox" id="otherCB" class="languageCB"><label for="otherCB">other</label></div>
+    </div>
     <input type="text" placeholder="prerequisites" id="prerequisites" class="inputLargeText" required>
     <input type="text" placeholder="contents" id="contents" class="inputLargeText" required>
     <div class="qualifying">
@@ -51,8 +57,7 @@
     <div class="qualifying">
         <div class="titleQualifying">Time commitment</div>
     </div>
-
-
+    <div class="buttonAccept"><input type="submit" class="acceptBtn" value="Accept"></div>
 
 </form>
 </body>
