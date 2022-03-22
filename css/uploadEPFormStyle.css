@@ -3,22 +3,115 @@ form{
     display: flex;
     flex-direction: column;
 }
-.form input{
-    color: #E7ECEF;
-    font-family: 'Droid Sans', serif;
+
+.inputShortText{
+    background-color: #E7ECEF;
+    height: 3em;
+    margin-bottom:1.5em;
+    border:none;
+    border-radius: 0.63em;
+    font-family: 'Droid Sans',serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 2.25em;
+    font-size: 36px;
+    line-height: 42px;
     display: flex;
     align-items: center;
     text-align: center;
-}
-.inputShortText{
 
+    color: #000000;
 }
-.form input:focus {
-    background-color: lightblue;
+
+textarea:focus, input:focus, input[type]:focus {
+    border-color: rgb(213,237,251);
+    box-shadow: 0 1px 1px rgb(175,206,224)inset, 0 0 8px rgb(175,206,224);
+    outline: 0 none;
 }
 .inputLargeText{
-    height: 10rem;
+    border-radius: 0.63em;
+    height: 40rem;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #E7ECEF;
+    border:none;
+    margin-bottom:1.5em;
+
+    color: #000000;
+}
+.firstLineInputs{
+    display: flex;
+    justify-content: center;
+}
+#name{
+    width:40em;
+    margin-left:5rem;
+}
+.secondLineInputs{
+    display: flex;
+    justify-content: center;
+}
+
+#year{
+    margin-left:5rem;
+    margin-right:5rem;
+}
+label{
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+    margin-left:1rem;
+    align-self: center;
+
+    color: #000000;
+}
+.languageCB{
+    height:22px;
+    width: 22px;
+    align-self: center;
+}
+.languageDivCB{
+    position:relative;
+    width: 33%;
+    justify-content: center;
+    height: 3rem;
+    display:inline-block;
+}
+.languagesCB{
+    margin-left: 20rem;
+    margin-bottom: 2rem;
+
+}
+
+.qualifying{
+    margin-bottom: 2rem;
+}
+
+.acceptBtn{
+    position: absolute;
+    width: 261px;
+    height: 105px;
+    background: #A3CEF1;
+    border-radius: 15px;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+    align-self: center;
+
+}
+.buttonAccept{
+    align-self:center
 }
