@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eravity</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../css/homePageStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/UniversityProfilePageStyle.css" type="text/css">
+    <script>
+        $(function(){
+            $("#header").load("headerLogueado.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <main class="university-info-container">
+        <div class="universidades">
+            <div class="universidadOrigen">
+                <img src="https://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" class="imagenUniversidad">
+                <div class="textoEncimaImagen">
+                    <p class="textoUniversidad">University</p>
+                    <p class="textoPais">Country</p>
+                </div>
+                <div class="field" id="searchform">
+                    <input type="text" id="searchterm" placeholder="Search..." class="inputBuscador"/>
+                    <button type="button" id="search"><img src="images/lupa.png" class="lupaBuscador" alt="Lupa buscador"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer" class="localizacionFooter"></div>
+</body>
+</html>
