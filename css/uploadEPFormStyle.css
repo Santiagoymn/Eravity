@@ -1,0 +1,24 @@
+form{
+    padding:15rem;
+    display: flex;
+    flex-direction: column;
+}
+.form input{
+    color: #E7ECEF;
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.25em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.inputShortText{
+
+}
+.form input:focus {
+    background-color: lightblue;
+}
+.inputLargeText{
+    height: 10rem;
+}
