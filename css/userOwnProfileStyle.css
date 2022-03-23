@@ -77,7 +77,7 @@
 }
 
 .ratings{
-    ont-family: 'Roboto';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
@@ -192,5 +192,5 @@
 
 .separacionTablas {
     border-collapse: separate;
-    border-spacing: 5rem 0rem;
+    border-spacing: 5rem 0;
 }
