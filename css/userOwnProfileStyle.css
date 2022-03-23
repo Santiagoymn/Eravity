@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+
 
 .perfil{
     padding: 20em;
@@ -6,6 +8,7 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    overflow:hidden;
 }
 
 .fotoUsuario{
@@ -74,7 +77,7 @@
 }
 
 .ratings{
-    ont-family: 'Roboto';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
@@ -120,4 +123,74 @@
 .checkBoxErasmus{
     height:22px;
     width: 22px;
+}
+
+.titleQualifying{
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.my-rating-4{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.simboloEditar{
+    width: 3rem;
+    float: right;
+}
+
+.botonEditar{
+    float: right;
+    border: none;
+    background: transparent;
+}
+
+.localizacionFooter{
+    margin-top: -5rem;
+}
+
+.university{
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+    align-items: center;
+    text-align: center;
+    width: 453px;
+
+    background: rgba(231, 236, 239, 0.7);
+    border-radius: 20px;
+    border-bottom: 2px solid black;
+}
+
+
+.subjects{
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+    align-items: center;
+    text-align: center;
+    height: 5rem;
+}
+
+.asignaturas{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+#anchoUniversidadDestino{
+    width: 50rem;
+}
+
+.separacionTablas {
+    border-collapse: separate;
+    border-spacing: 5rem 0;
 }

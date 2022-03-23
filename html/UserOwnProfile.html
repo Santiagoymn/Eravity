@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="../css/userOwnProfileStyle.css" type="text/css">
     <link rel="stylesheet" href="../css/generalStyle.css" type="text/css">
+    <script src="../js/jquery.star-rating-svg.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/star-rating-svg.css">
 
 </head>
 
@@ -19,10 +21,14 @@
 <div id="header"></div>
 <body>
     <div class="perfil">
-            <div class="userInfo">
-                <img src="images/imagenUsuario.png" class="fotoUsuario">
-                <p class="nombreUsuario">Noe Cuevas</p>
-            </div>
+        <div>
+            <button type="button" class="botonEditar"> <img src="images/iconoEditar.png" class="simboloEditar" alt="Icono editar perfil"></button>
+        </div>
+
+        <div class="userInfo">
+            <img src="images/imagenUsuario.png" class="fotoUsuario" alt="Imagen del usuario">
+            <p class="nombreUsuario">Noe Cuevas</p>
+        </div>
             <div class="infoUniversidad">
                 <p class="infoUni" id="nombreUniversidad">Universidad de Las Palmas de Gran Canaria</p>
                 <p class="infoUni" id="carreraUniversidad">Computer Science Engineering</p>
@@ -38,7 +44,7 @@
                 <div class="qualifying">
                     <div class="titleQualifying">Accesibility</div>
                     <div class="textQualifying" id="centradoIzquierda">It is easy to arrive to the university by public transport ?<br>Are there ramps?</div>
-                    <div class="my-rating-4" data-rating="0">
+                    <div class="my-rating-4" data-rating="0" >
                         <script>
                             $(".my-rating-4").starRating({
                                 totalStars: 5,
@@ -55,9 +61,36 @@
                 <div class="qualifying">
                     <div class="titleQualifying">Installations</div>
                     <div class="textQualifying">Library, cafeteria, bathrooms, laboratories, study rooms...</div>
+                    <div class="my-rating-4" data-rating="0" id="separacionEstrellas">
+                        <script>
+                            $(".my-rating-4").starRating({
+                                totalStars: 5,
+                                starShape: 'rounded',
+                                starSize: 40,
+                                emptyColor: 'lightgray',
+                                hoverColor: '#6096BA',
+                                activeColor: 'green',
+                                useGradient: false
+                            });
+                        </script>
+                    </div>
                 </div>
+
                 <div class="qualifying">
                     <div class="titleQualifying">Environment</div>
+                    <div class="my-rating-4" data-rating="0">
+                        <script>
+                            $(".my-rating-4").starRating({
+                                totalStars: 5,
+                                starShape: 'rounded',
+                                starSize: 40,
+                                emptyColor: 'lightgray',
+                                hoverColor: '#6096BA',
+                                activeColor: 'green',
+                                useGradient: false
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
 
@@ -65,7 +98,80 @@
                 <label class="textoErasmus" for="cbox1">Have you been on Erasmus?</label><input type="checkbox" class="checkBoxErasmus" id="cbox1" value="second_checkbox">
             </div>
 
+        <script>
+            var checkbox = document.getElementById('cbox1');
+            checkbox.addEventListener("change", validaCheckbox, false);
+            function validaCheckbox()
+            {
+                var checked = checkbox.checked;
+                if(checked){
+                    var aux = "<div class=\"asignaturas\">\n" +
+                        "            <table class=\"separacionTablas\">\n" +
+                        "                <thead>\n" +
+                        "                <tr>\n" +
+                        "                    <th colspan=\"1\" class=\"university\">Home University</th>\n" +
+                        "                </tr>\n" +
+                        "\n" +
+                        "                </thead>\n" +
+                        "\n" +
+                        "                <tbody>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 1</td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 2</td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 3</td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 4</td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 5</td>\n" +
+                        "                </tr>\n" +
+                        "                </tbody>\n" +
+                        "            </table>\n" +
+                        "\n" +
+                        "            <table class=\"separacionTablas\">\n" +
+                        "                <thead>\n" +
+                        "                <tr>\n" +
+                        "                    <th colspan=\"2\" class=\"university\" id=\"anchoUniversidadDestino\">Destination University</th>\n" +
+                        "                </tr>\n" +
+                        "\n" +
+                        "                </thead>\n" +
+                        "\n" +
+                        "                <tbody>\n" +
+                        "                <tr class=\"separacionAsignaturas\">\n" +
+                        "                    <td class=\"subjects\">Subject 1</td>\n" +
+                        "                    <td class=\"subjects\"></td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 2</td>\n" +
+                        "                    <td class=\"subjects\">Subject 2</td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 3</td>\n" +
+                        "                    <td class=\"subjects\"></td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 4</td>\n" +
+                        "                    <td class=\"subjects\"></td>\n" +
+                        "                </tr>\n" +
+                        "                <tr>\n" +
+                        "                    <td class=\"subjects\">Subject 5</td>\n" +
+                        "                    <td class=\"subjects\">Subject 5</td>\n" +
+                        "                </tr>\n" +
+                        "                </tbody>\n" +
+                        "            </table>\n" +
+                        "        </div>";
 
+                    $('.perfil').append(aux);
+                }else{
+                    $('.asignaturas').hide();
+                }
+            }
+        </script>
     </div>
 
 </body>
