@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Degree Profile</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../css/DegreeProfilePageStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/generalStyle.css" type="text/css">
+
+</head>
+<script>
+    $(function(){
+        $("#header").load("headerLogueado.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+<div id="header"></div>
+<body>
+
+<div class="universityDegree">
+    <div class="universityName"> University </div>
+    <div class="degreeName"> Degree </div>
+</div>
+<article class="year">
+    <div class="headerYear">
+        <div class="text">Year 1</div>
+    </div>
+    <div class="semesters">
+        <table class="tableSemester">
+            <thead>
+                <tr>
+                    <th colspan="1" class="semester">First Semester</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="subjects">Subject 1</td>
+                </tr>
+                <tr>
+                    <td class="subjects">Subject 2</td>
+                </tr>
+                <tr>
+                    <td class="subjects">Subject 3</td>
+                </tr>
+                <tr>
+                    <td class="subjects">Subject 4</td>
+                </tr>
+                <tr>
+                    <td class="subjects">Subject 5</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="tableSemester">
+            <thead>
+            <tr>
+                <th colspan="1" class="semester">Second Semester</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="subjects">Subject 1</td>
+            </tr>
+            <tr>
+                <td class="subjects">Subject 2</td>
+            </tr>
+            <tr>
+                <td class="subjects">Subject 3</td>
+            </tr>
+            <tr>
+                <td class="subjects">Subject 4</td>
+            </tr>
+            <tr>
+                <td class="subjects">Subject 5</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</article>
+
+
+</body>
+<div id="footer" class="localizacionFooter"></div>
+</html>
