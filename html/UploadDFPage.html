@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Educational Project</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../css/uploadDFPageStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/generalStyle.css" type="text/css">
+</head>
+<script>
+    $(function(){
+        $("#header").load("headerLogueado.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+<div id="header"></div>
+<body>
+    <div class="pageTitle textQualifying">
+        <h2>Upload Degree Form</h2>
+    </div>
+    
+
+<form>
+    <input type="text" placeholder="name" id="name" class="inputShortText" required>
+    <input type="text" placeholder="university" id="university" class="inputShortText" required>
+
+    <div class="firstLineInputs">
+        <input type="text" placeholder="years" id="years" class="inputShortText" required>
+        <input type="text" placeholder="ECTS" id="ects" class="inputShortText" required>
+    </div>
+
+    <div class="buttonAccept"><input type="submit" class="acceptBtn" value="Send"></div>
+
+</form>
+</body>
+
+<div id="footer"></div>
+</html>
