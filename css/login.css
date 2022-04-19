@@ -1,186 +1,189 @@
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
-		*{
-			padding: 0;
-			margin: 0;
-		}
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		h1 {
-			font-size: 6rem;
-			font-family: Sanchez;
-			font-style: normal;
-			font-weight: 400;
-		}
-		h2 {
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 2.5rem;
-		}
-		h3 {
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.5rem;
-		}
-		span {
-			margin: 0 auto;
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.5rem;
-			line-height: 69%;
-		}
-		#title {
-			margin-bottom: 3.5rem;
-			padding-top: 3rem;
-		}
-        .container {
-			width: 100%;
-			height: 100%;
-			margin: auto;
-		}
-		.left {
-			width: 40%;
-			height: 100%;
-			background-color: #274C77;
-			float: left;
-		}
-		.right {
-			margin-left: 40%;
-			height: 100%;
-			background-color: white;
-		}
-		#contentLeft{
-			margin-left: 18%;
-			margin-top: 30%;
-			margin-right: 21%;
-			margin-bottom: 25%;
-			vertical-align: middle;
-			color: white;
-		}
-		#contentRight{
-			margin-left: 21%;
-			margin-right: 18%;
-			vertical-align: middle;
-		}
-		
-		/******************************************************/
-		/* End of site structure, start of login form styling */
-		/******************************************************/
-		
-		
-		.login {
-			width: 100%;
-			margin-top: 2.5rem;
-			vertical-align: middle;
-			text-align:center;
-			/*padding-top: 16%;*/
-			/*padding-right: 30px;*/
-			/*padding-bottom: 5%;*/
-			/*padding-left: 80px;*/
-		}
-		.login__field {	
-			padding-top: 3rem;
-			padding-right: 0px;
-			padding-bottom: 3rem;
-			padding-left: 0px;
-			position: relative;
-			background-color: #6096BA;
-			height: 3.125rem;
-		}
-		#top {
-			padding-top: 2rem;
-			padding-right: 0px;
-			padding-bottom: 0px;
-			padding-left: 0px;
-		}
-		#down {
-			padding-top: 2rem;
-			padding-right: 0px;
-			padding-bottom: 1.5rem;
-			padding-left: 0px;
-		}
-		#down_bgwhite {
-			padding-top: 1.25rem;
-			padding-right: 0px;
-			padding-bottom: 1.25rem;
-			padding-left: 0px;
-			background-color: white;
-		}
-		.login__icon {
-			position: absolute;
-			top: 2.9rem;
-			color: #fff;
-		}
-		.login__input {
-			border: none;
-			border-bottom: 2px solid #fff;
-			background: none;
-			padding-left: 3rem;
-			padding-bottom: 0.5rem;
-			width: 75%;
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.75rem;
-			color: white;
-			line-height: 2.5rem;
-			transition: .2s;
-		}
-		.login__input:active,
-		.login__input:focus,
-		.login__input:hover {
-			outline: none;
-			border-bottom-color: #fff;
-		}
-		.login__submit {
-			top: 1.875rem;
-			padding: 0.625rem;
-			font-size: 1.1rem;
-			border-radius: 0.5rem;
-			border: none;
-			font-weight: 700;
-			align-items: center;
-			width: 25%;
-			height: 2.5rem;
-			color: black;
-			background: #A3CEF1;
-			box-shadow: 0 0.125rem 0.125rem #274C77;
-			cursor: pointer;
-			transition: .2s;
-			white-space: normal !important;
-		}
-		.login__submit:active,
-		.login__submit:focus,
-		.login__submit:hover {
-			border-color: #274C77;
-			outline: none;
-		}
-		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-			color: white;
-			opacity: 1; /* Firefox */
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.75rem;
-			line-height: 2.625rem;
-		}
-		:-ms-input-placeholder { /* Internet Explorer 10-11 */
-			color: white;
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.75rem;
-			line-height: 2.625rem;
-		}
-		::-ms-input-placeholder { /* Microsoft Edge */
-			color: white;
-			font-family: Droid Sans;
-			font-style: normal;
-			font-weight: 400;
-			font-size: 1.75rem;
-			line-height: 2.625rem;
-		}
+*{
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	margin: 0;
+}
+h1 {
+	font-size: 6rem;
+	font-family: 'Sanchez', serif;
+	font-style: normal;
+	font-weight: 400;
+}
+h2 {
+	font-family: 'Droid Sans', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2.5rem;
+}
+h3 {
+	font-family: 'Droid Sans', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+span {
+	margin: 0 auto;
+	font-family: 'Droid Sans', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 69%;
+}
+#title {
+	margin-bottom: 3.5rem;
+	padding-top: 3rem;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.left {
+	width: 40%;
+	height: 100%;
+	background-color: #274C77;
+	float: left;
+}
+.right {
+	margin-left: 40%;
+	height: 100%;
+	background-color: white;
+	display:flex;
+	justify-content: center;
+}
+#contentLeft{
+	margin: 30% 21% 25% 18%;
+	vertical-align: middle;
+	color: white;
+}
+#contentRight{
+	margin-left: 21%;
+	margin-right: 18%;
+	vertical-align: middle;
+}
+
+/******************************************************/
+/* End of site structure, start of login form styling */
+/******************************************************/
+
+
+.login {
+	width: 100%;
+	margin-top: 2.5rem;
+	vertical-align: middle;
+	text-align:center;
+	/*padding-top: 16%;*/
+	/*padding-right: 30px;*/
+	/*padding-bottom: 5%;*/
+	/*padding-left: 80px;*/
+}
+.login__field {
+	padding: 3rem 0px;
+	position: relative;
+	background-color: #6096BA;
+	height: 3.125rem;
+}
+#top {
+	padding: 2rem 0px 0px;
+}
+#down {
+	padding-top: 2rem;
+	padding-right: 0px;
+	padding-bottom: 1.5rem;
+	padding-left: 0px;
+}
+button{
+	background-color: white;
+	margin-top:2rem;
+}
+.login__icon {
+	position: absolute;
+	top: 2.9rem;
+	color: #fff;
+}
+.login__input {
+	border: none;
+	border-bottom: 2px solid #fff;
+	background: none;
+	padding-left: 3rem;
+	padding-bottom: 0.5rem;
+	width: 75%;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.75rem;
+	color: white;
+	line-height: 2.5rem;
+	transition: .2s;
+}
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: #fff;
+}
+.login__submit {
+	padding: 0.625rem;
+	font-size: 1.1rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-weight: 700;
+	align-items: center;
+	width: 25%;
+	height: 2.5rem;
+	color: black;
+	background: #A3CEF1;
+	box-shadow: 0 0.125rem 0.125rem #274C77;
+	cursor: pointer;
+	transition: .2s;
+	white-space: normal !important;
+}
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: #274C77;
+	outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white;
+	opacity: 1; /* Firefox */
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.75rem;
+	line-height: 2.625rem;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: white;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.75rem;
+	line-height: 2.625rem;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+	color: white;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.75rem;
+	line-height: 2.625rem;
+}
+.questionSignUp{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	alignment: center;
+	align-content: center;
+	margin-top: 3rem;
+	position: relative;
+}
+.buttonSignUp{
+	position: relative;
+	width: 35em;
+}
+
