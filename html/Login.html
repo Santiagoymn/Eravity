@@ -13,8 +13,8 @@
 		
 			<div class="left">
 				<div id="contentLeft" align="center">
-					<h1>Join us!</h1><br><br><br>
-					<h2>The easiest way<br>to go on Erasmus</h2>
+					<h1 id="white">Join us!</h1><br><br><br>
+					<h2 id="white">The easiest way<br>to go on Erasmus</h2>
 				</div>
 			</div>
 			
@@ -22,18 +22,18 @@
 				<div id="contentRight" align="center">
 				
 					<div id="title" align="center">
-						<h1>Eravity</h1>
+						<h1 id="black">Eravity</h1>
 					</div>
 					
 					<form class="login">
 						<div class="column">
 							<div class="login__field" id="top">
 								<i class="login__icon fas fa-user fa-2xl"></i>
-								<input type="text" class="login__input" placeholder="email" required>
+								<input type="text" class="login__input" placeholder="email">
 							</div>
 							<div class="login__field" id="down">
 								<i class="login__icon fas fa-lock fa-2xl"></i>
-								<input type="password" class="login__input" placeholder="password" required>
+								<input type="password" class="login__input" placeholder="password">
 							</div>
 							<div class="login__field" id="down_bgwhite">
 								<button class="button login__submit"><span>Login</span></button>
@@ -53,32 +53,4 @@
 			
 		</section>
     </body>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" >
-		$(document).ready(function() {
-			$('#inicio').click( function(){
-				$.getJSON("http://localhost:3000/usuarios", function (data_users) {
-					var existe = false;
-					for (let idx = 0; idx < data_users.length; idx++) {
-						let user_item = data_users[idx];
-
-						var userInput = $('#user').val();
-						var passwordInput = $('#passwd').val();
-
-						if(userInput == user_item.usuario) {
-							if (passwordInput == user_item.password) {
-								existe = true;
-								sessionStorage.setItem("logged", "true");
-								window.location.href = "index.html";
-							}
-						}
-					}
-					if(existe == false){
-						alert("Usuario o Contraseña incorrectos");
-					}
-				});
-			});
-		});
-	</script>
 </html>
