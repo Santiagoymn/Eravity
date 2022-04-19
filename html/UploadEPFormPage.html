@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Update Educational Project</title>
@@ -10,124 +11,141 @@
     <link rel="stylesheet" type="text/css" href="../css/star-rating-svg.css">
 </head>
 <script>
-    $(function(){
+    $(function () {
         $("#header").load("headerLogueado.html");
         $("#footer").load("footer.html");
     });
 </script>
 <div id="header"></div>
-<body>
-<form>
-    <div class="firstLineInputs">
-        <input type="text" placeholder="id" id="id" class="inputShortText" required>
-        <input type="text" placeholder="name" id="name" class="inputShortText" required>
-    </div>
-    <div class="secondLineInputs">
-        <input type="text" placeholder="ects" id="ects" class="inputShortText" required>
-        <input type="text" placeholder="year" id="year" class="inputShortText" required>
-        <input type="text" placeholder="semester" id="semester" class="inputShortText" required>
-    </div>
-    <input type="text" placeholder="degree" id="degree" class="inputShortText" required>
-    <input type="text" placeholder="university" id="university" class="inputShortText" required>
-    <div class="text" id="labelLanguages">languages</div>
-    <div class="languagesCB">
-        <div class="languageDivCB"><input type="checkbox" id="englishCB" class="languageCB"><label for="englishCB">english</label></div>
-        <div class="languageDivCB"><input type="checkbox" id="frenchCB" class="languageCB"><label for="frenchCB">french</label></div>
-        <div class="languageDivCB"><input type="checkbox" id="dutchCB" class="languageCB"><label for="dutchCB">dutch</label></div>
-        <div class="languageDivCB"><input type="checkbox" id="spanishCB" class="languageCB"><label for="spanishCB">spanish</label></div>
-        <div class="languageDivCB"><input type="checkbox" id="germanCB" class="languageCB"><label for="germanCB">german</label></div>
-        <div class="languageDivCB"><input type="checkbox" id="otherCB" class="languageCB"><label for="otherCB">other</label></div>
-    </div>
-    <input type="text" placeholder="prerequisites" id="prerequisites" class="inputLargeText" required>
-    <input type="text" placeholder="contents" id="contents" class="inputLargeText" required>
-    <div class="qualifying">
-        <div class="titleQualifying">Teaching staff</div>
-        <div class="textQualifying">Do they help students? Do they provide good explanations?</div>
-        <div class="my-rating-4" data-rating="0">
-            <script>
-                $(".my-rating-4").starRating({
-                    totalStars: 5,
-                    starShape: 'rounded',
-                    starSize: 40,
-                    emptyColor: 'lightgray',
-                    hoverColor: '#6096BA',
-                    activeColor: 'green',
-                    useGradient: false
-                });
-            </script>
-        </div>
-    </div>
-    <div class="qualifying">
-        <div class="titleQualifying">Contents</div>
-        <div class="textQualifying">Do they adapt to the educational programme?</div>
-        <div class="my-rating-4" data-rating="0">
-            <script>
-                $(".my-rating-4").starRating({
-                    totalStars: 5,
-                    starShape: 'rounded',
-                    starSize: 40,
-                    emptyColor: 'lightgray',
-                    hoverColor: '#6096BA',
-                    activeColor: 'green',
-                    useGradient: false
-                });
-            </script>
-        </div>
-    </div>
-    <div class="qualifying">
-        <div class="titleQualifying">Difficulty</div>
-        <div class="textQualifying">Are the contents difficult?</div>
-        <div class="my-rating-4" data-rating="0">
-            <script>
-                $(".my-rating-4").starRating({
-                    totalStars: 5,
-                    starShape: 'rounded',
-                    starSize: 40,
-                    emptyColor: 'lightgray',
-                    hoverColor: '#6096BA',
-                    activeColor: 'green',
-                    useGradient: false
-                });
-            </script>
-        </div>
-    </div>
-    <div class="qualifying">
-        <div class="titleQualifying">Interest</div>
-        <div class="textQualifying">Are the contents interesting? Were they useful?</div>
-        <div class="my-rating-4" data-rating="0">
-            <script>
-                $(".my-rating-4").starRating({
-                    totalStars: 5,
-                    starShape: 'rounded',
-                    starSize: 40,
-                    emptyColor: 'lightgray',
-                    hoverColor: '#6096BA',
-                    activeColor: 'green',
-                    useGradient: false
-                });
-            </script>
-        </div>
-    </div>
-    <div class="qualifying">
-        <div class="titleQualifying">Time commitment</div>
-        <div class="my-rating-4" data-rating="0">
-            <script>
-                $(".my-rating-4").starRating({
-                    totalStars: 5,
-                    starShape: 'rounded',
-                    starSize: 40,
-                    emptyColor: 'lightgray',
-                    hoverColor: '#6096BA',
-                    activeColor: 'green',
-                    useGradient: false
-                });
-            </script>
-        </div>
-    </div>
-    <div class="buttonAccept"><input type="submit" class="acceptBtn" value="Accept"></div>
 
-</form>
+<body>
+    <form>
+        <div class="firstLineInputs">
+            <input type="text" placeholder="id" id="id" class="inputShortText" required>
+            <input type="text" placeholder="name" id="name" class="inputShortText" required>
+        </div>
+        <div class="secondLineInputs">
+            <input type="text" placeholder="ects" id="ects" class="inputShortText" required>
+            <input type="text" placeholder="year" id="year" class="inputShortText" required>
+            <input type="text" placeholder="semester" id="semester" class="inputShortText" required>
+        </div>
+        <input type="text" placeholder="degree" id="degree" class="inputShortText" required>
+        <input type="text" placeholder="university" id="university" class="inputShortText" required>
+        <div class="text" id="labelLanguages">languages</div>
+        <div class="languagesCB">
+            <div class="languageDivCB"><input type="checkbox" id="englishCB" class="languageCB"><label
+                    for="englishCB">english</label></div>
+            <div class="languageDivCB"><input type="checkbox" id="frenchCB" class="languageCB"><label
+                    for="frenchCB">french</label></div>
+            <div class="languageDivCB"><input type="checkbox" id="dutchCB" class="languageCB"><label
+                    for="dutchCB">dutch</label></div>
+            <div class="languageDivCB"><input type="checkbox" id="spanishCB" class="languageCB"><label
+                    for="spanishCB">spanish</label></div>
+            <div class="languageDivCB"><input type="checkbox" id="germanCB" class="languageCB"><label
+                    for="germanCB">german</label></div>
+            <div class="languageDivCB"><input type="checkbox" id="otherCB" class="languageCB"><label
+                    for="otherCB">other</label></div>
+        </div>
+        <div class="file-upload-container text">
+            <label for="file-upload" class="custom-file-upload">
+                Upload Educational Programm
+                <img class="download-image" src="./images/Imagen 1.png" alt="Download image">
+            </label>
+
+            <input id="file-upload" type="file" />
+
+        </div>
+        <input type="text" placeholder="prerequisites" id="prerequisites" class="inputLargeText" required>
+        <input type="text" placeholder="contents" id="contents" class="inputLargeText" required>
+        <div class="qualifying">
+            <div class="titleQualifying">Teaching staff</div>
+            <div class="textQualifying">Do they help students? Do they provide good explanations?</div>
+            <div class="my-rating-4" data-rating="0">
+                <script>
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        starShape: 'rounded',
+                        starSize: 40,
+                        emptyColor: 'lightgray',
+                        hoverColor: '#6096BA',
+                        activeColor: 'green',
+                        useGradient: false
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="qualifying">
+            <div class="titleQualifying">Contents</div>
+            <div class="textQualifying">Do they adapt to the educational programme?</div>
+            <div class="my-rating-4" data-rating="0">
+                <script>
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        starShape: 'rounded',
+                        starSize: 40,
+                        emptyColor: 'lightgray',
+                        hoverColor: '#6096BA',
+                        activeColor: 'green',
+                        useGradient: false
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="qualifying">
+            <div class="titleQualifying">Difficulty</div>
+            <div class="textQualifying">Are the contents difficult?</div>
+            <div class="my-rating-4" data-rating="0">
+                <script>
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        starShape: 'rounded',
+                        starSize: 40,
+                        emptyColor: 'lightgray',
+                        hoverColor: '#6096BA',
+                        activeColor: 'green',
+                        useGradient: false
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="qualifying">
+            <div class="titleQualifying">Interest</div>
+            <div class="textQualifying">Are the contents interesting? Were they useful?</div>
+            <div class="my-rating-4" data-rating="0">
+                <script>
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        starShape: 'rounded',
+                        starSize: 40,
+                        emptyColor: 'lightgray',
+                        hoverColor: '#6096BA',
+                        activeColor: 'green',
+                        useGradient: false
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="qualifying">
+            <div class="titleQualifying">Time commitment</div>
+            <div class="my-rating-4" data-rating="0">
+                <script>
+                    $(".my-rating-4").starRating({
+                        totalStars: 5,
+                        starShape: 'rounded',
+                        starSize: 40,
+                        emptyColor: 'lightgray',
+                        hoverColor: '#6096BA',
+                        activeColor: 'green',
+                        useGradient: false
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="buttonAccept"><input type="submit" class="acceptBtn" value="Accept"></div>
+
+    </form>
 </body>
 
 <div id="footer"></div>
+
 </html>

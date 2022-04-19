@@ -1,16 +1,16 @@
-form{
-    padding:15rem;
+form {
+    padding: 15rem;
     display: flex;
     flex-direction: column;
 }
 
-.inputShortText{
+.inputShortText {
     background-color: #E7ECEF;
     height: 3em;
-    margin-bottom:1.5em;
-    border:none;
+    margin-bottom: 1.5em;
+    border: none;
     border-radius: 0.63em;
-    font-family: 'Droid Sans',serif;
+    font-family: 'Droid Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -22,15 +22,18 @@ form{
     color: #000000;
 }
 
-textarea:focus, input:focus, input[type]:focus {
-    border-color: rgb(213,237,251);
-    box-shadow: 0 1px 1px rgb(175,206,224)inset, 0 0 8px rgb(175,206,224);
+textarea:focus,
+input:focus,
+input[type]:focus {
+    border-color: rgb(213, 237, 251);
+    box-shadow: 0 1px 1px rgb(175, 206, 224)inset, 0 0 8px rgb(175, 206, 224);
     outline: 0 none;
 }
-.inputLargeText{
+
+.inputLargeText {
     border-radius: 0.63em;
     height: 40rem;
-    font-family: 'Droid Sans',serif;
+    font-family: 'Droid Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -39,69 +42,76 @@ textarea:focus, input:focus, input[type]:focus {
     align-items: center;
     text-align: center;
     background: #E7ECEF;
-    border:none;
-    margin-bottom:1.5em;
+    border: none;
+    margin-bottom: 1.5em;
 
     color: #000000;
 }
-.firstLineInputs{
-    display: flex;
-    justify-content: center;
-}
-#name{
-    width:40em;
-    margin-left:5rem;
-}
-.secondLineInputs{
+
+.firstLineInputs {
     display: flex;
     justify-content: center;
 }
 
-#year{
-    margin-left:5rem;
-    margin-right:5rem;
+#name {
+    width: 40em;
+    margin-left: 5rem;
 }
-label{
-    font-family: 'Droid Sans',serif;
+
+.secondLineInputs {
+    display: flex;
+    justify-content: center;
+}
+
+#year {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+label {
+    font-family: 'Droid Sans', serif;
     font-style: normal;
     font-size: 36px;
     line-height: 42px;
     align-items: center;
     text-align: center;
-    margin-left:1rem;
+    margin-left: 1rem;
     align-self: center;
 
     color: #000000;
 }
-.languageCB{
-    height:22px;
+
+.languageCB {
+    height: 22px;
     width: 22px;
     align-self: center;
 }
-.languageDivCB{
-    position:relative;
+
+.languageDivCB {
+    position: relative;
     width: 33%;
     justify-content: center;
     height: 3rem;
-    display:inline-block;
+    display: inline-block;
 }
-.languagesCB{
+
+.languagesCB {
     margin-left: 20rem;
     margin-bottom: 2rem;
 
 }
 
-.qualifying{
+.qualifying {
     margin-bottom: 2rem;
 }
 
-.acceptBtn{
+.acceptBtn {
     position: absolute;
     width: 261px;
     height: 105px;
     background: #A3CEF1;
     border-radius: 15px;
-    font-family: 'Droid Sans',serif;
+    font-family: 'Droid Sans', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -112,6 +122,32 @@ label{
     align-self: center;
 
 }
-.buttonAccept{
-    align-self:center
+
+.buttonAccept {
+    align-self: center
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: none;
+    cursor: pointer;
+}
+
+.file-upload-container {
+    border: 0.2rem dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-bottom: 2rem;
+    padding: 20vh 30vw;
+}
+
+.download-image {
+    z-index: 2;
+    background-color: #A3CEF1;
+    border-radius: 1rem;
+    margin-top: 1rem;
 }
