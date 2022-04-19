@@ -1,8 +1,43 @@
-import React from 'react';
+import { dblClick } from '@testing-library/user-event/dist/click';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { collection, addDoc } from 'firebase/firestore';
+import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
+import { auth, db } from './firebase';
 import './registerStyle.css'
 
 function Register() {
+
+    const[email, setEmail] = useState("");
+    const[password, setPassword] = useState("");
+    const[repeatPassword, setRepeatPassword] = useState("");
+    const[name, setName] = useState("");
+    const[surname, setSurname] = useState("");
+    const[university, setUniversity] = useState("");
+    const[degree, setDegree] = useState("");
+
+    const register = (e) => {
+        e.preventDefault();
+        if(password === repeatPassword){
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                addDoc(collection(db, 'users'),{
+                    uid: userCredential.user.uid,
+                    name: name + " " + surname,
+                    university: university,
+                    degree: degree,
+                    universitySecundary: "",
+                    subjects: new Map([['', false]]),
+                    profilePicture: "",
+                    subjectsConv: new Map([['', false]])
+                });
+        }).catch(error => alert(error.message));
+        }else {
+            alert("The passwords doesn't match");
+        }
+
+    }
+
   return (
       <div>
     <Helmet>
@@ -13,58 +48,58 @@ function Register() {
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans" />
         <link rel="stylesheet" type="text/css" href="../css/register.css" />
     </Helmet>
-    <body>
+    <div>
 		<div id="title" align="center">
 			<h1 id="black">Eravity</h1>
 		</div>
-		<div class="main">
-			<form class="register">
+		<div className="main">
+			<form className="register">
 			
-				<div class="column">
-					<div class="register__field" id="top">
-						<i class="login__icon fa-solid fa-envelope fa-2xl"></i>
-						<input type="text" class="login__input" placeholder="email" />
+				<div className="column">
+					<div className="register__field" id="top">
+						<i className="login__icon fa-solid fa-envelope fa-2xl"></i>
+						<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="login__input" placeholder="email" required/>
 					</div>
-					<div class="register__field">
-						<i class="login__icon fas fa-user fa-2xl"></i>
-						<input type="text" class="login__input" placeholder="name" />
+					<div className="register__field">
+						<i className="login__icon fas fa-user fa-2xl"></i>
+						<input value={name} onChange={e => setName(e.target.value)} type="text" className="login__input" placeholder="name" required/>
 					</div>
-					<div class="register__field">
-						<i class="login__icon fas fa-user fa-2xl"></i>
-						<input type="text" class="login__input" placeholder="surname" />
+					<div className="register__field">
+						<i className="login__icon fas fa-user fa-2xl"></i>
+						<input value={surname} onChange={e => setSurname(e.target.value)} type="text" className="login__input" placeholder="surname" required/>
 					</div>
-					<div class="register__field" id="bottom">
-						<i class="login__icon fa-solid fa-graduation-cap fa-2xl"></i>
-						<input type="text" class="login__input" placeholder="university" />
+					<div className="register__field" id="bottom">
+						<i className="login__icon fa-solid fa-graduation-cap fa-2xl"></i>
+						<input value={university} onChange={e => setUniversity(e.target.value)} type="text" className="login__input" placeholder="university" required/>
 					</div>
 				</div>
 				
-				<div class="column">
-					<div class="register__field" id="top">
-						<i class="login__icon fa-solid fa-book-open fa-2xl"></i>
-						<input type="text" class="login__input" placeholder="degree/master"/>
+				<div className="column">
+					<div className="register__field" id="top">
+						<i className="login__icon fa-solid fa-book-open fa-2xl"></i>
+						<input value={degree} onChange={e => setDegree(e.target.value)} type="text" className="login__input" placeholder="degree/master" required/>
 					</div>
-					<div class="register__field">
-						<i class="login__icon fas fa-lock fa-2xl"></i>
-						<input type="password" class="login__input" placeholder="password"/>
+					<div className="register__field">
+						<i className="login__icon fas fa-lock fa-2xl"></i>
+						<input value={password} onChange={e => setPassword(e.target.value)} type="password" className="login__input" placeholder="password" required/>
 					</div>
-					<div class="register__field">
-						<i class="login__icon fas fa-lock fa-2xl"></i>
-						<input type="password" class="login__input" placeholder="repeat password"/>
+					<div className="register__field">
+						<i className="login__icon fas fa-lock fa-2xl"></i>
+						<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="login__input" placeholder="repeat password" required/>
 					</div>
-					<div class="register__field" id="bottom">
-						<button class="button register__submit"><span>Sign up</span></button>
+					<div className="register__field" id="bottom">
+						<button type="submit" onClick={register} className="button register__submit"><span>Sign up</span></button>
 					</div>
 				</div>
 				
 			</form>
 					
-			<div class="back2login">
+			<div className="back2login">
 				<h3 id="white">If you already have an account, please <a href="../html/login.html">sign in.</a></h3>
 			</div>
 			
 		</div>
-	</body>
+	</div>
 
     </div>
   )
