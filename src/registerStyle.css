@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: Sanchez;
+			font-style: normal;
+			font-weight: 400;
+		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			background-color: #6096BA;
+		}
+		h1 {
+			font-size: 6rem;
+		}
+		h2 {
+			font-size: 2.5rem;
+		}
+		h3 {
+			font-size: 1.4rem;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 2.625rem;
+		}
+		span {
+			margin: 0 auto;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 1.35rem;
+			line-height: 50%;
+		}
+		a {
+			font-size: 1.4rem;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 2.625rem;
+		}
+		a:visited {
+			color: white;
+			background-color: transparent;
+		}
+		#black {
+			color: black;;
+		}
+		#white {
+			color: white;
+		}
+		#title {
+			margin-top: 2rem;
+			margin-bottom: 3rem;
+		}
+		.main {
+			left: 10%;
+			right: 10%;
+			position: relative;
+			width: 80%;
+			vertical-align: middle;
+			text-align:center;
+		}
+		.column {
+			float: left;
+			width: 50%;
+		}
+		.back2login {
+			margin-top: 2rem;
+		}
+		
+		
+		/******************************************************/
+		/* End of site structure, start of login form styling */
+		/******************************************************/
+		
+		form {
+			background-color: #fff;
+			border-radius: 1.5rem;
+		}
+		.register {
+			width: 80%;
+			margin: auto;
+			content: "";
+		}
+		.register:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.register__field {
+			padding: 1.25rem 0px;	
+			position: relative;
+			height: 3.125rem;
+		}
+		.login__icon {
+			position: absolute;
+			top: 2.25rem;
+		}
+		.login__input {
+			margin-bottom: 1rem;
+			border: none;
+			border-bottom: 2px solid #000;
+			background: none;
+			padding-left: 3rem;
+			padding-bottom: 0.5rem;
+			width: 75%;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 2rem;
+			line-height: 2.5rem;
+			transition: .2s;
+		}
+		.login__input:active,
+		.login__input:focus,
+		.login__input:hover {
+			outline: none;
+		}
+		.register__submit {
+			top: 1.875rem;
+			padding: 0.625rem;
+			font-size: 1.1rem;
+			border-radius: 0.5rem;
+			border: none;
+			font-weight: 700;
+			align-items: center;
+			width: 25%;
+			height: 2.4375rem;
+			color: black;
+			background: #A3CEF1;
+			box-shadow: 0 0.125rem 0.125rem #274C77;
+			cursor: pointer;
+			transition: .2s;
+			white-space: normal !important;
+			word-wrap: break-word;
+		}
+		.fa-2xl {
+			font-size: 2em;
+			line-height: 0.5rem;
+		}
+
+		.register__submit:active,
+		.register__submit:focus,
+		.register__submit:hover {
+			border-color: #274C77;
+			outline: none;
+		}
+		#top {
+			margin-top: 2.5rem;
+		}
+		#bottom {
+			margin-bottom: 2.5rem;
+		}
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: black;
+			opacity: 1; /* Firefox */
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 2rem;
+			line-height: 2.625rem;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: black;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 2rem;
+			line-height: 2.625rem;
+		}
+		::-ms-input-placeholder { /* Microsoft Edge */
+			color: black;
+			font-family: Droid Sans;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 2rem;
+			line-height: 2.625rem;
+		}
