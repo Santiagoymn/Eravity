@@ -1,6 +1,6 @@
 import { dblClick } from '@testing-library/user-event/dist/click';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, setDoc, doc, updateDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { auth, db } from './firebase';
@@ -20,16 +20,13 @@ function Register() {
         e.preventDefault();
         if(password === repeatPassword){
             createUserWithEmailAndPassword(auth, email, password)
+            //corregir name - updateprofile
             .then((userCredential) => {
                 addDoc(collection(db, 'users'),{
                     uid: userCredential.user.uid,
                     name: name + " " + surname,
                     university: university,
                     degree: degree,
-                    universitySecundary: "",
-                    subjects: new Map([['', false]]),
-                    profilePicture: "",
-                    subjectsConv: new Map([['', false]])
                 });
         }).catch(error => alert(error.message));
         }else {
