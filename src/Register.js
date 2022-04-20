@@ -1,6 +1,5 @@
-import { dblClick } from '@testing-library/user-event/dist/click';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { collection, addDoc, setDoc, doc, updateDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { auth, db } from './firebase';
@@ -20,14 +19,19 @@ function Register() {
         e.preventDefault();
         if(password === repeatPassword){
             createUserWithEmailAndPassword(auth, email, password)
-            //corregir name - updateprofile
             .then((userCredential) => {
-                addDoc(collection(db, 'users'),{
-                    uid: userCredential.user.uid,
-                    name: name + " " + surname,
+                setDoc(doc(db, 'users', userCredential.user.uid),{
                     university: university,
                     degree: degree,
-                });
+                }).then(() => {
+					updateProfile(userCredential.user, {
+						displayName: name + " " + surname,
+					}).then(() => {
+						sendEmailVerification(auth.currentUser);
+					})
+				}).then(() => {
+					alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web")
+				});
         }).catch(error => alert(error.message));
         }else {
             alert("The passwords doesn't match");
