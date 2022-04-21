@@ -30,7 +30,7 @@ function Register() {
 						sendEmailVerification(auth.currentUser);
 					})
 				}).then(() => {
-					alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web")
+					alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web");
 				});
         }).catch(error => alert(error.message));
         }else {
