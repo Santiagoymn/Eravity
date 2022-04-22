@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { db } from './firebase';
-import {collection, query, where, getDocs, addDoc, getDoc} from "firebase/firestore";
-import styles from './uploadUniversityFormStyle.module.css';
+import {collection, query, where, getDocs, addDoc} from "firebase/firestore";
+import './uploadUniversityFormStyle.css';
 
 function UploadUniversityForm() {
     const[name, setName] = useState("");
@@ -40,14 +40,14 @@ function UploadUniversityForm() {
             <meta charset="UTF-8"/>
             <title>Upload University</title>
         </Helmet>
-        <form>
-            <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="name" id="name" className={styles.inputShortText} required/>
+        <form className='uploaduniversity__form'>
+            <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="name" id="uploaduniversity__name" className="uploaduniversity__inputShortText" required/>
 
-            <input value={city} onChange={e => setCity(e.target.value)} type="text" placeholder="city" id="city" className={styles.inputShortText} required/>
+            <input value={city} onChange={e => setCity(e.target.value)} type="text" placeholder="city" id="uploaduniversity__city" className="uploaduniversity__inputShortText" required/>
 
-            <input value={country} onChange={e => setCountry(e.target.value)} type="text" placeholder="country" id="country" className={styles.inputShortText} required/>
+            <input value={country} onChange={e => setCountry(e.target.value)} type="text" placeholder="country" id="uploaduniversity__country" className="uploaduniversity__inputShortText" required/>
 
-            <div className={styles.buttonAccept}><input type="submit" onClick={checkUniversity} className={styles.acceptBtn} value="Send"/></div>
+            <div className="uploaduniversity__buttonAccept"><input type="submit" onClick={checkUniversity} className="uploaduniversity__acceptBtn" value="Send"/></div>
 
         </form>
     </div>

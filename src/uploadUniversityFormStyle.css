@@ -1,20 +1,13 @@
-form{
+.uploaduniversity__form{
     padding:15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.lineContent{
-    display: flex;
-}
-
-.localizacionFooter{
-    margin-top: -5rem;
-}
 
 
-.inputShortText{
+.uploaduniversity__inputShortText{
     background-color: #E7ECEF;
     height: 3em;
     margin-bottom:1.5em;
@@ -33,11 +26,11 @@ form{
 }
 
 
-.buttonAccept{
+.uploaduniversity__buttonAccept{
     align-self:center
 }
 
-.acceptBtn{
+.uploaduniversity__acceptBtn{
     width: 261px;
     height: 105px;
     background: #A3CEF1;
