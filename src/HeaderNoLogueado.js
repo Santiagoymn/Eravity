@@ -12,9 +12,9 @@ function HeaderNoLogueado( {navigation} ){
         </Helmet>
         <header>
             <h1>Eravity</h1>
-            <nav class="barraNavegacion">
-                <li class="apartadoBarraNavegacion" ><a>About Us</a></li>
-                <li class="apartadoLoginRegister" onClick={() => navigation.navigate('Register')}><a>Login/Register</a></li>
+            <nav className="barraNavegacion">
+                <li className="apartadoBarraNavegacion" ><a>About Us</a></li>
+                <li className="apartadoLoginRegister" onClick={() => navigation.navigate('Register')}><a>Login/Register</a></li>
             </nav>
         </header>
         </div>
