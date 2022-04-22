@@ -1,10 +1,11 @@
 import './App.css';
 import Register from './Register';
+import UploadUniversityForm from './UploadUniversityForm';
 
 function App() {
   return(
     <div className='title'>
-      <Register />
+      <UploadUniversityForm />
 
     </div>
   );
