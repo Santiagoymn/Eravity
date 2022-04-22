@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    position: relative;
+    width: auto;
+    margin-left: 2rem;
+    top: 1rem;
+
+    font-family: 'Sanchez';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 7.6875rem;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+
+header{
+    position: absolute;
+    width: 100%;
+    height: 146px;
+    left: 0;
+    top: 0;
+
+    background: #274C77;
+}
+
+
+.apartadoLoginRegister {
+    position: relative;
+    width: auto;
+    height: 2rem;
+    float: right;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    transform: translate(0, 30%);
+
+
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5625rem;
+    line-height: 1.8125rem;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.apartadoBarraNavegacion{
+    position: relative;
+    width: auto;
+    height: 2.9375rem;
+    float: right;
+    margin-left: 5rem;
+
+
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 4;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+
+    color: white;
+}
+
+.barraNavegacion{
+    position: relative;
+    display: inline-flex;
+    list-style: none;
+    float: right;
+    top: -2rem;
+}
