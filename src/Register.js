@@ -36,7 +36,7 @@ function Register() {
 					});
 					}).catch(error => alert(error.message));
 				}else{
-					alert("La contraseña no cumple los requisitos");
+					alert("La contraseña no cumple los requisitos: Debe de ser entre 8 y 16 caracteres y tener al menos una mayúscula, una minúscula, un dígito y un carácter especial");
 				}
 			}else {
 				alert("The passwords doesn't match");
@@ -50,10 +50,8 @@ function Register() {
 	function validationCorreo(){
 		const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 		if(regex.test(document.getElementById("idEmail").value)){
-			document.getElementById("idEmail").setCustomValidity("");
 			return true;
 		}else{
-			document.getElementById("idEmail").setCustomValidity("Debe de ser una dirección de correo ");
 			return false;
 		}
 	}
@@ -61,11 +59,8 @@ function Register() {
 	function validationPassword(){
 		const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 		if (regex.test(document.getElementById("idPassword").value)){
-			document.getElementById("idPassword").setCustomValidity("");
-			alert("La contraseña cumple los requisitos")
 			return true;
 		}else{
-			document.getElementById("idPassword").setCustomValidity("La contraseña debe de tener entre 8 y 16 caracteres, y al menos: una mayúscula, una minúscula, un dígito y un carácter especial");
 			return false;
 		}
 	}
