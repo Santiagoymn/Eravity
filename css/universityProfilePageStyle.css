@@ -7,6 +7,13 @@
     font-family: 'Droid Sans', serif;
 }
 
+p {
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
 .university-info-container{
     position:relative;
     display: flex;
@@ -60,7 +67,6 @@ hr{
 }
 
 .uni-degree{
-    width: 95%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -71,10 +77,15 @@ hr{
     margin-top: 3rem;
 }
 
+#degrees-list{
+    width: 90%;
+    align-items: center;
+}
+
 #degree-not-found-msg{
+    display: flex;
     height: 5rem;
     background-color: #6096BA;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;

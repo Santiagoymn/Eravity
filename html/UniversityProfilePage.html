@@ -18,17 +18,21 @@
 
 <body>
     <div id="header"></div>
+	
     <main class="university-info-container">
+	
         <div class="universidades">
             <div class="textoEncimaImagen">
                 <p class="textoUniversidad">University</p>
                 <p class="textoPais">Country</p>
             </div>
+			
             <div class="field" id="searchform">
                 <input type="text" id="searchterm" placeholder="Search..." class="inputBuscador"/>
                 <button type="button" id="search"><img src="images/lupa.png" class="lupaBuscador" alt="Lupa buscador"></button>
             </div>
         </div>
+		
         <div class="university-totals">
             <div class="total-info">
                 <p class="total-txt">Total degrees&nbsp;</p>
@@ -43,7 +47,9 @@
                 <p>202</p>
             </div>
         </div>
+		
         <hr>
+		
         <div class="my-rating-4" data-rating="0">
             <script>
                 $(".my-rating-4").starRating({
@@ -57,13 +63,47 @@
                 });
             </script>
         </div>
-        <div class="uni-degree">
-            <p>Degree 1</p>
-        </div>
-        <div id="degree-not-found-msg">
-            <p>Degree not found, please <a href="#">fill</a> this form to add the degree needed</p>
-        </div>
+		
+		<div id="degrees-list"></div>
+        
     </main>
+	
+		<script>
+		
+			// Loading Database (example)
+			const degrees = [
+				{name: 'Informatica'},
+				{name: 'Biologia'},
+				{name: 'Matematica'},
+				{name: 'Lettere'},
+				{name: 'Musica'},
+			];
+			degrees.sort((a, b) => a.name.localeCompare(b.name));
+	
+			const formulario = document.querySelector('#searchterm');
+			const result = document.querySelector('#degrees-list');
+		
+			const filtrar = ()=>{
+				result.innerHTML = '';
+				const text = formulario.value.toLowerCase();
+				for(let degree of degrees){
+					let name = degree.name.toLowerCase();
+					if(name.indexOf(text) !== -1){
+						result.innerHTML += '<div class="uni-degree"><p>' + degree.name + '</p></div>';
+					}
+				}
+			
+				if(result.innerHTML === ''){
+					result.innerHTML += '<div id="degree-not-found-msg"><p>Degree not found, please <a href="#">fill</a> this form to add the degree needed</p></div>';
+				}
+			}
+		
+			formulario.addEventListener('keyup', filtrar);
+		
+			filtrar();
+		
+		</script>
+	
     <div id="footer" class="localizacionFooter"></div>
 </body>
 </html>
