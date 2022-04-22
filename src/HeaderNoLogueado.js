@@ -1,5 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
+import './headerNoLogueadoStyle.css'
+
 
 function HeaderNoLogueado( {navigation} ){
     return(
@@ -11,8 +13,8 @@ function HeaderNoLogueado( {navigation} ){
         <header>
             <h1>Eravity</h1>
             <nav class="barraNavegacion">
-                <li class="apartadoBarraNavegacion"><a>About Us</a></li>
-                <li class="apartadoLoginRegister"><a>Login/Register</a></li>
+                <li class="apartadoBarraNavegacion" ><a>About Us</a></li>
+                <li class="apartadoLoginRegister" onClick={() => navigation.navigate('Register')}><a>Login/Register</a></li>
             </nav>
         </header>
         </div>
