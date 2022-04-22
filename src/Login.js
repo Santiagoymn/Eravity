@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { useDispatch } from 'react-redux';
 import { auth, db } from './firebase';
+import { login } from './features/userSlice'
 import './loginStyle.css';
 
 function Login() {
@@ -16,12 +17,18 @@ function Login() {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((userAuth) => {
+                //if (userAuth.user.emailVerified) {
                 dispatch(login({
                     email: userAuth.user.email,
                     uid: userAuth.user.uid,
                     displayName: userAuth.user.displayName,
                 })
+
                 );
+                alert("exito");
+                //} else {
+                //   alert("User must be verified first. Check your email");
+                //}
             }).catch(error => alert(error));
     };
 
@@ -37,24 +44,24 @@ function Login() {
 
             </Helmet>
             <div>
-                <div class="container">
-                    <div class="rightPart">
-                        <div class="title1">Join us!</div>
-                        <div class="title2">The easiest way to go on Erasmus</div>
+                <div className="container">
+                    <div className="rightPart">
+                        <div className="title1">Join us!</div>
+                        <div className="title2">The easiest way to go on Erasmus</div>
                     </div>
-                    <div class="leftPart">
-                        <div class="titlePage">Eravity</div>
+                    <div className="leftPart">
+                        <div className="titlePage">Eravity</div>
                         <form>
-                            <div class="conjuntoInput">
-                                <img src="images/Imagen%202.png" class="icono" alt="Usuario" />
-                                <input type="text" id="email" name="email" placeholder="email" required />
+                            <div className="conjuntoInput">
+                                <img src="images/Imagen%202.png" className="icono" alt="Usuario" />
+                                <input value={email} onChange={e => setEmail(e.target.value)} type="text" id="email" name="email" placeholder="email" required />
                             </div>
-                            <div class="conjuntoInput">
-                                <img src="images/Imagen%201.png" class="icono" alt="Contraseña" />
-                                <input type="password" id="passwd" name="passwd" placeholder="password" required />
+                            <div className="conjuntoInput">
+                                <img src="images/Imagen%201.png" className="icono" alt="Contraseña" />
+                                <input value={password} onChange={e => setPassword(e.target.value)} type="password" id="passwd" name="passwd" placeholder="password" required />
                             </div>
-                            <div class="botonForm">
-                                <button type="button" value="Iniciar Sesión" id="inicio" onclick="InicioSesion">
+                            <div className="botonForm">
+                                <button type="button" value="Iniciar Sesión" id="inicio" onClick={loginToApp}>
                                     Iniciar Sesión
                                 </button>
 
