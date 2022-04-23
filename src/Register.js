@@ -99,7 +99,7 @@ function Register() {
 						</div>
 					</div>
 					
-					<div className="register__column">
+					<div className="register__column2">
 						<div className="register__field" id="top">
 							<i className="login__icon fa-solid fa-book-open fa-2xl"></i>
 							<input value={degree} onChange={e => setDegree(e.target.value)} type="text" className="login__input" placeholder="degree/master" required/>
