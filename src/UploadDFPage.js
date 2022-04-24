@@ -33,11 +33,11 @@ function UploadDFPage() {
                         alert("The University doesn't exist");
                     }
                     
-                });
+                }).catch(error => alert(error.message));
             } else {
                 alert("The degree already exists");
             }
-        })
+        }).catch(error => alert(error.message));
     }
         
 
