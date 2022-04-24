@@ -1,0 +1,62 @@
+.uploaddfpage__form{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.uploaddfpage__inputShortText{
+    background-color: #E7ECEF;
+    height: 3em;
+    margin-bottom:1.5em;
+    border:none;
+    border-radius: 0.63em;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin:1rem;
+    color: #000000;
+}
+
+.uploaddfpage__firstLineInputs{
+    display: flex;
+    justify-content: center;
+}
+
+.secondLineInputs{
+    display: flex;
+    justify-content: center;
+}
+
+.uploaddfpage__acceptBtn{
+    width: 261px;
+    height: 105px;
+    background: #A3CEF1;
+    border-radius: 15px;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+    align-self: center;
+
+}
+.uploaddfpage__buttonAccept{
+    align-self:center
+}
+
+.uploaddfpage__pageTitle{
+    margin-top: 15rem;
+    text-align: center;
+}
+
+.uploaddfpage__pageTitle > h2{
+    color: #000000;
+}
