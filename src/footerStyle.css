@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.Footer_footer{
+.Footer__footer{
     position: relative;
     width: 100%;
     height: 8.5625rem;
@@ -13,7 +13,7 @@
     background: #274C77;
 }
 
-.Footer_logosRedesSociales{
+.Footer__logosRedesSociales{
     position: relative;
     display: block;
     text-align: center;
@@ -21,20 +21,20 @@
     top: 35%;
 }
 
-.Footer_logoFacebook{
+.Footer__logoFacebook{
     width: 3.125rem;
     height: 3.125rem;
     margin-right: 10rem;
 
 }
 
-.Footer_logoInstagram{
+.Footer__logoInstagram{
     width: 3.125rem;
     height: 3.125rem;
     margin-right: 10rem;
 }
 
-.Footer_logoTwitter{
+.Footer__logoTwitter{
     width: 3.56rem;
     height: 3.125rem;
 }
