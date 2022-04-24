@@ -1,10 +1,11 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getRedirectResult, signInWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { useDispatch } from 'react-redux';
 import { auth, db } from './firebase';
-import { login } from './features/userSlice'
+import { login } from './features/userSlice';
+import { useNavigate } from "react-router-dom";
 import './loginStyle.css';
 
 function Login() {
@@ -31,6 +32,14 @@ function Login() {
                 //}
             }).catch(error => alert(error));
     };
+
+    let navigate = useNavigate();
+
+    
+    
+    
+    
+    
 
     return (
         <div>
@@ -72,7 +81,7 @@ function Login() {
 						</form>
 
 						<div className="textQuestionSignUp">If you don't have an account:</div>
-						<button id="buttonSignUp" type="submit" className="button login__submit">Sign up</button>
+						<button id="buttonSignUp" type="submit" className="button login__submit" onClick={() => navigate("/Register")}>Sign up</button>
 						
 					</div>
 				</div>

@@ -15,14 +15,6 @@
     display: flex;
 }
 
-contentLeft {
-    
-    vertical-align: middle;
-    color: white;
-    text-align: center;
-    display: flex;
-}
-
 .title1 {
     margin-top: 10rem;
     font-size: 5em;
@@ -80,7 +72,7 @@ contentLeft {
 .login {
     width: 100%;
     vertical-align: middle;
-    text-align: center;
+    text-align: center;    
 }
 
 .login__field {
