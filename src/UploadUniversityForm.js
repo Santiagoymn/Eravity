@@ -12,13 +12,13 @@ function UploadUniversityForm() {
     const checkUniversity = (e) => {
         e.preventDefault();
         if((name != "") && (city != "") && (country != "") ){
-            const q = query(collection(db, "universities"), where("name", "==", name), where("city", "==", city), where("country", "==", country));
+            const q = query(collection(db, "universities"), where("name", "==", name.toLowerCase()), where("city", "==", city.toLowerCase()), where("country", "==", country.toLowerCase()));
             getDocs(q).then((querySnapshot) => {
             if(querySnapshot.empty){
                 addDoc(collection(db, "universities"), {
-                    name: name,
-                    city: city,
-                    country: country
+                    name: name.toLowerCase(),
+                    city: city.toLowerCase(),
+                    country: country.toLowerCase()
             }).catch(error => alert(error.message))
                 alert("The university has been added. Thanks for supporting!");
             } else {
