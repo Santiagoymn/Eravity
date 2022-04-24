@@ -16,15 +16,15 @@ function UploadDFPage() {
         if(validationNameDegree()){
             if(validationYear()){
                 if(validationECTS()){
-                    const q = query(collection(db, "degrees"), where("name", "==", name), where("university", "==", universityName));
+                    const q = query(collection(db, "degrees"), where("name", "==", name.toLowerCase()), where("university", "==", universityName.toLowerCase()));
                     getDocs(q).then((querySnapshot) => {
                         if(querySnapshot.empty){
-                            const q2 = query(collection(db, "universities"), where("name", "==", universityName));
+                            const q2 = query(collection(db, "universities"), where("name", "==", universityName.toLowerCase()));
                             getDocs(q2).then((querySnapshot2) => {
                                 if(!querySnapshot2.empty){
                                     querySnapshot2.forEach((universityObject) => {
                                         addDoc(collection(db, "degrees"), {
-                                            name: name,
+                                            name: name.toLowerCase(),
                                             universityId: universityObject.id,
                                             years: years,
                                             credits: credits

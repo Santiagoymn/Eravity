@@ -1,6 +1,7 @@
 import './App.css';
 import Register from './Register';
 import UploadDFPage from './UploadDFPage';
+import UploadUniversityForm from './UploadUniversityForm';
 
 function App() {
   return(
