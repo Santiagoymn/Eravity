@@ -3,7 +3,7 @@ import { setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { auth, db } from './firebase';
-import './loginStyle.css';
+import './RegisterStyle.css';
 
 function Register() {
 

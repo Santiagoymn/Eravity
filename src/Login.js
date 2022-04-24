@@ -32,7 +32,6 @@ function Login() {
             }).catch(error => alert(error));
     };
 
-
     return (
         <div>
             <Helmet>
@@ -40,38 +39,46 @@ function Login() {
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <script src="https://kit.fontawesome.com/f9a9bc67cc.js" crossorigin="anonymous"></script>
-                <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans" />
 
             </Helmet>
-            <div>
-                <div className="container">
-                    <div className="rightPart">
-                        <div className="title1">Join us!</div>
-                        <div className="title2">The easiest way to go on Erasmus</div>
-                    </div>
-                    <div className="leftPart">
-                        <div className="titlePage">Eravity</div>
-                        <form>
-                            <div className="conjuntoInput">
-                                <img src="images/Imagen%202.png" className="icono" alt="Usuario" />
-                                <input value={email} onChange={e => setEmail(e.target.value)} type="text" id="email" name="email" placeholder="email" required />
-                            </div>
-                            <div className="conjuntoInput">
-                                <img src="images/Imagen%201.png" className="icono" alt="Contraseña" />
-                                <input value={password} onChange={e => setPassword(e.target.value)} type="password" id="passwd" name="passwd" placeholder="password" required />
-                            </div>
-                            <div className="botonForm">
-                                <button type="button" value="Iniciar Sesión" id="inicio" onClick={loginToApp}>
-                                    Iniciar Sesión
-                                </button>
 
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div className="container">
+				<div className="left">
+					<div className="contentLeft">
+						<div className="title1">Join us!</div>
+						<div className="title2">The easiest way to go on Erasmus</div>
+					</div>
+				</div>
 
+				<div className="right">
+					<div className="contentRight">
+
+						<div className="titlePage"> Eravity </div>
+
+						<form className="login">
+							<div className="column">
+								<div className="login__field" id="top">
+									<div className="login__icon fas fa-user fa-2xl"></div>
+									<input value={email} onChange={e=> setEmail(e.target.value)} type="text" className="login__input" placeholder="email" required/>
+								</div>
+								<div className="login__field" id="down">
+									<div className="login__icon fas fa-lock fa-2xl"></div>
+									<input value={password} onChange={e=> setPassword(e.target.value)} type="password" className="login__input" placeholder="password" required/>
+								</div>
+								<div className="button">
+									<button id="buttonLogIn" className="button login__submit" type="submit" onClick={loginToApp}>Login</button>
+								</div>
+							</div>
+						</form>
+
+						<div className="textQuestionSignUp">If you don't have an account:</div>
+						<button id="buttonSignUp" type="submit" className="button login__submit">Sign up</button>
+						
+					</div>
+				</div>
+			</div>
+       </div>     
+    
     )
 }
 

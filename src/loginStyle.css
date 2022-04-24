@@ -1,62 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-h1 {
-    font-size: 6rem;
-    font-family: 'Sanchez', serif;
-    font-style: normal;
-    font-weight: 400;
-}
-
-h2 {
-    font-family: 'Droid Sans', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-family: 'Droid Sans', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-span {
-    margin: 0 auto;
-    font-family: 'Droid Sans', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 69%;
-}
-
-#title {
-    margin-bottom: 3.5rem;
-    padding-top: 3rem;
-}
 
 .container {
     width: 100%;
     height: 100%;
-    margin: auto;
 }
 
 .left {
     width: 40%;
-    height: 100%;
+    height: 100vh;
     background-color: #274C77;
     float: left;
+    display: flex;
+}
+
+contentLeft {
+    
+    vertical-align: middle;
+    color: white;
+    text-align: center;
+    display: flex;
+}
+
+.title1 {
+    margin-top: 10rem;
+    font-size: 5em;
+    font-family: 'Sanchez', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+.title2 {
+    margin-top: 5rem;
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    margin-right: 6rem;
+    margin-left: 6rem;
+}
+
+.titlePage {
+    font-size: 5em;
+    font-family: 'Sanchez', serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    padding-top: 5rem;
 }
 
 .right {
@@ -67,16 +62,14 @@ span {
     justify-content: center;
 }
 
-#contentLeft {
-    margin: 30% 21% 25% 18%;
-    vertical-align: middle;
-    color: white;
-}
 
-#contentRight {
+.contentRight {
     margin-left: 21%;
     margin-right: 18%;
     vertical-align: middle;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /******************************************************/
@@ -86,13 +79,8 @@ span {
 
 .login {
     width: 100%;
-    margin-top: 2.5rem;
     vertical-align: middle;
     text-align: center;
-    /*padding-top: 16%;*/
-    /*padding-right: 30px;*/
-    /*padding-bottom: 5%;*/
-    /*padding-left: 80px;*/
 }
 
 .login__field {
@@ -126,7 +114,7 @@ button {
 
 .login__input {
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #fff;
     background: none;
     padding-left: 3rem;
     padding-bottom: 0.5rem;
@@ -154,7 +142,7 @@ button {
     border: none;
     font-weight: 700;
     align-items: center;
-    width: 25%;
+    width: 6rem;
     height: 2.5rem;
     color: black;
     background: #A3CEF1;
@@ -162,6 +150,11 @@ button {
     cursor: pointer;
     transition: .2s;
     white-space: normal !important;
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 69%;
 }
 
 .login__submit:active,
@@ -203,16 +196,17 @@ button {
     line-height: 2.625rem;
 }
 
-.questionSignUp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+
+.textQuestionSignUp {
     margin-top: 3rem;
-    position: relative;
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    justify-content: center;
 }
 
-.buttonSignUp {
-    position: relative;
-    width: 35em;
+#buttonSignUp{
+    width: 8rem;
+    margin-top: 1rem;
 }
