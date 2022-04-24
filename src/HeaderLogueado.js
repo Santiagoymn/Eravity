@@ -9,19 +9,16 @@ function HeaderLogueado( {navigation} ) {
             <Helmet>
                 <meta charset="UTF-8" />
                 <title>Header no logueado</title>
-
-                <link rel="stylesheet" href="../css/homePageLogueadoStyle.css" type="text/css"/>
-
             </Helmet>
-            <header>
-                <h1>Eravity</h1>
+            <header className="HeaderLogueado__header">
+                <h1 className="HeaderLogueado__h1">Eravity</h1>
 
-                <nav class="barraNavegacion">
-                    <li class="apartadoBarraNavegacion"><a>My subjects</a></li>
-                    <li class="apartadoBarraNavegacion"><a>Contact Us</a></li>
-                    <li class="apartadoBarraNavegacion"><a>Upload</a></li>
-                    <li><a><img src="images/Imagen%201.png" class="imagenUpload"/></a></li>
-                    <li class="apartadoBarraNavegacion"><a><img src="images/Imagen%202.png" class="imagenUsuario"/></a></li>
+                <nav class="HeaderLogueado__barraNavegacion">
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a>My subjects</a></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Contact Us</a></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Upload</a></li>
+                    <li><a><img src="images/Imagen%201.png" className="HeaderLogueado__imagenUpload"/></a></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a><img src="images/Imagen%202.png" className="HeaderLogueado__imagenUsuario"/></a></li>
                 </nav>
             </header>
         </div>

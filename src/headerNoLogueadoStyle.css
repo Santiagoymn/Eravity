@@ -6,7 +6,7 @@
     margin: 0;
 }
 
-h1{
+.HeaderNoLogueado__h1{
     position: relative;
     width: auto;
     margin-left: 2rem;
@@ -23,7 +23,7 @@ h1{
 }
 
 
-header{
+.HeaderNoLogueado__header{
     position: absolute;
     width: 100%;
     height: 146px;
@@ -34,7 +34,7 @@ header{
 }
 
 
-.apartadoLoginRegister {
+.HeaderNoLogueado__apartadoLoginRegister {
     position: relative;
     width: auto;
     height: 2rem;
@@ -54,7 +54,7 @@ header{
     color: #FFFFFF;
 }
 
-.apartadoBarraNavegacion{
+.HeaderNoLogueado__apartadoBarraNavegacion{
     position: relative;
     width: auto;
     height: 2.9375rem;
@@ -73,7 +73,7 @@ header{
     color: white;
 }
 
-.barraNavegacion{
+.HeaderNoLogueado__barraNavegacion{
     position: relative;
     display: inline-flex;
     list-style: none;
