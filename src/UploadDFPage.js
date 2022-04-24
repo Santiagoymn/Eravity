@@ -3,7 +3,7 @@ import "./uploadDFPageStyle.css";
 import "./generalStyles.css";
 import Helmet from 'react-helmet';
 import { db } from './firebase';
-import { addDoc, collection, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 function UploadDFPage() {
 
@@ -16,29 +16,30 @@ function UploadDFPage() {
         if(validationNameDegree()){
             if(validationYear()){
                 if(validationECTS()){
-                    const q = query(collection(db, "degrees"), where("name", "==", name), where("university", "==", universityName));
+                    const q = query(collection(db, "universities"), where("name", "==", universityName.toLowerCase()));
                     getDocs(q).then((querySnapshot) => {
-                        if(querySnapshot.empty){
-                            const q2 = query(collection(db, "universities"), where("name", "==", universityName));
-                            getDocs(q2).then((querySnapshot2) => {
-                                if(!querySnapshot2.empty){
-                                    querySnapshot2.forEach((universityObject) => {
-                                        addDoc(collection(db, "degrees"), {
-                                            name: name,
-                                            universityId: universityObject.id,
-                                            years: years,
-                                            credits: credits
-                                        }).catch(error => alert(error.message))
-                                        alert("The degree has been added. Thanks for supporting!");
-                                        return true;
-                                    })
-                                } else {
-                                    alert("The University doesn't exist");
-                                }
-                                
-                            }).catch(error => alert(error.message));
+                        if(!querySnapshot.empty){
+                            querySnapshot.forEach((universityObject) => {
+                                const q2 = query(collection(db, "degrees"), where("name", "==", name.toLowerCase()), where("universityId", "==", universityObject.id));
+                                getDocs(q2).then((querySnapshot2) => {
+                                    if(querySnapshot2.empty){
+                                            addDoc(collection(db, "degrees"), {
+                                                name: name.toLowerCase(),
+                                                universityId: universityObject.id,
+                                                years: years,
+                                                credits: credits
+                                            }).catch(error => alert(error.message))
+                                            alert("The degree has been added. Thanks for supporting!");
+                                       
+                                    } else {
+                                        alert("The degree already exists");
+                                    }
+                                    
+                                }).catch(error => alert(error.message));
+                                return true;
+                            })
                         } else {
-                            alert("The degree already exists");
+                            alert("The University doesn't exist");
                         }
                     }).catch(error => alert(error.message));
                 }else{
@@ -54,7 +55,7 @@ function UploadDFPage() {
         
 
     function validationNameDegree(){
-        if(name == ""){
+        if(name === ""){
             return false;
         }else{
             return true;
