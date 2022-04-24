@@ -13,33 +13,69 @@ function UploadDFPage() {
     const[credits, setCredits] = useState("");
     const checkDegree = (e) => {
         e.preventDefault();
-        const q = query(collection(db, "degrees"), where("name", "==", name), where("university", "==", universityName));
-        getDocs(q).then((querySnapshot) => {
-            if(querySnapshot.empty){
-                const q2 = query(collection(db, "universities"), where("name", "==", universityName));
-                getDocs(q2).then((querySnapshot2) => {
-                    if(!querySnapshot2.empty){
-                        querySnapshot2.forEach((universityObject) => {
-                            addDoc(collection(db, "degrees"), {
-                                name: name,
-                                universityId: universityObject.id,
-                                years: years,
-                                credits: credits
-                            }).catch(error => alert(error.message))
-                            alert("The degree has been added. Thanks for supporting!");
-                            return true;
-                        })
-                    } else {
-                        alert("The University doesn't exist");
-                    }
-                    
-                }).catch(error => alert(error.message));
-            } else {
-                alert("The degree already exists");
+        if(validationNameDegree()){
+            if(validationYear()){
+                if(validationECTS()){
+                    const q = query(collection(db, "degrees"), where("name", "==", name), where("university", "==", universityName));
+                    getDocs(q).then((querySnapshot) => {
+                        if(querySnapshot.empty){
+                            const q2 = query(collection(db, "universities"), where("name", "==", universityName));
+                            getDocs(q2).then((querySnapshot2) => {
+                                if(!querySnapshot2.empty){
+                                    querySnapshot2.forEach((universityObject) => {
+                                        addDoc(collection(db, "degrees"), {
+                                            name: name,
+                                            universityId: universityObject.id,
+                                            years: years,
+                                            credits: credits
+                                        }).catch(error => alert(error.message))
+                                        alert("The degree has been added. Thanks for supporting!");
+                                        return true;
+                                    })
+                                } else {
+                                    alert("The University doesn't exist");
+                                }
+                                
+                            }).catch(error => alert(error.message));
+                        } else {
+                            alert("The degree already exists");
+                        }
+                    }).catch(error => alert(error.message));
+                }else{
+                    alert("The ECTS must be a positive value");
+                }
+            }else{
+                alert("The year must be a positive value")
             }
-        }).catch(error => alert(error.message));
+        }else{
+            alert("A degree must be specified");
+        }
     }
         
+
+    function validationNameDegree(){
+        if(name == ""){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function validationYear(){
+        if(years > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function validationECTS(){
+        if(credits > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
 
