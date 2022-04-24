@@ -6,7 +6,7 @@
     padding:0;
 }
 
-.field {
+.HomePage__field {
     display:flex;
     position:relative;
     width:100%;
@@ -14,57 +14,57 @@
     margin-right: 2rem;
 }
 
-.field>input[type=text],
-.field>button {
+.HomePage__field>input[type=text],
+.HomePage__field>button {
     display:block;
     font:1.2em 'Montserrat Alternates';
 }
 
-.field>input[type=text] {
+.HomePage__field>input[type=text] {
     flex:1;
     padding:0.6em;
     background: #E7ECEF;
     border: none;
 }
 
-.field>button {
+.HomePage__field>button {
     color:black;
     background: #E7ECEF;
     border: black;
 }
 
-.buscador{
+.HomePage__buscador{
     position: relative;
     display: flex;
     width: 100%;
     text-align: center;
 }
 
-.lupaBuscador{
+.HomePage__lupaBuscador{
     width: 2rem;
     margin-right: 1rem;
 }
 
-.homePage{
+.HomePage__homePage{
     position: relative;
     margin-left: 2rem;
     top: 10rem;
 }
 
-.universidades{
+.HomePage__universidades{
     position: relative;
     top: 3rem;
     display: block;
     margin-right: 2rem;
 }
 
-.imagenUniversidad{
+.HomePage__imagenUniversidad{
     width: 100%;
     height: 13.0625rem;
     opacity: 50%;
 }
 
-.textoEncimaImagen{
+.HomePage__textoEncimaImagen{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,13 +75,13 @@
     background: rgba(96, 150, 186, 0.5);
 }
 
-.universidadOrigen{
+.HomePage__universidadOrigen{
     position: relative;
     width: 100%;
     text-align: center;
 }
 
-.textoUniversidad{
+.HomePage__textoUniversidad{
     font-family: 'Droid Sans';
     font-style: normal;
     font-weight: 400;
@@ -93,7 +93,7 @@
     color: #FFFFFF;
 }
 
-.textoPais{
+.HomePage__textoPais{
     font-family: 'Droid Sans';
     font-style: normal;
     font-weight: 400;
@@ -103,13 +103,13 @@
     color: #FFFFFF;
 }
 
-.universidadDestino{
+.HomePage__universidadDestino{
     position: relative;
     width: 100%;
     text-align: center;
     margin-top: 2rem;
 }
 
-.localizacionFooter{
+.HomePage__localizacionFooter{
     margin-top: 18rem;
 }
