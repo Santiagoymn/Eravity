@@ -3,6 +3,7 @@ import React from 'react'
 import './homePageStyle.css'
 import Footer from "./Footer";
 import HeaderNoLogueado from "./HeaderNoLogueado";
+import lupa from "./assets/images/lupa.png"
 
 function HomePage( {navigation}) {
   return (
@@ -17,7 +18,7 @@ function HomePage( {navigation}) {
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
                         <input type="text" id="HomePage__searchterm" placeholder="Search..." className="HomePage__inputBuscador"/>
-                        <button type="button" id="HomePage__search"><img src="images/lupa.png" className="HomePage__lupaBuscador" alt="Lupa buscador"/></button>
+                        <button type="button" id="HomePage__search"><img src={lupa} className="HomePage__lupaBuscador" alt="Lupa buscador"/></button>
                     </div>
                 </div>
 
