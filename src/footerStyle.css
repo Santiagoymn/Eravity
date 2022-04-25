@@ -1,0 +1,41 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.Footer__footer{
+    position: relative;
+    width: 100%;
+    height: 8.5625rem;
+    left: 0;
+    justify-content: center;
+    background: #274C77;
+    margin-top: 20rem;
+}
+
+.Footer__logosRedesSociales{
+    position: relative;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    top: 35%;
+}
+
+.Footer__logoFacebook{
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 10rem;
+
+}
+
+.Footer__logoInstagram{
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 10rem;
+}
+
+.Footer__logoTwitter{
+    width: 3.56rem;
+    height: 3.125rem;
+}
