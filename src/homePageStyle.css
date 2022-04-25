@@ -16,9 +16,8 @@
 
 .HomePage__field>input[type=text],
 .HomePage__field>button {
-    display: block;
-    font: 1.2em 'Montserrat Alternates';
-    margin-bottom: 1rem;
+    display:block;
+    font:1.2em 'Droid Sans';
 }
 
 .HomePage__field>input[type=text] {
@@ -26,13 +25,13 @@
     padding: 0.6em;
     background: #E7ECEF;
     border: none;
-
+    height: 2rem;
 }
 
 .HomePage__field>button {
-    color: black;
-    background: #E7ECEF;
+    color:black;
     border: black;
+    margin-top: 0rem;
 }
 
 .HomePage__buscador {
@@ -42,9 +41,10 @@
     text-align: center;
 }
 
-.HomePage__lupaBuscador {
-    width: 2rem;
+.HomePage__lupaBuscador{
+    width: 2.2rem;
     margin-right: 1rem;
+    margin-left: 0.3rem;
 }
 
 .HomePage__homePage {

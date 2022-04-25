@@ -8,13 +8,14 @@ import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
 import HeaderLogueado from './HeaderLogueado';
 import HeaderNoLogueado from './HeaderNoLogueado';
-
+import UploadUniversityForm from './UploadUniversityForm';
 
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
 
 
 function App() {

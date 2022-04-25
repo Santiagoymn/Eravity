@@ -48,12 +48,12 @@ function DegreeProfilePage() {
 
     const loadSubjects = (o) => {
         var keys = Object.keys(o).map((key) => [key]);
-
+        console.log(keys)+" KEYSSS";
         for (let i = 0; i < keys.length; i++) {
-
+            console.log(keys[i][0])+" KEYSSS";
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
-                console.log(docSnap.data());
+                console.log(docSnap.data().name + "DATOS");
                 if (docSnap.exists()) {
                     setSubjects(subjects => [...subjects, docSnap.data()])
                     console.log(subjects);
@@ -121,21 +121,11 @@ function DegreeProfilePage() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 1</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 2</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 3</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 4</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 5</td>
-                            </tr>
+                            {subjects.map((subject) => (
+                                <tr>
+                                    <td className="DegreeProfile__subjects">{subject.name}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
