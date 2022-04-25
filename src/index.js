@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import HeaderLogueado from './HeaderLogueado';
-import HeaderNoLogueado from './HeaderNoLogueado';
-import Footer from './Footer';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <HeaderNoLogueado/>
+    <Provider store={store}>
     <App />
-    <Footer/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

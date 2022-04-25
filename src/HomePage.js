@@ -1,6 +1,8 @@
 import Helmet from "react-helmet";
 import React from 'react'
 import './homePageStyle.css'
+import Footer from "./Footer";
+import HeaderNoLogueado from "./HeaderNoLogueado";
 
 function HomePage( {navigation}) {
   return (
@@ -9,6 +11,8 @@ function HomePage( {navigation}) {
         <meta charset="UTF-8" />
         <title>Eravity</title>
     </Helmet>
+
+    <HeaderNoLogueado/>
             <div className="HomePage__homePage">
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
@@ -35,7 +39,10 @@ function HomePage( {navigation}) {
                     </div>
                 </div>
             </div>
+
+    <Footer/>
     </div>
+
 
   )
 }

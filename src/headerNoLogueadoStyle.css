@@ -42,6 +42,7 @@
     margin-left: 3rem;
     margin-right: 1rem;
     transform: translate(0, 30%);
+    text-decoration: none;
 
 
     font-family: 'Droid Sans';
@@ -60,6 +61,7 @@
     height: 2.9375rem;
     float: right;
     margin-left: 5rem;
+    text-decoration: none;
 
 
     font-family: 'Droid Sans';

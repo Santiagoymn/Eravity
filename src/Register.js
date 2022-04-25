@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } 
 import { setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
+import { useNavigate } from 'react-router-dom';
 import { auth, db } from './firebase';
 import './registerStyle.css';
 
@@ -14,6 +15,7 @@ function Register() {
 	const [surname, setSurname] = useState("");
 	const [university, setUniversity] = useState("");
 	const [degree, setDegree] = useState("");
+	let navigate = useNavigate();
 
 	const register = (e) => {
 		e.preventDefault();
@@ -113,7 +115,7 @@ function Register() {
 								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="login__input" placeholder="repeat password" required />
 							</div>
 							<div className="register__field" id="bottom">
-								<button type="submit" onClick={register} className="button register__submit"><span className='register__span' >Sign up</span></button>
+								<button type="submit" onClick={() => {register; navigate("/HomePage")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
 							</div>
 						</div>
 
