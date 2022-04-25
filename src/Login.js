@@ -26,7 +26,7 @@ function Login() {
                 })
 
                 );
-                alert("exito");
+                navigate("/Home")
                 //} else {
                 //   alert("User must be verified first. Check your email");
                 //}
@@ -35,11 +35,11 @@ function Login() {
 
     let navigate = useNavigate();
 
-    
-    
-    
-    
-    
+
+
+
+
+
 
     return (
         <div>
@@ -52,42 +52,42 @@ function Login() {
             </Helmet>
 
             <div className="container">
-				<div className="left">
-					<div className="contentLeft">
-						<div className="title1">Join us!</div>
-						<div className="title2">The easiest way to go on Erasmus</div>
-					</div>
-				</div>
+                <div className="left">
+                    <div className="contentLeft">
+                        <div className="title1">Join us!</div>
+                        <div className="title2">The easiest way to go on Erasmus</div>
+                    </div>
+                </div>
 
-				<div className="right">
-					<div className="contentRight">
+                <div className="right">
+                    <div className="contentRight">
 
-						<div className="titlePage"> Eravity </div>
+                        <div className="titlePage"> Eravity </div>
 
-						<form className="login">
-							<div className="column">
-								<div className="login__field" id="top">
-									<div className="login__icon fas fa-user fa-2xl"></div>
-									<input value={email} onChange={e=> setEmail(e.target.value)} type="text" className="login__input" placeholder="email" required/>
-								</div>
-								<div className="login__field" id="down">
-									<div className="login__icon fas fa-lock fa-2xl"></div>
-									<input value={password} onChange={e=> setPassword(e.target.value)} type="password" className="login__input" placeholder="password" required/>
-								</div>
-								<div className="button">
-									<button id="buttonLogIn" className="button login__submit" type="submit" onClick={loginToApp}>Login</button>
-								</div>
-							</div>
-						</form>
+                        <form className="login">
+                            <div className="column">
+                                <div className="login__field" id="top">
+                                    <div className="login__icon fas fa-user fa-2xl"></div>
+                                    <input value={email} onChange={e => setEmail(e.target.value)} type="text" className="login__input" placeholder="email" required />
+                                </div>
+                                <div className="login__field" id="down">
+                                    <div className="login__icon fas fa-lock fa-2xl"></div>
+                                    <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="login__input" placeholder="password" required />
+                                </div>
+                                <div className="button">
+                                    <button id="buttonLogIn" className="button login__submit" type="submit" onClick={loginToApp}>Login</button>
+                                </div>
+                            </div>
+                        </form>
 
-						<div className="textQuestionSignUp">If you don't have an account:</div>
-						<button id="buttonSignUp" type="submit" className="button login__submit" onClick={() => navigate("/Register")}>Sign up</button>
-						
-					</div>
-				</div>
-			</div>
-       </div>     
-    
+                        <div className="textQuestionSignUp">If you don't have an account:</div>
+                        <button id="buttonSignUp" type="submit" className="button login__submit" onClick={() => navigate("/Register")}>Sign up</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     )
 }
 
