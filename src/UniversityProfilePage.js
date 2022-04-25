@@ -37,7 +37,7 @@ function UniversityProfilePage() {
 
 			const docRef = doc(db, "degrees", keys[i][0]);
 			getDoc(docRef).then((docSnap) => {
-				console.log(docSnap.data());
+
 				if (docSnap.exists()) {
 					setDegrees(degrees => [...degrees, docSnap.data()])
 				}

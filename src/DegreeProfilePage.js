@@ -1,8 +1,8 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
-import { auth, db } from './firebase';
-import { doc, setDoc, docRef, getDoc, getDocs, collection } from "firebase/firestore";
+import { db } from './firebase';
+import { doc, getDoc} from "firebase/firestore";
 
 import './degreeProfilePage.css';
 import './assets/jquery.star-rating-svg';
@@ -48,15 +48,12 @@ function DegreeProfilePage() {
 
     const loadSubjects = (o) => {
         var keys = Object.keys(o).map((key) => [key]);
-        console.log(keys)+" KEYSSS";
+
         for (let i = 0; i < keys.length; i++) {
-            console.log(keys[i][0])+" KEYSSS";
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
-                console.log(docSnap.data().name + "DATOS");
                 if (docSnap.exists()) {
                     setSubjects(subjects => [...subjects, docSnap.data()])
-                    console.log(subjects);
                 }
                 else {
                     console.log("No such document!");
