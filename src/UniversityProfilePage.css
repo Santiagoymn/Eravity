@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Droid Sans', serif;
+}
+
+.university-info-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10rem;
+}
+
+.UniversityProfile__textoEncimaImagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 635px;
+    height: 152.64px;
+    background: rgba(96, 150, 186, 0.5);
+}
+
+
+.UniversityProfile__textoUniversidad {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+
+    margin-top: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+}
+
+.UniversityProfile__textoPais {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+}
+
+.UniversityProfile__lupaBuscador {
+    width: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.UniversityProfile__field {
+    display: flex;
+    position: relative;
+    width: 60rem;
+    flex-direction: row;
+    margin-right: 2rem;
+
+}
+
+.UniversityProfile__field>input[type=text],
+.UniversityProfile__field>button {
+    display: block;
+    border-radius: 1rem;
+    font: 1.2em 'Droid Sans';
+}
+
+.UniversityProfile__field>input[type=text] {
+    flex: 1;
+    padding: 0.6em;
+    background: #E7ECEF;
+    border: none;
+}
+
+.UniversityProfile__field>button {
+    color: black;
+    border: black;
+}
+
+
+
+.UniversityProfile__universidades {
+    position: relative;
+    top: 3rem;
+    display: block;
+    margin-right: 2rem;
+}
+
+.textoEncimaImagen {
+    height: 13.0625rem;
+    margin-top: 5rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.university-totals {
+    position: relative;
+    display: flex;
+    width: 95%;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+
+.universidades {
+    margin: 0;
+}
+
+.total-info {
+    display: flex;
+    font-size: 1.5rem;
+    border-bottom: 2px black;
+
+}
+
+.total-txt {
+    color: #8B8C89;
+}
+
+.field {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    margin-right: 2rem;
+}
+
+hr {
+    width: 95%;
+}
+
+.uni-degree {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #E7ECEF;
+    border-radius: 1rem;
+    height: 4rem;
+    margin-top: 3rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+#degree-not-found-msg {
+    height: 5rem;
+    background-color: #6096BA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    width: 95%;
+}
+
+.my-rating-4 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#searchform {
+    margin-top: 30rem;
+}
