@@ -30,9 +30,11 @@
 			font-style: normal;
 			font-weight: 400;
 			line-height: 2.625rem;
+			color: #000;
+			text-decoration: underline black;
 		}
 		.register__a:visited {
-			color: white;
+			text-decoration: black;
 			background-color: transparent;
 		}
 		#register__title {

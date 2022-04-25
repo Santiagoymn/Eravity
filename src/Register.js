@@ -115,14 +115,14 @@ function Register() {
 								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="register__input" placeholder="repeat password" required />
 							</div>
 							<div className="register__field" id="bottom">
-								<button type="submit" onClick={() => {register; navigate("/HomePage")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
+								<button type="submit" onClick={() => {register; navigate("/")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
 							</div>
 						</div>
 
 					</form>
 
 					<div className="register__back2login">
-						<h3 id="register__white">If you already have an account, please <a className='register__a' href="../html/login.html">sign in.</a></h3>
+						<h3 id="register__white">If you already have an account, please <a className='register__a' onClick={() => {register; navigate("/Login")}}>sign in.</a></h3>
 					</div>
 
 				</div>
