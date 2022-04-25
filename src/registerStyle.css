@@ -93,11 +93,12 @@
 			position: relative;
 			height: 3.125rem;
 		}
-		.login__icon {
+		.register__icon {
 			position: absolute;
 			top: 2.25rem;
+			color: black;
 		}
-		.login__input {
+		.register__input {
 			margin-bottom: 1rem;
 			border: none;
 			border-bottom: 2px solid #000;
@@ -112,9 +113,9 @@
 			line-height: 2.5rem;
 			transition: .2s;
 		}
-		.login__input:active,
-		.login__input:focus,
-		.login__input:hover {
+		.register__input:active,
+		.register__input:focus,
+		.register__input:hover {
 			outline: none;
 		}
 		.register__submit {
