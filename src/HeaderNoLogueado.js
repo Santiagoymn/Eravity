@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Helmet from "react-helmet";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import './headerNoLogueadoStyle.css'
+import './headerNoLogueadoStyle.css';
 
 
-function HeaderNoLogueado(){
-    return(
+function HeaderNoLogueado() {
+    return (
         <div>
             <Helmet>
-                <meta charset="UTF-8"/>
+                <meta charset="UTF-8" />
                 <title>Header no logueado</title>
             </Helmet>
             <header className="HeaderNoLogueado__header">
@@ -19,7 +19,7 @@ function HeaderNoLogueado(){
                     <li><Link to="/Login" className="HeaderNoLogueado__apartadoLoginRegister">Login/Register</Link></li>
                 </nav>
             </header>
-        </div>
+        </div >
     )
 }
 

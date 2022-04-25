@@ -2,15 +2,15 @@
 
 
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .HomePage__field {
-    display:flex;
-    position:relative;
-    width:100%;
-    flex-direction:row;
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: row;
     margin-right: 2rem;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .HomePage__field>input[type=text] {
-    flex:1;
-    padding:0.6em;
+    flex: 1;
+    padding: 0.6em;
     background: #E7ECEF;
     border: none;
     height: 2rem;
@@ -34,7 +34,7 @@
     margin-top: 0rem;
 }
 
-.HomePage__buscador{
+.HomePage__buscador {
     position: relative;
     display: flex;
     width: 100%;
@@ -47,26 +47,26 @@
     margin-left: 0.3rem;
 }
 
-.HomePage__homePage{
+.HomePage__homePage {
     position: relative;
     margin-left: 2rem;
     top: 10rem;
 }
 
-.HomePage__universidades{
+.HomePage__universidades {
     position: relative;
     top: 3rem;
     display: block;
     margin-right: 2rem;
 }
 
-.HomePage__imagenUniversidad{
+.HomePage__imagenUniversidad {
     width: 100%;
     height: 13.0625rem;
     opacity: 50%;
 }
 
-.HomePage__textoEncimaImagen{
+.HomePage__textoEncimaImagen {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -77,41 +77,42 @@
     background: rgba(96, 150, 186, 0.5);
 }
 
-.HomePage__universidadOrigen{
+.HomePage__universidadOrigen {
     position: relative;
-    width: 100%;
+    width: 96%;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-.HomePage__textoUniversidad{
+.HomePage__textoUniversidad {
     font-family: 'Droid Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 2.5rem;
     letter-spacing: 0.02em;
-
+    text-transform: capitalize;
     margin-top: 1.5rem;
 
     color: #FFFFFF;
 }
 
-.HomePage__textoPais{
+.HomePage__textoPais {
     font-family: 'Droid Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 1.7em;
     letter-spacing: 0.02em;
-
+    text-transform: capitalize;
     color: #FFFFFF;
 }
 
-.HomePage__universidadDestino{
+.HomePage__universidadDestino {
     position: relative;
     width: 100%;
     text-align: center;
     margin-top: 2rem;
 }
 
-.HomePage__localizacionFooter{
+.HomePage__localizacionFooter {
     margin-top: 18rem;
 }
