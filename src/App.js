@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import HeaderNoLogueado from './HeaderNoLogueado';
+import UploadUniversityForm from './UploadUniversityForm';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="Register" element={<Register />}></Route>
           <Route path="Login" element={<Login />}></Route>
-          <Route element={<HeaderNoLogueado/>}></Route>
+          <Route path="/UploadUniversityForm" element={<UploadUniversityForm/>}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
         </Routes>
       </BrowserRouter>
