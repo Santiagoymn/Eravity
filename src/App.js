@@ -19,7 +19,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         if(userSlice.actions.login){
+
           <HeaderLogueado></HeaderLogueado>
+
         } else {
           <HeaderNoLogueado></HeaderNoLogueado>
         }
