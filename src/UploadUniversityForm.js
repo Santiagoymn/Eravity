@@ -3,6 +3,8 @@ import Helmet from 'react-helmet';
 import { db } from './firebase';
 import {collection, query, where, getDocs, addDoc} from "firebase/firestore";
 import './uploadUniversityFormStyle.css';
+import HeaderNoLogueado from './HeaderNoLogueado';
+import Footer from './Footer';
 
 function UploadUniversityForm() {
     const[name, setName] = useState("");
@@ -40,6 +42,7 @@ function UploadUniversityForm() {
             <meta charset="UTF-8"/>
             <title>Upload University</title>
         </Helmet>
+        <HeaderNoLogueado/>
         <form className='uploaduniversity__form'>
             <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="name" id="uploaduniversity__name" className="uploaduniversity__inputShortText" required/>
 
@@ -50,6 +53,7 @@ function UploadUniversityForm() {
             <div className="uploaduniversity__buttonAccept"><input type="submit" onClick={checkUniversity} className="uploaduniversity__acceptBtn" value="Send"/></div>
 
         </form>
+        <Footer/>
     </div>
   )
 }
