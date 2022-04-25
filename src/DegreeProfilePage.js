@@ -51,10 +51,10 @@ function DegreeProfilePage() {
 		var keys = Object.keys(o).map((key) => [key]);
         
         for(let i=0; i<keys.length; i++){
-
+            
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
-                console.log(docSnap.data());
+                console.log(docSnap.data().name + "DATOS");
                 if (docSnap.exists()) {
                     setSubjects(subjects => [...subjects, docSnap.data()])
                     console.log(subjects);

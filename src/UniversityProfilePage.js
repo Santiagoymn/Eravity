@@ -31,8 +31,8 @@ function UniversityProfilePage() {
 
 	}
 
-	const loadDegrees =(arr) => {
-		var keys = Object.keys(arr).map((key) => [key]);
+	const loadDegrees =(o) => {
+		var keys = Object.keys(o).map((key) => [key]);
 
         for(let i=0; i<keys.length; i++){
 
