@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+
+.titleQualifying{
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.25em;
+
+    color: #000000;
+}
+.textQualifying{
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.875em;
+
+    color: #8B8C89;
+}
+.text{
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.25em;
+    line-height: 2.625rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

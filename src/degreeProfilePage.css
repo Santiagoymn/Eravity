@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+body{
+    margin-top: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.universityDegree{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    width: 39.9rem;
+    height: 8.5rem;
+    align-self: center;
+    background: rgba(96, 150, 186, 0.5);
+    font-family: 'Droid Sans', serif;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+.universityName{
+    font-weight: 400;
+    font-size: 3.125em;
+    letter-spacing: 0.02em;
+}
+.degreeName{
+    font-size: 1.88em;
+}
+.localizacionFooter{
+    margin-top:18rem;
+}
+.year{
+    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-top:3rem;
+}
+.headerYear{
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    background: #A3CEF1;
+    border-radius: 1.25rem;
+    border-bottom: 0.15rem solid black;
+}
+.text{
+    justify-content: center;
+}
+.semesters{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:2rem;
+}
+.semester{
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: rgba(231, 236, 239, 0.7);
+    border-radius: 20px;
+    width: 453px;
+    height: 49px;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-bottom: 0.15rem solid black;
+
+}
+.tableSemester{
+    border-collapse: separate;
+    border-spacing: 10rem 0;
+}
+
+.subjects{
+    font-family: 'Droid Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.25em;
+    line-height: 2.625rem;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    height: 5rem;
+}
