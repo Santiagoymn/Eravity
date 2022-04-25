@@ -121,21 +121,11 @@ function DegreeProfilePage() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 1</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 2</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 3</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 4</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 5</td>
-                            </tr>
+                            {subjects.map((subject) => (
+                                <tr>
+                                    <td className="DegreeProfile__subjects">{subject.name}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
