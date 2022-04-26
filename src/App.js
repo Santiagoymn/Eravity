@@ -5,9 +5,11 @@ import Register from './Register';
 import HomePage from './HomePage';
 import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
-import userSlice from './features/userSlice';
 import HeaderLogueado from './HeaderLogueado';
 import HeaderNoLogueado from './HeaderNoLogueado';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import { auth, onAuthStateChanged } from './firebase';
 
 
 import {
@@ -18,20 +20,43 @@ import {
 
 
 function App() {
-  console.log(userSlice.actions);
-  if (userSlice.actions != null) {
 
-    <HeaderLogueado></HeaderLogueado>
 
-  } else {
-    <HeaderNoLogueado></HeaderNoLogueado>
-  }
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  // check at page load if a user is authenticated
+  useEffect(() => {
+    onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth) {
+        // user is logged in, send the user's details to redux, store the current user in the state
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
+
+
   return (
     <div className="App">
 
       <BrowserRouter>
-
+        {!user ? (
+          <HeaderNoLogueado></HeaderNoLogueado>
+        ) : (
+          <HeaderLogueado></HeaderLogueado>
+        )
+        }
         <Routes>
+
           <Route path="/" element={<Login />}></Route>
           <Route path="" element={<HomePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>

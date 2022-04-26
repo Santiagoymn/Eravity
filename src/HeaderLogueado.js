@@ -1,9 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
-import './headerLogueadoStyle.css'
+import './headerLogueadoStyle.css';
+import imagenPerfil from './assets/images/Imagen 2.png';
+import upload from './assets/images/Imagen 1.png'
 
 
-function HeaderLogueado( {navigation} ) {
+function HeaderLogueado({ navigation }) {
     return (
         <div>
             <Helmet>
@@ -17,8 +19,8 @@ function HeaderLogueado( {navigation} ) {
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>My subjects</a></li>
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Contact Us</a></li>
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Upload</a></li>
-                    <li><a><img src="images/Imagen%201.png" className="HeaderLogueado__imagenUpload"/></a></li>
-                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a><img src="images/Imagen%202.png" className="HeaderLogueado__imagenUsuario"/></a></li>
+                    <li><a><img src={upload} className="HeaderLogueado__imagenUpload" /></a></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a><img src={imagenPerfil} className="HeaderLogueado__imagenUsuario" /></a></li>
                 </nav>
             </header>
         </div>

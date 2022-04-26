@@ -26,7 +26,8 @@ function Login() {
                 })
 
                 );
-                navigate("/Home")
+                alert("exito");
+                navigate("/Home");
                 //} else {
                 //   alert("User must be verified first. Check your email");
                 //}
