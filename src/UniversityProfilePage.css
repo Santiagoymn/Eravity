@@ -16,7 +16,7 @@
 }
 
 .UniversityProfile__textoEncimaImagen {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -98,7 +98,6 @@
 
 .textoEncimaImagen {
     height: 13.0625rem;
-    margin-top: 5rem;
     text-align: center;
     position: relative;
     display: flex;
@@ -174,5 +173,4 @@ hr {
 }
 
 #searchform {
-    margin-top: 30rem;
 }

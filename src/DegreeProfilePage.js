@@ -7,6 +7,13 @@ import { doc, setDoc, docRef, getDoc, getDocs, collection } from "firebase/fires
 import './degreeProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
+import HeaderNoLogueado from './HeaderNoLogueado';
+import Footer from './Footer';
+import HeaderLogueado from './HeaderLogueado';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import {onAuthStateChanged} from 'firebase/auth';
+
 
 function DegreeProfilePage() {
     const { id } = useParams();
@@ -85,9 +92,43 @@ function DegreeProfilePage() {
         })
     }, [])
 
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
+
+  // check at page load if a user is authenticated
+  useEffect(() => {
+    onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth) {
+        // user is logged in, send the user's details to redux, store the current user in the state
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
+
 
     return (
         <div>
+            {(() => {
+		if (user) {
+			return (
+				<HeaderLogueado></HeaderLogueado>
+			)
+		} else {
+			return (
+				<HeaderNoLogueado></HeaderNoLogueado>
+			)
+		}
+	})()}
+
             <div className="DegreeProfile__uniContainer">
                 <div className="DegreeProfile__universityDegree">
                     <div className="DegreeProfile__universityName"> {university} </div>
@@ -130,6 +171,7 @@ function DegreeProfilePage() {
                     </table>
                 </div>
             </article>
+            <Footer></Footer>
         </div>
     )
 

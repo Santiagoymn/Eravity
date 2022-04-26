@@ -6,8 +6,6 @@ import HomePage from './HomePage';
 import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
-import HeaderLogueado from './HeaderLogueado';
-import HeaderNoLogueado from './HeaderNoLogueado';
 import UploadUniversityForm from './UploadUniversityForm';
 
 import {
@@ -15,26 +13,20 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import UploadDFPage from './UploadDFPage';
 
 
 
 function App() {
   console.log(userSlice.actions);
-  if (userSlice.actions != null) {
-
-    <HeaderLogueado></HeaderLogueado>
-
-  } else {
-    <HeaderNoLogueado></HeaderNoLogueado>
-  }
+  
   return (
     <div className="App">
 
       <BrowserRouter>
 
         <Routes>
-          <Route path="/" element={<Login />}></Route>
-          <Route path="" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
           <Route path="Register" element={<Register />}></Route>
@@ -43,6 +35,8 @@ function App() {
           <Route path="UniversityProfile/:id" element={<UniversityProfilePage />} ></Route>
           <Route path="DegreeProfile" element={<DegreeProfilePage />}></Route>
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
+          <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
+          <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
         </Routes>
 
       </BrowserRouter>

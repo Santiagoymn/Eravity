@@ -18,6 +18,7 @@
 .HomePage__field>button {
     display:block;
     font:1.2em 'Droid Sans';
+    margin-top:-10rem;
 }
 
 .HomePage__field>input[type=text] {
@@ -31,7 +32,7 @@
 .HomePage__field>button {
     color:black;
     border: black;
-    margin-top: 0rem;
+    height: auto;
 }
 
 .HomePage__buscador {
@@ -45,6 +46,10 @@
     width: 2.2rem;
     margin-right: 1rem;
     margin-left: 0.3rem;
+    height: auto;
+}
+#HomePage__search{
+    height: 2rem;
 }
 
 .HomePage__homePage {

@@ -1,15 +1,10 @@
-.uploaduniversity__form{
-    padding:15rem;
+.uploaddfpage__form{
+    padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-bottom: -27rem;
-    margin-top: -10rem;
 }
 
-
-
-.uploaduniversity__inputShortText{
+.uploaddfpage__inputShortText{
     background-color: #E7ECEF;
     height: 3em;
     margin-bottom:1.5em;
@@ -23,16 +18,21 @@
     display: flex;
     align-items: center;
     text-align: center;
-
+    margin:1rem;
     color: #000000;
 }
 
-
-.uploaduniversity__buttonAccept{
-    align-self:center
+.uploaddfpage__firstLineInputs{
+    display: flex;
+    justify-content: center;
 }
 
-.uploaduniversity__acceptBtn{
+.secondLineInputs{
+    display: flex;
+    justify-content: center;
+}
+
+.uploaddfpage__acceptBtn{
     width: 261px;
     height: 105px;
     background: #A3CEF1;
@@ -47,4 +47,15 @@
     color: #000000;
     align-self: center;
 
+}
+.uploaddfpage__buttonAccept{
+    align-self:center
+}
+
+.uploaddfpage__pageTitle{
+    text-align: center;
+}
+
+.uploaddfpage__pageTitle > h2{
+    color: #000000;
 }
