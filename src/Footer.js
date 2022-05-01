@@ -11,7 +11,6 @@ function Footer( {} ){
         <div>
             <Helmet>
                 <meta charset="UTF-8"/>
-                <title>Footer</title>
             </Helmet>
             <footer className="Footer__footer">
                 <span className="Footer__logosRedesSociales">

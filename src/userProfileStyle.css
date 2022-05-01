@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.userProfile__perfil{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    overflow:hidden;
+}
+
+.userProfile__botonEditar{
+    float: right;
+    border: none;
+    background: transparent;
+}
+
+.userProfile__simboloEditar{
+    width: 3rem;
+    float: right;
+}
+
+.userProfile__userInfo{
+    display:flex;
+    flex-direction: column;
+}
+
+.userProfile__fotoUsuario{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+#userProfile__fotoUsuarioFondo{
+    height: 170px;
+    width: 170px;
+    border-radius: 150px;
+}
+
+#userProfile__textCenter{
+    transform: translate(0%, -200%);
+    font-size: 50px;
+    font-weight: 400;
+    
+}
+.userProfile__nombreUsuario{
+    width: 75%;
+
+    font-family: 'Sanchez';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 77px;
+    /* identical to box height */
+
+    color: #000000;
+    align-self: center;
+}
+
+.userProfile__infoUniversidad{
+    margin-top: 2rem;
+}
+
+.userProfile__infoUni{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
+
+#userProfile__nombreUniversidad{
+    color: black;
+}
+
+#userProfile__carreraUniversidad{
+    color: #8B8C89;
+}
+
+.userProfile__infoEmail{
+    margin-top: 3rem;
+}
+.userProfile__emailUsuario{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+}

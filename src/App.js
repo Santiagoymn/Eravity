@@ -14,6 +14,7 @@ import {
   Route,
 } from "react-router-dom";
 import UploadDFPage from './UploadDFPage';
+import UserProfile from './UserProfile';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
+          <Route path="UserProfile" element={<UserProfile />} ></Route>
         </Routes>
 
       </BrowserRouter>
