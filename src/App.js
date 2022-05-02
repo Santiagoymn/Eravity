@@ -19,14 +19,14 @@ import UploadDFPage from './UploadDFPage';
 
 function App() {
   console.log(userSlice.actions);
-  
+
   return (
     <div className="App">
 
       <BrowserRouter>
 
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<UniversityProfilePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
           <Route path="Register" element={<Register />}></Route>
