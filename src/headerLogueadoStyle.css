@@ -72,3 +72,8 @@
     width: 3.5rem;
     margin-right: 1rem;
 }
+
+.HeaderLink{
+    text-decoration: none;
+    color: white;
+}

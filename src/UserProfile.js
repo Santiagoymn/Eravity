@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './userProfileStyle.css';
 import fotoFondo from "./assets/images/gris-claro.jpg";
 import HeaderLogueado from './HeaderLogueado';
 import HeaderNoLogueado from './HeaderNoLogueado';
-import { auth } from './firebase';
+import { db, auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import Footer from './Footer';
 import Helmet from 'react-helmet';
+import { doc, getDoc} from "firebase/firestore";
+
 
 
 
@@ -18,6 +20,25 @@ function UserProfile() {
 
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
+    const[university, setUniversity] = useState("");
+    const[degree, setDegree] = useState("");
+
+    const loadUniversityDegree = async () => {
+
+      const docRef = doc(db, "users", user.uid)
+      getDoc(docRef).then((docSnap) => {
+        if (docSnap.exists()) {
+          setUniversity(docSnap.data().university);
+          setDegree(docSnap.data().degree);
+        }
+        else {
+          console.log("No such document!");
+        }
+      })
+  
+    }
+
+    
 
   // check at page load if a user is authenticated
   useEffect(() => {
@@ -36,6 +57,12 @@ function UserProfile() {
         dispatch(logout());
       }
     });
+  }, []);
+
+
+  useEffect(()=> {
+    loadUniversityDegree();
+
   }, []);
 
   return (
@@ -65,8 +92,8 @@ function UserProfile() {
         </div>
         <p className="userProfile__nombreUsuario">{user? user.displayName: "Error"}</p>
             <div className="userProfile__infoUniversidad">
-                <p className="userProfile__infoUni" id="userProfile__nombreUniversidad">Universidad de Las Palmas de Gran Canaria</p>
-                <p className="userProfile__infoUni" id="userProfile__carreraUniversidad">Computer Science Engineering</p>
+                <p className="userProfile__infoUni" id="userProfile__nombreUniversidad">{university}</p>
+                <p className="userProfile__infoUni" id="userProfile__carreraUniversidad">{degree}</p>
             </div>
             <div className="userProfile__infoEmail">
                 <p className="userProfile__emailUsuario">email: {user? user.email: "Error"}</p>
