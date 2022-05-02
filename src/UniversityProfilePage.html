@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eravity</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../css/homePageStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/universityProfilePageStyle.css" type="text/css">
+    <script src="../js/jquery.star-rating-svg.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/star-rating-svg.css">
+    <script>
+        $(function(){
+            $("#header").load("HeaderLogueado.html");
+            $("#footer").load("Footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+	
+    <main class="university-info-container">
+	
+        <div class="universidades">
+            <div class="textoEncimaImagen">
+                <p class="textoUniversidad">University</p>
+                <p class="textoPais">Country</p>
+            </div>
+			
+            <div class="field" id="searchform">
+                <input type="text" id="searchterm" placeholder="Search..." class="inputBuscador"/>
+                <button type="button" id="search"><img src="images/lupa.png" class="lupaBuscador" alt="Lupa buscador"></button>
+            </div>
+        </div>
+		
+        <div class="university-totals">
+            <div class="total-info">
+                <p class="total-txt">Total degrees&nbsp;</p>
+                <p>100</p>
+            </div>
+            <div class="total-info">
+                <p class="total-txt">Total projects upload&nbsp;</p>
+                <p>198</p>
+            </div>
+            <div class="total-info">
+                <p class="total-txt">Total subjects&nbsp;</p>
+                <p>202</p>
+            </div>
+        </div>
+		
+        <hr>
+		
+        <div class="my-rating-4" data-rating="0">
+            <script>
+                $(".my-rating-4").starRating({
+                    totalStars: 5,
+                    starShape: 'rounded',
+                    starSize: 40,
+                    emptyColor: 'lightgray',
+                    hoverColor: '#6096BA',
+                    activeColor: 'green',
+                    useGradient: false
+                });
+            </script>
+        </div>
+		
+		<div id="degrees-list"></div>
+        
+    </main>
+	
+    <div id="footer" class="localizacionFooter"></div>
+</body>
+</html>
