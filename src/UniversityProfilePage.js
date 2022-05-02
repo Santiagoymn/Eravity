@@ -25,8 +25,18 @@ function UniversityProfilePage() {
 	const [searchResults, setSearchResults] = useState([]);
 	var degreesOrdered = [];
 
-	const loadUniversity = async () => {
+	const filtrar = () => {
+		degreesOrdered = [];
+		const text = searchInput.toLowerCase();
+		for (let degree of degrees) {
+			if (degree.data.name.toLowerCase().indexOf(text) !== -1) {
+				degreesOrdered.push(degree);
+			}
+		}
+		setSearchResults(degreesOrdered);
+	}
 
+	const loadUniversity = async () => {
 		const docRef = doc(db, "universities", id)
 		getDoc(docRef).then((docSnap) => {
 			if (docSnap.exists()) {
@@ -43,6 +53,7 @@ function UniversityProfilePage() {
 		for (let i = 0; i < keys.length; i++) {
 			const docRef = doc(db, "degrees", keys[i][0]);
 			getDoc(docRef).then((docSnap) => {
+				setSearchResults(degrees);
 				if (docSnap.exists()) {
 					console.log(docSnap.data());
 					setDegrees(degrees => [...degrees,
@@ -50,25 +61,18 @@ function UniversityProfilePage() {
 						id: keys[i][0],
 						data: docSnap.data()
 					}])
+
 				}
+
 			})
 		}
+
 	}
 
 	useEffect(() => {
 		loadUniversity();
 	}, [])
 
-	const filtrar = () => {
-		degreesOrdered = [];
-		const text = searchInput.toLowerCase();
-		for (let degree of degrees) {
-			if (degree.data.name.toLowerCase().indexOf(text) !== -1) {
-				degreesOrdered.push(degree);
-			}
-		}
-		setSearchResults(degreesOrdered);
-	}
 
 	useEffect(() => {
 		$(".my-rating-4").starRating({
