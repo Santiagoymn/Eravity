@@ -1,6 +1,5 @@
 import Helmet from "react-helmet";
 import React from 'react'
-import './homePageStyle.css'
 import Footer from "./Footer";
 import HeaderNoLogueado from "./HeaderNoLogueado";
 

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import userSlice from './features/userSlice';
 import HeaderLogueado from './HeaderLogueado';
 import HeaderNoLogueado from './HeaderNoLogueado';
-import Login from './Login';
 import Register from './Register';
 import HomePage from './HomePage';
 
@@ -13,7 +12,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import HeaderNoLogueado from './HeaderNoLogueado';
+import AdministratorProfile from './AdministratorProfile';
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="Register" element={<Register />}></Route>
-          <Route path="Login" element={<Login />}></Route>
+          <Route path="AdminProfile" element={<AdministratorProfile />}></Route>
           <Route element={<HeaderNoLogueado/>}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
         </Routes>

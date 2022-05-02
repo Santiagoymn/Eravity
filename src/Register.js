@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from './firebase';
-import './registerStyle.css';
 
 function Register() {
 
@@ -34,7 +33,8 @@ function Register() {
 									sendEmailVerification(auth.currentUser);
 								})
 							}).then(() => {
-								alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web");
+								navigate("/HomePage")
+								
 							});
 						}).catch(error => alert(error.message));
 				} else {
@@ -115,7 +115,7 @@ function Register() {
 								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="login__input" placeholder="repeat password" required />
 							</div>
 							<div className="register__field" id="bottom">
-								<button type="submit" onClick={() => {register; navigate("/HomePage")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
+								<button type="submit" onClick={() => {register()}} className="button register__submit"><span className='register__span' >Sign up</span></button>
 							</div>
 						</div>
 
