@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import './headerNoLogueadoStyle.css'
 
 
-function HeaderNoLogueado( {navigation} ){
+function HeaderNoLogueado(){
+
+
     return(
         <div>
             <Helmet>
@@ -14,8 +17,8 @@ function HeaderNoLogueado( {navigation} ){
                 <h1 className="HeaderNoLogueado__h1">Eravity</h1>
 
                 <nav className="HeaderNoLogueado__barraNavegacion">
-                    <li className="HeaderNoLogueado__apartadoBarraNavegacion"><a>About Us</a></li>
-                    <li className="HeaderNoLogueado__apartadoLoginRegister"><a>Login/Register</a></li>
+                    <li><Link to="/AboutUs" className="HeaderNoLogueado__apartadoBarraNavegacion">About Us</Link></li>
+                    <li><Link to="/Login" className="HeaderNoLogueado__apartadoLoginRegister">Login/Register</Link></li>
                 </nav>
             </header>
         </div>
