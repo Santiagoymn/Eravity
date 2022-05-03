@@ -87,7 +87,19 @@
     border: black;
 }
 
-
+.UniversityProfile__notLoggedInContainer {
+    background-color: #6096BA;
+    height: 80%;
+    margin-top: 2rem;
+    display: flex;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 2rem;
+    opacity: 80%;
+    position: absolute;
+    z-index: 9;
+}
 
 .UniversityProfile__universidades {
     position: relative;
@@ -172,5 +184,4 @@ hr {
     margin-top: 2rem;
 }
 
-#searchform {
-}
+#searchform {}

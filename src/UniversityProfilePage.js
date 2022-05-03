@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db } from './firebase';
@@ -151,15 +151,45 @@ function UniversityProfilePage() {
 				<div className="my-rating-4" data-rating="0">
 				</div>
 
-				{searchResults.map(({ data: { name } }) => (
+				{(() => {
+					if (!user) {
+						return (
+							<Fragment>
+								<div className='UniversityProfile__notLoggedInContainer'>
+									<p>You must be signed in to access the degrees of the universities</p>
+								</div>
+								{searchResults.map(({ data: { name } }) => (
 
-					<div class="uni-degree">
-						<p>{name}</p>
-					</div>
-				))}
-				<div id="degree-not-found-msg">
-					<p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
-				</div>
+									<div class="uni-degree">
+										<p>{name}</p>
+									</div>
+								))}
+								<div id="degree-not-found-msg" >
+									<p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
+								</div>
+							</Fragment>
+
+						)
+					} else {
+						return (
+							<Fragment>
+								{searchResults.map(({ data: { name } }) => (
+
+									<div class="uni-degree">
+										<p>{name}</p>
+									</div>
+								))}
+								<div id="degree-not-found-msg" >
+									<p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
+								</div>
+							</Fragment>
+
+						)
+					}
+				})()}
+
+
+
 
 			</main>
 			<Footer></Footer>
