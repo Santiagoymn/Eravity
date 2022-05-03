@@ -7,6 +7,13 @@ body {
     justify-content: center;
 }
 
+.DegreeProfile__mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 .DegreeProfile__universityDegree {
     display: flex;
     background: rgba(96, 150, 186, 0.5);

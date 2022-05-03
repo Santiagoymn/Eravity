@@ -11,11 +11,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 
 import './UniversityProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
+import HideInfo from './HideInfo';
 
 function UniversityProfilePage() {
 	const { id } = useParams();
@@ -154,20 +156,13 @@ function UniversityProfilePage() {
 				{(() => {
 					if (!user) {
 						return (
-							<Fragment>
-								<div className='UniversityProfile__notLoggedInContainer'>
-									<p>You must be signed in to access the degrees of the universities</p>
-									<div className='UniversityProfile__buttonContainer'>
-
-									</div>
-								</div >
-
-							</Fragment>
+							<HideInfo></HideInfo>
 
 						)
 					} else {
 						return (
 							<Fragment>
+
 								{searchResults.map(({ data: { name } }) => (
 
 									<div class="uni-degree">

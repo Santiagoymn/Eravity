@@ -51,12 +51,6 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
-        {!user ? (
-          <HeaderNoLogueado></HeaderNoLogueado>
-        ) : (
-          <HeaderLogueado></HeaderLogueado>
-        )
-        }
         <Routes>
 
           <Route path="" element={<HomePage />}></Route>

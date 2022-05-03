@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db, auth } from './firebase';
-import { doc, getDoc} from "firebase/firestore";
-
+import { doc, getDoc } from "firebase/firestore";
 import './degreeProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
@@ -12,7 +11,8 @@ import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
-import {onAuthStateChanged} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
+import HideInfo from './HideInfo';
 
 
 function DegreeProfilePage() {
@@ -92,84 +92,101 @@ function DegreeProfilePage() {
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
 
-  // check at page load if a user is authenticated
-  useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        // user is logged in, send the user's details to redux, store the current user in the state
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
-  }, []);
+    // check at page load if a user is authenticated
+    useEffect(() => {
+        onAuthStateChanged(auth, (userAuth) => {
+            if (userAuth) {
+                // user is logged in, send the user's details to redux, store the current user in the state
+                dispatch(
+                    login({
+                        email: userAuth.email,
+                        uid: userAuth.uid,
+                        displayName: userAuth.displayName,
+                        photoUrl: userAuth.photoURL,
+                    })
+                );
+            } else {
+                dispatch(logout());
+            }
+        });
+    }, []);
 
 
     return (
-        <div>
-            {(() => {
-		if (user) {
-			return (
-				<HeaderLogueado></HeaderLogueado>
-			)
-		} else {
-			return (
-				<HeaderNoLogueado></HeaderNoLogueado>
-			)
-		}
-	})()}
+        <Fragment>
+            <div className='DegreeProfile__mainContainer'>
+                {(() => {
+                    if (user) {
+                        return (
+                            <HeaderLogueado></HeaderLogueado>
+                        )
+                    } else {
+                        return (
+                            <HeaderNoLogueado></HeaderNoLogueado>
+                        )
+                    }
+                })()}
 
-            <div className="DegreeProfile__uniContainer">
-                <div className="DegreeProfile__universityDegree">
-                    <div className="DegreeProfile__universityName"> {university} </div>
-                    <div className="DegreeProfile__degreeName"> {degree.name} </div>
+                <div className="DegreeProfile__uniContainer">
+                    <div className="DegreeProfile__universityDegree">
+                        <div className="DegreeProfile__universityName"> {university} </div>
+                        <div className="DegreeProfile__degreeName"> {degree.name} </div>
+                    </div>
                 </div>
+                {(() => {
+                    if (user) {
+                        return (
+                            <Fragment>
+                                <article className="DegreeProfile__year">
+                                    <div className="DegreeProfile__headerYear">
+                                        <div className="DegreeProfile__text">Year 1</div>
+                                    </div>
+                                    <div className="DegreeProfile__semesters">
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjects.map((subject) => (
+                                                    <tr>
+                                                        <td className="DegreeProfile__subjects">{subject.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjects.map((subject) => (
+                                                    <tr>
+                                                        <td className="DegreeProfile__subjects">{subject.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </article>
+                            </Fragment>
+                        )
+                    } else {
+                        return (
+                            <HideInfo></HideInfo>
+                        )
+
+
+                    }
+                })()}
+
             </div>
-
-            <article className="DegreeProfile__year">
-                <div className="DegreeProfile__headerYear">
-                    <div className="DegreeProfile__text">Year 1</div>
-                </div>
-                <div className="DegreeProfile__semesters">
-                    <table className="DegreeProfile__tableSemester">
-                        <thead>
-                            <tr>
-                                <th colspan="1" className="DegreeProfile__semester">First Semester</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {subjects.map((subject) => (
-                                <tr>
-                                    <td className="DegreeProfile__subjects">{subject.name}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <table className="DegreeProfile__tableSemester">
-                        <thead>
-                            <tr>
-                                <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {subjects.map((subject) => (
-                                <tr>
-                                    <td className="DegreeProfile__subjects">{subject.name}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </article>
             <Footer></Footer>
-        </div>
+        </Fragment>
+
     )
 
 
