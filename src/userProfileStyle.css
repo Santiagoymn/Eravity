@@ -91,3 +91,25 @@
 
     color: #000000;
 }
+.userProfile__buttonLogout{
+    width: 100px;
+    height: 75px;
+    background: #A3CEF1;
+    border-radius: 15px;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+
+    color: #000000;
+    align-self: center;
+}
+
+.userProfile__containerLogout{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:4rem;
+}

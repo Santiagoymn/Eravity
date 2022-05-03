@@ -8,6 +8,7 @@ import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
 
+
 import {
   BrowserRouter,
   Routes,
@@ -15,6 +16,8 @@ import {
 } from "react-router-dom";
 import UploadDFPage from './UploadDFPage';
 import UserProfile from './UserProfile';
+import AdminProfile from './AdminProfile';
+import SubjectRevision from './SubjectRevision';
 
 
 
@@ -39,6 +42,8 @@ function App() {
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
           <Route path="UserProfile" element={<UserProfile />} ></Route>
+          <Route path="AdminProfile" element={<AdminProfile />} ></Route>
+          <Route path="SubjectRevision" element={<SubjectRevision />} ></Route>
         </Routes>
 
       </BrowserRouter>
