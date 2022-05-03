@@ -6,12 +6,10 @@ import { db } from "./firebase";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import lupa from "./assets/images/lupa.png";
-import userSlice from './features/userSlice';
 import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
-import { auth } from './firebase';
-import {onAuthStateChanged} from 'firebase/auth';
+import { selectUser } from './features/userSlice';
+import { checkIfLogged } from "./Utilities";
 
 
 
@@ -48,27 +46,13 @@ function HomePage() {
 
     }, [])
 
-
-    const user = useSelector(selectUser);
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
   // check at page load if a user is authenticated
   useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        // user is logged in, send the user's details to redux, store the current user in the state
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
+    checkIfLogged(dispatch);
+    
   }, []);
 
 
