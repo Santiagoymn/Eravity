@@ -84,45 +84,45 @@ function Register() {
 
 						<div className="register__column">
 							<div className="register__field" id="register__top">
-								<i className="login__icon fa-solid fa-envelope fa-2xl"></i>
-								<input value={email} id="idEmail" onChange={e => { setEmail(e.target.value); validationCorreo() }} type="email" className="login__input" placeholder="email" required />
+								<i className="register__icon fa-solid fa-envelope fa-2xl"></i>
+								<input value={email} id="idEmail" onChange={e => { setEmail(e.target.value); validationCorreo() }} type="email" className="register__input" placeholder="email" required />
 							</div>
 							<div className="register__field">
-								<i className="login__icon fas fa-user fa-2xl"></i>
-								<input value={name} onChange={e => setName(e.target.value)} type="text" className="login__input" placeholder="name" required />
+								<i className="register__icon fas fa-user fa-2xl"></i>
+								<input value={name} onChange={e => setName(e.target.value)} type="text" className="register__input" placeholder="name" required />
 							</div>
 							<div className="register__field">
-								<i className="login__icon fas fa-user fa-2xl"></i>
-								<input value={surname} onChange={e => setSurname(e.target.value)} type="text" className="login__input" placeholder="surname" required />
+								<i className="register__icon fas fa-user fa-2xl"></i>
+								<input value={surname} onChange={e => setSurname(e.target.value)} type="text" className="register__input" placeholder="surname" required />
 							</div>
 							<div className="register__field" id="register__bottom">
-								<i className="login__icon fa-solid fa-graduation-cap fa-2xl"></i>
-								<input value={university} onChange={e => setUniversity(e.target.value)} type="text" className="login__input" placeholder="university" required />
+								<i className="register__icon fa-solid fa-graduation-cap fa-2xl"></i>
+								<input value={university} onChange={e => setUniversity(e.target.value)} type="text" className="register__input" placeholder="university" required />
 							</div>
 						</div>
 
 						<div className="register__column2">
 							<div className="register__field" id="top">
-								<i className="login__icon fa-solid fa-book-open fa-2xl"></i>
-								<input value={degree} onChange={e => setDegree(e.target.value)} type="text" className="login__input" placeholder="degree/master" required />
+								<i className="register__icon fa-solid fa-book-open fa-2xl"></i>
+								<input value={degree} onChange={e => setDegree(e.target.value)} type="text" className="register__input" placeholder="degree/master" required />
 							</div>
 							<div className="register__field">
-								<i className="login__icon fas fa-lock fa-2xl"></i>
-								<input value={password} id="idPassword" onChange={e => { setPassword(e.target.value); validationPassword(); }} type="password" className="login__input" placeholder="password" required />
+								<i className="register__icon fas fa-lock fa-2xl"></i>
+								<input value={password} id="idPassword" onChange={e => { setPassword(e.target.value); validationPassword(); }} type="password" className="register__input" placeholder="password" required />
 							</div>
 							<div className="register__field">
-								<i className="login__icon fas fa-lock fa-2xl"></i>
-								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="login__input" placeholder="repeat password" required />
+								<i className="register__icon fas fa-lock fa-2xl"></i>
+								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="register__input" placeholder="repeat password" required />
 							</div>
 							<div className="register__field" id="bottom">
-								<button type="submit" onClick={() => {register; navigate("/HomePage")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
+								<button type="submit" onClick={() => {register; navigate("/")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
 							</div>
 						</div>
 
 					</form>
 
 					<div className="register__back2login">
-						<h3 id="register__white">If you already have an account, please <a className='register__a' href="../html/login.html">sign in.</a></h3>
+						<h3 id="register__white">If you already have an account, please <a className='register__a' onClick={() => {register; navigate("/Login")}}>sign in.</a></h3>
 					</div>
 
 				</div>

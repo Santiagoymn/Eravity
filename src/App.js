@@ -10,13 +10,15 @@ import HeaderNoLogueado from './HeaderNoLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth, onAuthStateChanged } from './firebase';
-
+import UploadUniversityForm from './UploadUniversityForm';
 
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+import UploadDFPage from './UploadDFPage';
+
 
 
 function App() {
@@ -57,8 +59,8 @@ function App() {
         }
         <Routes>
 
-          <Route path="/" element={<Login />}></Route>
           <Route path="" element={<HomePage />}></Route>
+          <Route path="/" element={<UniversityProfilePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
           <Route path="Register" element={<Register />}></Route>
@@ -67,6 +69,8 @@ function App() {
           <Route path="UniversityProfile/:id" element={<UniversityProfilePage />} ></Route>
           <Route path="DegreeProfile" element={<DegreeProfilePage />}></Route>
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
+          <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
+          <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
         </Routes>
 
       </BrowserRouter>

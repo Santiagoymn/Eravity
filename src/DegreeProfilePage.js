@@ -1,12 +1,19 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
-import { auth, db } from './firebase';
-import { doc, setDoc, docRef, getDoc, getDocs, collection } from "firebase/firestore";
+import { db, auth } from './firebase';
+import { doc, getDoc} from "firebase/firestore";
 
 import './degreeProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
+import HeaderNoLogueado from './HeaderNoLogueado';
+import Footer from './Footer';
+import HeaderLogueado from './HeaderLogueado';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import {onAuthStateChanged} from 'firebase/auth';
+
 
 function DegreeProfilePage() {
     const { id } = useParams();
@@ -50,13 +57,10 @@ function DegreeProfilePage() {
         var keys = Object.keys(o).map((key) => [key]);
 
         for (let i = 0; i < keys.length; i++) {
-
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
-                console.log(docSnap.data());
                 if (docSnap.exists()) {
                     setSubjects(subjects => [...subjects, docSnap.data()])
-                    console.log(subjects);
                 }
                 else {
                     console.log("No such document!");
@@ -85,9 +89,43 @@ function DegreeProfilePage() {
         })
     }, [])
 
+    const user = useSelector(selectUser);
+    const dispatch = useDispatch();
+
+  // check at page load if a user is authenticated
+  useEffect(() => {
+    onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth) {
+        // user is logged in, send the user's details to redux, store the current user in the state
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
+
 
     return (
         <div>
+            {(() => {
+		if (user) {
+			return (
+				<HeaderLogueado></HeaderLogueado>
+			)
+		} else {
+			return (
+				<HeaderNoLogueado></HeaderNoLogueado>
+			)
+		}
+	})()}
+
             <div className="DegreeProfile__uniContainer">
                 <div className="DegreeProfile__universityDegree">
                     <div className="DegreeProfile__universityName"> {university} </div>
@@ -121,25 +159,16 @@ function DegreeProfilePage() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 1</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 2</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 3</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 4</td>
-                            </tr>
-                            <tr>
-                                <td className="DegreeProfile__subjects">Subject 5</td>
-                            </tr>
+                            {subjects.map((subject) => (
+                                <tr>
+                                    <td className="DegreeProfile__subjects">{subject.name}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
             </article>
+            <Footer></Footer>
         </div>
     )
 

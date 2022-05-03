@@ -12,7 +12,7 @@ function HeaderNoLogueado() {
                 <title>Header no logueado</title>
             </Helmet>
             <header className="HeaderNoLogueado__header">
-                <h1 className="HeaderNoLogueado__h1">Eravity</h1>
+                <h1 ><Link to="/" className="HeaderNoLogueado__h1">Eravity</Link></h1>
 
                 <nav className="HeaderNoLogueado__barraNavegacion">
                     <li><Link to="/AboutUs" className="HeaderNoLogueado__apartadoBarraNavegacion">About Us</Link></li>

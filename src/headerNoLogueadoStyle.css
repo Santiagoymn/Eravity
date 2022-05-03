@@ -11,6 +11,7 @@
     width: auto;
     margin-left: 2rem;
     top: 1rem;
+    text-decoration: none;
 
     font-family: 'Sanchez';
     font-style: normal;
@@ -21,8 +22,6 @@
 
     color: #FFFFFF;
 }
-
-
 .HeaderNoLogueado__header{
     position: absolute;
     width: 100%;
