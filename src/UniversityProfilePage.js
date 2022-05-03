@@ -157,16 +157,11 @@ function UniversityProfilePage() {
 							<Fragment>
 								<div className='UniversityProfile__notLoggedInContainer'>
 									<p>You must be signed in to access the degrees of the universities</p>
-								</div>
-								{searchResults.map(({ data: { name } }) => (
+									<div className='UniversityProfile__buttonContainer'>
 
-									<div class="uni-degree">
-										<p>{name}</p>
 									</div>
-								))}
-								<div id="degree-not-found-msg" >
-									<p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
-								</div>
+								</div >
+
 							</Fragment>
 
 						)

@@ -89,15 +89,14 @@
 
 .UniversityProfile__notLoggedInContainer {
     background-color: #6096BA;
-    height: 80%;
+    height: 20rem;
     margin-top: 2rem;
     display: flex;
-    width: 80%;
+    width: 90%;
     text-align: center;
     justify-content: center;
     border-radius: 2rem;
     opacity: 80%;
-    position: absolute;
     z-index: 9;
 }
 
