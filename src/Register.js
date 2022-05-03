@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signOut } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
@@ -34,7 +34,10 @@ function Register() {
 									sendEmailVerification(auth.currentUser);
 								})
 							}).then(() => {
-								alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web");
+								signOut(auth).then(() =>{
+									alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web");
+								});
+								
 							});
 						}).catch(error => alert(error.message));
 				} else {
@@ -59,7 +62,7 @@ function Register() {
 	}
 
 	function validationPassword() {
-		const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+		const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%-_.*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 		if (regex.test(document.getElementById("idPassword").value)) {
 			return true;
 		} else {
@@ -74,8 +77,7 @@ function Register() {
 				<meta charset="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<script src="https://kit.fontawesome.com/f9a9bc67cc.js" crossorigin="anonymous"></script>
-				<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans" />
-				<link rel="stylesheet" type="text/css" href="../css/register.css" />
+				
 			</Helmet>
 			<div className='register__body'>
 				<h1 id="register__title">Eravity</h1>
@@ -115,14 +117,14 @@ function Register() {
 								<input value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} type="password" className="register__input" placeholder="repeat password" required />
 							</div>
 							<div className="register__field" id="bottom">
-								<button type="submit" onClick={() => {register; navigate("/")}} className="button register__submit"><span className='register__span' >Sign up</span></button>
+								<button type="submit" onClick={register} className="button register__submit"><span className='register__span' >Sign up</span></button>
 							</div>
 						</div>
 
 					</form>
 
 					<div className="register__back2login">
-						<h3 id="register__white">If you already have an account, please <a className='register__a' onClick={() => {register; navigate("/Login")}}>sign in.</a></h3>
+						<h3 id="register__white">If you already have an account, please <a className='register__a' onClick={() => {navigate("/Login")}}>sign in.</a></h3>
 					</div>
 
 				</div>
