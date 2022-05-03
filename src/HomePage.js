@@ -10,6 +10,7 @@ import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { checkIfLogged } from "./Utilities";
+import { async } from "@firebase/util";
 
 
 
@@ -22,7 +23,8 @@ function HomePage() {
 
 
 
-    const filtrar = () => {
+    const filtrar = async() => {
+        await getUniversities();
         universitiesOrdered = [];
         const text = searchInput.toLowerCase();
         for (let university of universities) {
@@ -34,17 +36,19 @@ function HomePage() {
         setSearchResults(universitiesOrdered);
     }
 
-
-    useEffect(() => {
+    const getUniversities = async() => {
         getDocs(query(collection(db, "universities"), orderBy("name"))).then((querySnapshot) => {
             setUniversities(querySnapshot.docs.map(doc => ({
                 data: doc.data()
             })));
         }).then(() => {
             setSearchResults(universities);
+            
         });
 
-    }, [])
+    }
+
+
 
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
@@ -53,6 +57,10 @@ function HomePage() {
   useEffect(() => {
     checkIfLogged(dispatch);
     
+  }, []);
+  useEffect(() => {
+    getUniversities();
+    filtrar();
   }, []);
 
 
@@ -78,7 +86,7 @@ function HomePage() {
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
                         <input type="text" value={searchInput} onClick={filtrar} onChange={e => { setSearchInput(e.target.value); filtrar() }} id="HomePage__searchterm" placeholder="Search..." className="HomePage__inputBuscador" />
-                        <button type="button" id="HomePage__search"><img src={lupa} className="HomePage__lupaBuscador" alt="Lupa buscador" /></button>
+                        <button type="button" id="HomePage__search" onClick={filtrar}><img src={lupa} className="HomePage__lupaBuscador" alt="Lupa buscador" /></button>
                     </div>
                 </div>
 
