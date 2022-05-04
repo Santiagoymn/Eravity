@@ -117,7 +117,9 @@ function DegreeProfilePage() {
             <div className='DegreeProfile__mainContainer'>
                 {(() => {
                     if (user) {
+
                         return (
+
                             <HeaderLogueado></HeaderLogueado>
                         )
                     } else {

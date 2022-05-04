@@ -11,7 +11,7 @@ import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
-import {onAuthStateChanged} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 
 
 
@@ -52,33 +52,36 @@ function HomePage() {
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
 
-  // check at page load if a user is authenticated
-  useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        // user is logged in, send the user's details to redux, store the current user in the state
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
-  }, []);
+    // check at page load if a user is authenticated
+    useEffect(() => {
+        onAuthStateChanged(auth, (userAuth) => {
+            if (userAuth) {
+                // user is logged in, send the user's details to redux, store the current user in the state
+                dispatch(
+                    login({
+                        email: userAuth.email,
+                        uid: userAuth.uid,
+                        displayName: userAuth.displayName,
+                        photoUrl: userAuth.photoURL,
+                    })
+                );
+            } else {
+                dispatch(logout());
+            }
+        });
+    }, []);
 
 
     return (
+
         <div>
+
             <Helmet>
                 <meta charset="UTF-8" />
                 <title>Eravity</title>
             </Helmet>
             {(() => {
+                /*{ dispatch(logout()) }*/
                 if (user) {
                     return (
                         <HeaderLogueado></HeaderLogueado>
@@ -89,7 +92,7 @@ function HomePage() {
                     )
                 }
             })()}
-            
+
             <div className="HomePage__homePage">
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
@@ -112,15 +115,15 @@ function HomePage() {
                 </div>
 
                 {(() => {
-                    if(searchResults.length == 0){
+                    if (searchResults.length == 0) {
                         return (
                             <div id="degree-not-found-msg">
                                 <p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
                             </div>
                         )
                     }
-                    else{
-                        
+                    else {
+
                     }
                 })()}
             </div>
