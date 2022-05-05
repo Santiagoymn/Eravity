@@ -7,6 +7,7 @@ import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
+import SubjectPage from './SubjectPage';
 
 
 import {
@@ -20,7 +21,7 @@ import UploadDFPage from './UploadDFPage';
 
 
 function App() {
-  console.log(userSlice.actions);
+  //console.log(userSlice.actions);
   
   return (
     <div className="App">
@@ -37,6 +38,8 @@ function App() {
           <Route path="UniversityProfile/:id" element={<UniversityProfilePage />} ></Route>
           <Route path="DegreeProfile" element={<DegreeProfilePage />}></Route>
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
+          <Route path="Subject" element={<SubjectPage />}></Route>
+          <Route path="Subject/:id" element={<SubjectPage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
         </Routes>
