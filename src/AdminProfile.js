@@ -10,6 +10,7 @@ import HeaderLogueado from './HeaderLogueado'
 import HeaderNoLogueado from './HeaderNoLogueado'
 import './adminProfileStyle.css'
 import Footer from './Footer';
+import { logoutAPP } from './Utilities';
 
 function AdminProfile() {
 
@@ -90,7 +91,7 @@ function AdminProfile() {
 			            <div className="admin__command"><Link to="/SubjectRevision" class ="TextLink"><p className='admin__p'>Subject Application</p></Link></div>
 			            <div className="admin__command"><Link to="/" class ="TextLink"><p className='admin__p'>Contact Forms</p></Link></div>
 		            </div>
-                <div className="userProfile__containerLogout"><input type="submit" onClick={logout} value="Logout" className="userProfile__buttonLogout" /></div>
+                <div className="userProfile__containerLogout"><input type="submit" onClick={logoutAPP} value="Logout" className="userProfile__buttonLogout" /></div>
 
         
     </main>

@@ -6,12 +6,11 @@ import { db } from "./firebase";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import lupa from "./assets/images/lupa.png";
-import userSlice from './features/userSlice';
 import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
-import { auth } from './firebase';
-import {onAuthStateChanged} from 'firebase/auth';
+import { selectUser } from './features/userSlice';
+import { checkIfLogged } from "./Utilities";
+import { async } from "@firebase/util";
 
 
 
@@ -24,7 +23,8 @@ function HomePage() {
 
 
 
-    const filtrar = () => {
+    const filtrar = async() => {
+        await getUniversities();
         universitiesOrdered = [];
         const text = searchInput.toLowerCase();
         for (let university of universities) {
@@ -36,39 +36,31 @@ function HomePage() {
         setSearchResults(universitiesOrdered);
     }
 
-
-    useEffect(() => {
+    const getUniversities = async() => {
         getDocs(query(collection(db, "universities"), orderBy("name"))).then((querySnapshot) => {
             setUniversities(querySnapshot.docs.map(doc => ({
                 data: doc.data()
             })));
         }).then(() => {
             setSearchResults(universities);
+            
         });
 
-    }, [])
+    }
 
 
-    const user = useSelector(selectUser);
+
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
   // check at page load if a user is authenticated
   useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        // user is logged in, send the user's details to redux, store the current user in the state
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
+    checkIfLogged(dispatch);
+    
+  }, []);
+  useEffect(() => {
+    getUniversities();
+    filtrar();
   }, []);
 
 
@@ -94,7 +86,7 @@ function HomePage() {
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
                         <input type="text" value={searchInput} onClick={filtrar} onChange={e => { setSearchInput(e.target.value); filtrar() }} id="HomePage__searchterm" placeholder="Search..." className="HomePage__inputBuscador" />
-                        <button type="button" id="HomePage__search"><img src={lupa} className="HomePage__lupaBuscador" alt="Lupa buscador" /></button>
+                        <button type="button" id="HomePage__search" onClick={filtrar}><img src={lupa} className="HomePage__lupaBuscador" alt="Lupa buscador" /></button>
                     </div>
                 </div>
 

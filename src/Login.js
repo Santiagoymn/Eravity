@@ -7,6 +7,8 @@ import { auth, db } from './firebase';
 import { login } from './features/userSlice';
 import { useNavigate } from "react-router-dom";
 import './loginStyle.css';
+import { Link } from "react-router-dom";
+
 
 function Login() {
 
@@ -63,7 +65,7 @@ function Login() {
                 <div className="right">
                     <div className="contentRight">
 
-                        <div className="titlePage"> Eravity </div>
+                        <div className="titlePage"><Link to="/" className='TextLink'>Eravity </Link> </div>
 
                         <form className="login">
                             <div className="column">

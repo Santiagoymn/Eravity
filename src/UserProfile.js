@@ -7,12 +7,13 @@ import { db, auth } from './firebase';
 import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
+import { selectUser } from './features/userSlice';
 import Footer from './Footer';
 import Helmet from 'react-helmet';
 import { doc, getDoc} from "firebase/firestore";
 import AdminProfile from './AdminProfile';
 import { useNavigate } from 'react-router-dom';
+import { logoutAPP } from './Utilities';
 
 
 
@@ -43,33 +44,14 @@ function UserProfile() {
   
     }
     
-    const logout = () => {
-      signOut(auth).then(() => {
-        navigate("/");
-      }).catch((error) => {
-        // An error happened.
-      });
-    }
+    
 
     
 
   // check at page load if a user is authenticated
   useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        // user is logged in, send the user's details to redux, store the current user in the state
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
+    checkIfLogged(dispatch);
+    
   }, []);
 
   let navigate = useNavigate();
@@ -120,7 +102,7 @@ function UserProfile() {
           <div className="userProfile__infoEmail">
             <p className="userProfile__emailUsuario">email: {user ? user.email : "Error"}</p>
           </div>
-        </div><div className="userProfile__containerLogout"><input type="submit" onClick={logout} value="Logout" className="userProfile__buttonLogout" /></div>
+        </div><div className="userProfile__containerLogout"><input type="submit" onClick={logoutAPP} value="Logout" className="userProfile__buttonLogout" /></div>
   
 
         <Footer/>
