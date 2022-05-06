@@ -21,11 +21,16 @@ import HideInfo from './HideInfo';
 
 function UniversityProfilePage() {
 	const { id } = useParams();
+
 	const [university, setUniversity] = useState([]);
 	const [degrees, setDegrees] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
+	const [credits, setCredits] = useState();
 	var degreesOrdered = [];
+
+	const user = useSelector(selectUser);
+	const dispatch = useDispatch();
 
 	const filtrar = () => {
 		degreesOrdered = [];
@@ -43,8 +48,18 @@ function UniversityProfilePage() {
 		getDoc(docRef).then((docSnap) => {
 			if (docSnap.exists()) {
 				setUniversity(docSnap.data());
-				console.log(docSnap.data().name);
 				loadDegrees(docSnap.data().degrees);
+			}
+		})
+
+	}
+
+	const loadUser = async (uid) => {
+		const docRef = doc(db, "users", uid)
+		getDoc(docRef).then((docSnap) => {
+			if (docSnap.exists()) {
+				setCredits(docSnap.data().creditos);
+				console.log(docSnap.data().creditos);
 			}
 		})
 
@@ -57,7 +72,6 @@ function UniversityProfilePage() {
 			getDoc(docRef).then((docSnap) => {
 				setSearchResults(degrees);
 				if (docSnap.exists()) {
-					console.log(docSnap.data());
 					setDegrees(degrees => [...degrees,
 					{
 						id: keys[i][0],
@@ -73,6 +87,7 @@ function UniversityProfilePage() {
 
 	useEffect(() => {
 		loadUniversity();
+
 	}, [])
 
 
@@ -88,8 +103,7 @@ function UniversityProfilePage() {
 		})
 	}, [])
 
-	const user = useSelector(selectUser);
-	const dispatch = useDispatch();
+
 
 	// check at page load if a user is authenticated
 	useEffect(() => {
@@ -108,11 +122,14 @@ function UniversityProfilePage() {
 				dispatch(logout());
 			}
 		});
+
 	}, []);
 
 	return (
 		<div>
+
 			{(() => {
+				{ loadUser(user.uid) }
 				if (user) {
 					return (
 						<HeaderLogueado></HeaderLogueado>

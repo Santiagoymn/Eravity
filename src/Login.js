@@ -67,7 +67,6 @@ function Login() {
 
     return (
         <Fragment>
-
             {(() => {
                 if (loggedIn()) {
                     console.log(loggedIn());
@@ -79,6 +78,7 @@ function Login() {
 
                     )
                 } else {
+
                     <Fragment>
                         <div className="container">
                             <div className="left">

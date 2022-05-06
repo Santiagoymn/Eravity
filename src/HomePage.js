@@ -81,6 +81,7 @@ function HomePage() {
                 <title>Eravity</title>
             </Helmet>
             {(() => {
+
                 /*{ dispatch(logout()) }*/
                 if (user) {
                     return (
