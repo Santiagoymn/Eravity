@@ -100,9 +100,6 @@ a {
     margin-left: 8rem;
 }
 
-input[type="file"] {
-    display: none;
-}
 
 .subjectProfile__custom-file-upload {
     border: none;

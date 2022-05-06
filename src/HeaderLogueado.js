@@ -15,7 +15,7 @@ function HeaderLogueado( {navigation} ) {
             <header className="HeaderLogueado__header">
                 <h1 className="HeaderLogueado__h1">Eravity</h1>
 
-                <nav class="HeaderLogueado__barraNavegacion">
+                <nav className="HeaderLogueado__barraNavegacion">
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>My subjects</a></li>
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Contact Us</a></li>
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Upload</a></li>
