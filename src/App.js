@@ -8,19 +8,22 @@ import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
 import UploadSubjectPage from './UploadSubjectPage';
+import SubjectPage from './SubjectPage';
 
 
 import {
   BrowserRouter,
   Routes,
   Route,
+
 } from "react-router-dom";
 import UploadDFPage from './UploadDFPage';
+import UploadResource from './UploadResource';
 
 
 
 function App() {
-  console.log(userSlice.actions);
+  //console.log(userSlice.actions);
   
   return (
     <div className="App">
@@ -37,9 +40,13 @@ function App() {
           <Route path="UniversityProfile/:id" element={<UniversityProfilePage />} ></Route>
           <Route path="DegreeProfile" element={<DegreeProfilePage />}></Route>
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
+          <Route path="Subject" element={<SubjectPage />}></Route>
+          <Route path="Subject/:id" element={<SubjectPage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
           <Route path="UploadSubject" element={<UploadSubjectPage />} ></Route>
+          <Route path="UploadResource" element={<UploadResource />} ></Route>
+
         </Routes>
 
       </BrowserRouter>

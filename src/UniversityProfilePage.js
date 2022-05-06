@@ -6,6 +6,8 @@ import { doc, getDoc } from "firebase/firestore";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
+import { Link } from "react-router-dom";
+
 
 
 import lupa from './assets/images/lupa.png';
@@ -46,9 +48,12 @@ function UniversityProfilePage() {
 
 			const docRef = doc(db, "degrees", keys[i][0]);
 			getDoc(docRef).then((docSnap) => {
-
 				if (docSnap.exists()) {
-					setDegrees(degrees => [...degrees, docSnap.data()])
+					setDegrees(degrees => [...degrees,
+					{
+						id: keys[i][0],
+						data: docSnap.data()
+					}])
 				}
 				else {
 					console.log("No such document!");
@@ -78,6 +83,7 @@ function UniversityProfilePage() {
 
 	const user = useSelector(selectUser);
     const dispatch = useDispatch();
+	console.log(degrees);
 
   // check at page load if a user is authenticated
   useEffect(() => {
@@ -143,7 +149,9 @@ function UniversityProfilePage() {
 
 	{degrees.map((degree) => (
 		<div class="uni-degree">
-			<p>{degree.name}</p>
+			<Link to={`/DegreeProfile/${degree.id}`}>
+				<p>{degree.data.name}</p>
+            </Link>
 		</div>
 	))}
 
