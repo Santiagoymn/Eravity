@@ -9,8 +9,6 @@ import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
 import UploadSubjectPage from './UploadSubjectPage';
 import SubjectPage from './SubjectPage';
-
-
 import {
   BrowserRouter,
   Routes,
@@ -44,8 +42,10 @@ function App() {
           <Route path="Subject/:id" element={<SubjectPage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
-          <Route path="UploadSubject" element={<UploadSubjectPage />} ></Route>
+          <Route path="UploadSubjectForm" element={<UploadSubjectPage />} ></Route>
           <Route path="UploadResource" element={<UploadResource />} ></Route>
+
+
 
         </Routes>
 
