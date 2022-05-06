@@ -6,6 +6,10 @@ import { collection, getDocs, query, orderBy, getDoc, doc } from "firebase/fires
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
+import { Link } from "react-router-dom";
+
+
+
 import lupa from './assets/images/lupa.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
@@ -77,7 +81,9 @@ function UniversityProfilePage() {
 						id: keys[i][0],
 						data: docSnap.data()
 					}])
-
+				}
+				else {
+					console.log("No such document!");
 				}
 
 			})
@@ -104,7 +110,6 @@ function UniversityProfilePage() {
 	}, [])
 
 
-
 	// check at page load if a user is authenticated
 	useEffect(() => {
 		onAuthStateChanged(auth, (userAuth) => {
@@ -122,7 +127,6 @@ function UniversityProfilePage() {
 				dispatch(logout());
 			}
 		});
-
 	}, []);
 
 	return (
