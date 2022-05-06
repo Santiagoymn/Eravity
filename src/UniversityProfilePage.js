@@ -1,21 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
-import { db } from './firebase';
+import { db, auth } from './firebase';
 import { collection, getDocs, query, orderBy, getDoc, doc } from "firebase/firestore";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
-import { Link } from "react-router-dom";
-
-
-
 import lupa from './assets/images/lupa.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
-import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 
 import './UniversityProfilePage.css';
@@ -30,7 +25,6 @@ function UniversityProfilePage() {
 	const [degrees, setDegrees] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
-	const [credits, setCredits] = useState();
 	var degreesOrdered = [];
 
 	const user = useSelector(selectUser);
@@ -58,16 +52,7 @@ function UniversityProfilePage() {
 
 	}
 
-	const loadUser = async (uid) => {
-		const docRef = doc(db, "users", uid)
-		getDoc(docRef).then((docSnap) => {
-			if (docSnap.exists()) {
-				setCredits(docSnap.data().creditos);
-				console.log(docSnap.data().creditos);
-			}
-		})
 
-	}
 
 	const loadDegrees = (arr) => {
 		var keys = Object.keys(arr).map((key) => [key]);
@@ -184,10 +169,11 @@ function UniversityProfilePage() {
 						return (
 							<Fragment>
 
-								{searchResults.map(({ data: { name } }) => (
-
+								{degrees.map((degree) => (
 									<div class="uni-degree">
-										<p>{name}</p>
+										<Link to={`/DegreeProfile/${degree.id}`}>
+											<p>{degree.data.name}</p>
+										</Link>
 									</div>
 								))}
 								<div id="degree-not-found-msg" >
@@ -198,10 +184,6 @@ function UniversityProfilePage() {
 						)
 					}
 				})()}
-
-
-
-
 			</main>
 			<Footer></Footer>
 		</div>

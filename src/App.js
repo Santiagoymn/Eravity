@@ -5,14 +5,9 @@ import Register from './Register';
 import HomePage from './HomePage';
 import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
-import HeaderLogueado from './HeaderLogueado';
-import HeaderNoLogueado from './HeaderNoLogueado';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
-import { auth, onAuthStateChanged } from './firebase';
 import UploadUniversityForm from './UploadUniversityForm';
 import SubjectPage from './SubjectPage';
-
+import UploadDFPage from './UploadDFPage';
 
 import {
   BrowserRouter,
@@ -20,7 +15,7 @@ import {
   Route,
 
 } from "react-router-dom";
-import UploadDFPage from './UploadDFPage';
+
 
 
 
@@ -32,7 +27,7 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route path="" element={<HomePage />}></Route>
+          <Route path="" element={<SubjectPage />}></Route>
           <Route path="/" element={<UniversityProfilePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
