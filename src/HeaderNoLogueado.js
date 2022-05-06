@@ -9,7 +9,6 @@ function HeaderNoLogueado() {
         <div>
             <Helmet>
                 <meta charset="UTF-8" />
-                <title>Header no logueado</title>
             </Helmet>
             <header className="HeaderNoLogueado__header">
                 <h1 ><Link to="/" className="HeaderNoLogueado__h1">Eravity</Link></h1>

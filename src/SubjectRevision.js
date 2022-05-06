@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db } from './firebase';
-import { doc, getDoc } from "firebase/firestore";
+import { collection, doc, getDoc, query,getDocs, orderBy } from "firebase/firestore";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
@@ -22,7 +22,6 @@ import './assets/star-rating-svg.css';
 import { checkIfLogged } from './Utilities';
 
 function SubjectRevision() {
-	const { id } = useParams();
 	const [subject, setSubject] = useState ('');
 	const [university, setUniversity] = useState('');
 	const [degree, setDegree] = useState('');
@@ -31,20 +30,23 @@ function SubjectRevision() {
 
 	const loadSubject = async () => {
 
-		const docRef = doc(db, "subjects", id)
+		const subjectRef = collection(db, "subjects_administrator")
+		const q = query(subjectRef); //, orderBy("timestamp", "desc")
 
-		getDoc(docRef).then((docSnap) => {
-			if (docSnap.exists()) {
-				setSubject(docSnap.data());
-				loadDegree(docSnap.data().degreeId);
-				loadUniversity(docSnap.data().universityId);
-				downloadFile(docSnap.data().teachingProject);
+		const querySnapshot = await getDocs(q);
+		querySnapshot.forEach((doc) => {
+			console.log(doc.data().content)
+			if (doc.exists()) {
+				setSubject(doc.data());
+				loadDegree(doc.data().degreeId);
+				loadUniversity(doc.data().universityId);
+				downloadFile(doc.data().teachingProject);
 			}
 			else {
 				console.log("No such document!");
 			}
-		})
-
+			
+			})
 	}
 
 	const loadDegree = (arr) => {
@@ -81,6 +83,14 @@ function SubjectRevision() {
 		getDownloadURL(teachingProject).then((url =>{
 			setUrl(url);
 		}))
+	}
+
+	const rejectSubject = () => {
+		
+	}
+
+	const acceptSubject = () => {
+		
 	}
 
 	useEffect(() => {
@@ -126,6 +136,7 @@ function SubjectRevision() {
 	})()}
 
 <main className="subject-info-container text">
+			
 
 	<div className="subject__field">
 		<p className="subject__title">id:</p>
@@ -161,18 +172,18 @@ function SubjectRevision() {
 
 	<div className="subject__title">languages</div>
 	<div className="subject__languagesCB">
-		<div className="languageDivCB"><input type="checkbox" id="englishCB" className="subject__inputCheckbox" disabled/><label
-				for="englishCB">english</label></div>
-		<div className="languageDivCB"><input type="checkbox" id="frenchCB" className="subject__inputCheckbox" checked disabled/><label
-				for="frenchCB">french</label></div>
-		<div className="languageDivCB"><input type="checkbox" id="dutchCB" className="subject__inputCheckbox" disabled/><label
-				for="dutchCB">dutch</label></div>
-		<div className="languageDivCB"><input type="checkbox" id="spanishCB" className="subject__inputCheckbox" checked disabled/><label
-				for="spanishCB">spanish</label></div>
-		<div className="languageDivCB"><input type="checkbox" id="germanCB" className="subject__inputCheckbox" disabled/><label
-				for="germanCB">german</label></div>
-		<div className="languageDivCB"><input type="checkbox" id="otherCB" className="subject__inputCheckbox" disabled/><label
-				for="otherCB">other</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="englishCB" className="subject__inputCheckbox" disabled/>
+		<label htmlFor="englishCB">english</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="frenchCB" className="subject__inputCheckbox" checked disabled/>
+		<label htmlFor="frenchCB">french</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="dutchCB" className="subject__inputCheckbox" disabled/> 
+		<label htmlFor="dutchCB">dutch</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="spanishCB" className="subject__inputCheckbox" checked disabled/>
+		<label htmlFor="spanishCB">spanish</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="germanCB" className="subject__inputCheckbox" disabled/>
+		<label htmlFor="germanCB">german</label></div>
+		<div className="languageDivCB"><input type="checkbox" id="otherCB" className="subject__inputCheckbox" disabled/>
+		<label htmlFor="otherCB">other</label></div>
 	</div>
 
 	<p className="subject__title">prerequisites:</p>
@@ -215,7 +226,7 @@ function SubjectRevision() {
 		</div>
 	</div>
 	<div className="subject__file-upload-container text">
-		<label for="subject__file-upload" className="subject__custom-file-upload">
+		<label htmlFor="subject__file-upload" className="subject__custom-file-upload">
 			Download Educational Programm
 		</label>
 
@@ -224,8 +235,10 @@ function SubjectRevision() {
 		</a>
 
 	</div>
-	
-	<div className="subject__buttonAccept"><input type="submit" className="subject__acceptBtn" value="Accept"/></div>
+	<div className='subject__buttons'>
+		<div className="subject__buttonReject"><input type="submit" className="subject__Btn" value="Reject" onClick={rejectSubject}/></div>
+		<div className="subject__buttonAccept"><input type="submit" className="subject__Btn" value="Accept" onClick={acceptSubject}/></div>
+	</div>
 	
 </div>
 
