@@ -1,10 +1,10 @@
-form{
+.UploadSubject__form{
     padding:15rem;
     display: flex;
     flex-direction: column;
 }
 
-.inputShortText{
+.UploadSubject__inputShortText{
     background-color: #E7ECEF;
     height: 3em;
     margin-bottom:1.5em;
@@ -28,7 +28,7 @@ textarea:focus, input:focus, input[type]:focus {
     inset, 0 0 8px rgb(175,206,224);
     outline: 0 none;
 }
-.inputLargeText{
+.UploadSubject__inputLargeText{
     border-radius: 0.63em;
     height: 40rem;
     font-family: 'Droid Sans',serif;
@@ -45,7 +45,7 @@ textarea:focus, input:focus, input[type]:focus {
 
     color: #000000;
 }
-.firstLineInputs{
+.UploadSubject__firstLineInputs{
     display: flex;
     justify-content: center;
 }
@@ -53,7 +53,7 @@ textarea:focus, input:focus, input[type]:focus {
     width:40em;
     margin-left:5rem;
 }
-.secondLineInputs{
+.UploadSubject__secondLineInputs{
     display: flex;
     justify-content: center;
 }
@@ -62,7 +62,7 @@ textarea:focus, input:focus, input[type]:focus {
     margin-left:5rem;
     margin-right:5rem;
 }
-label{
+.UploadSubject__label{
     font-family: 'Droid Sans',serif;
     font-style: normal;
     font-size: 36px;
@@ -74,29 +74,29 @@ label{
 
     color: #000000;
 }
-.languageCB{
+.UploadSubject__languageCB{
     height:22px;
     width: 22px;
     align-self: center;
 }
-.languageDivCB{
+.UploadSubject__languageDivCB{
     position:relative;
     width: 33%;
     justify-content: center;
     height: 3rem;
     display:inline-block;
 }
-.languagesCB{
+.UploadSubject__languagesCB{
     margin-left: 20rem;
     margin-bottom: 2rem;
 
 }
 
-.qualifying{
+.UploadSubject__qualifying{
     margin-bottom: 2rem;
 }
 
-.acceptBtn{
+.UploadSubject__acceptBtn{
     position: absolute;
     width: 261px;
     height: 105px;
@@ -113,11 +113,11 @@ label{
     align-self: center;
 
 }
-.buttonAccept{
+.UploadSubject__buttonAccept{
     align-self:center
 }
 
-.file-upload-container {
+.UploadSubject__file-upload-container {
     border: 0.2rem dashed #ccc;
     display: flex;
     flex-direction: column;
@@ -126,12 +126,12 @@ label{
     padding: 20vh 30vw;
 }
 
-.custom-file-upload {
+.UploadSubject__custom-file-upload {
     border: none;
     cursor: pointer;
 }
 
-.download-image {
+.UploadSubject__download-image {
     z-index: 2;
     background-color: #A3CEF1;
     border-radius: 1rem;
