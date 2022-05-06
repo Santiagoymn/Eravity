@@ -137,107 +137,107 @@ function SubjectPage() {
 		}
 	})()}
 
-<main class="subject-info-container text">
+<main class="subjectProfile__info-container text">
 
-	<div class="field">
-		<p class="title">id:</p>
+	<div class="subjectProfile__field">
+		<p class="subjectProfile__title">id:</p>
 		<p>{subject.subjectId}</p>
 	</div>
 
-	<div class="field">
-		<p class="title">name:</p>
+	<div class="subjectProfile__field">
+		<p class="subjectProfile__title">name:</p>
 		<p>{subject.name}</p>
 	</div>
-	<div class="field">
-		<div class="field">
+	<div class="subjectProfile__field">
+		<div class="subjectProfile__field">
 			<p class="title">ECTS:</p>
 			<p>{subject.credits}</p>
 		</div>
-		<div class="field">
-			<p class="title">year:</p>
+		<div class="subjectProfile__field">
+			<p class="subjectProfile__title">year:</p>
 			<p>{subject.projectYear}</p>
 		</div>
-		<div class="field">
-			<p class="title">semester:</p>
+		<div class="subjectProfile__field">
+			<p class="subjectProfile__title">semester:</p>
 			<p>{subject.quarter}</p>
 		</div>
 	</div>
-	<div class="field">
-		<p class="title">degree:</p>
+	<div class="subjectProfile__field">
+		<p class="subjectProfile__title">degree:</p>
 		<p>{degree}</p>
 	</div>
-	<div class="field">
-		<p class="title">university:</p>
+	<div class="subjectProfile__field">
+		<p class="subjectProfile__title">university:</p>
 		<p>{university}</p>
 	</div>
 
-	<div class="title">languages</div>
-	<div class="languagesCB">
-		<div class="languageDivCB"><input type="checkbox" id="englishCB" class="languageCB" disabled/><label
+	<div class="subjectProfile__title">languages</div>
+	<div class="subjectProfile__languagesCB">
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="englishCB" class="subjectProfile__languageCB" disabled/><label
 				for="englishCB">english</label></div>
-		<div class="languageDivCB"><input type="checkbox" id="frenchCB" class="languageCB" checked disabled/><label
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="frenchCB" class="subjectProfile__languageCB" checked disabled/><label
 				for="frenchCB">french</label></div>
-		<div class="languageDivCB"><input type="checkbox" id="dutchCB" class="languageCB" disabled/><label
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="dutchCB" class="subjectProfile__languageCB" disabled/><label
 				for="dutchCB">dutch</label></div>
-		<div class="languageDivCB"><input type="checkbox" id="spanishCB" class="languageCB" checked disabled/><label
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="spanishCB" class="subjectProfile__languageCB" checked disabled/><label
 				for="spanishCB">spanish</label></div>
-		<div class="languageDivCB"><input type="checkbox" id="germanCB" class="languageCB" disabled/><label
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="germanCB" class="subjectProfile__languageCB" disabled/><label
 				for="germanCB">german</label></div>
-		<div class="languageDivCB"><input type="checkbox" id="otherCB" class="languageCB" disabled/><label
+		<div class="subjectProfile__languageDivCB"><input type="checkbox" id="otherCB" class="subjectProfile__languageCB" disabled/><label
 				for="otherCB">other</label></div>
 	</div>
 
-	<p class="title">prerequisites:</p>
+	<p class="subjectProfile__title">prerequisites:</p>
 	<textarea disabled value={subject.prerequisites} ></textarea>
 
-	<p class="title">contents:</p>
+	<p class="subjectProfile__title">contents:</p>
 	<textarea disabled value={subject.content}></textarea>
 
 	<a target="_blank" href={subject.url}>url where the information was obtained</a>
 
 </main>
-<div class="qualifying-container">
-	<div class="qualifying">
-		<div class="titleQualifying">Teaching staff</div>
-		<div class="textQualifying">Do they help students? Do they provide good explanations?</div>
+<div class="subjectProfile__qualifying-container">
+	<div class="subjectProfile__qualifying">
+		<div class="subjectProfile__titleQualifying">Teaching staff</div>
+		<div class="subjectProfile__textQualifying">Do they help students? Do they provide good explanations?</div>
 		<div class="my-rating-4" data-rating="0">
 		</div>
 	</div>
-	<div class="qualifying">
-		<div class="titleQualifying">Contents</div>
-		<div class="textQualifying">Do they adapt to the educational programme?</div>
+	<div class="subjectProfile__qualifying">
+		<div class="subjectProfile__titleQualifying">Contents</div>
+		<div class="subjectProfile__textQualifying">Do they adapt to the educational programme?</div>
 		<div class="my-rating-4" data-rating="0">
 		</div>
 	</div>
-	<div class="qualifying">
-		<div class="titleQualifying">Difficulty</div>
-		<div class="textQualifying">Are the contents difficult?</div>
+	<div class="subjectProfile__qualifying">
+		<div class="subjectProfile__titleQualifying">Difficulty</div>
+		<div class="subjectProfile__textQualifying">Are the contents difficult?</div>
 		<div class="my-rating-4" data-rating="0">
 		</div>
 	</div>
-	<div class="qualifying">
-		<div class="titleQualifying">Interest</div>
-		<div class="textQualifying">Are the contents interesting? Were they useful?</div>
+	<div class="subjectProfile__qualifying">
+		<div class="subjectProfile__titleQualifying">Interest</div>
+		<div class="subjectProfile__textQualifying">Are the contents interesting? Were they useful?</div>
 		<div class="my-rating-4" data-rating="0">
 		</div>
 	</div>
-	<div class="qualifying">
-		<div class="titleQualifying">Time commitment</div>
+	<div class="subjectProfile__qualifying">
+		<div class="subjectProfile__titleQualifying">Time commitment</div>
 		<div class="my-rating-4" data-rating="0">
 		</div>
 	</div>
-	<div class="file-upload-container text">
-		<label for="file-upload" class="custom-file-upload">
+	<div class="subjectProfile__file-upload-container text">
+		<label for="file-upload" class="subjectProfile__custom-file-upload">
 			Download Educational Programm
 		</label>
 
 		<a href={Url} target="_blank" id="file-upload"> 
-			 <img class="download-image" src={arrowCirle} alt="download"/> 
+			 <img class="subjectProfile__download-image" src={arrowCirle} alt="download"/> 
 		</a>
 
 	</div>
 	
-	<div class="buttonAccept"><input type="submit" class="acceptBtn" value="Accept"/></div>
+	<div class="buttonAccept"><input type="submit" class="subjectProfile__acceptBtn" value="Accept"/></div>
 	
 </div>
 

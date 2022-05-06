@@ -7,13 +7,13 @@
     font-family: 'Droid Sans', serif;
 }
 
-.title {
+.subjectProfile__title {
     font-weight: bold;
     margin-right: 1rem;
     margin-bottom: 1rem;
 }
 
-.field {
+.subjectProfile__field {
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
@@ -21,7 +21,7 @@
 
 }
 
-.subject-info-container {
+.subjectProfile__info-container {
     display: flex;
     flex-direction: column;
     align-items: start !important;
@@ -30,7 +30,7 @@
     margin-top: 10rem;
 }
 
-.languagesCB {
+.subjectProfile__languagesCB {
     display: grid;
     grid-template-columns: repeat(3, 15rem);
     justify-items: center;
@@ -51,7 +51,7 @@ input[type=checkbox][checked][disabled] {
     
 }
 
-textarea {
+.subjectProfile__textarea {
     width: 60%;
     height: 20rem;
     border-radius: 1rem;
@@ -66,7 +66,7 @@ a {
     margin-bottom: 3rem;
 }
 
-.acceptBtn {
+.subjectProfile__acceptBtn {
     width: 261px;
     height: 105px;
     background: #A3CEF1;
@@ -83,15 +83,15 @@ a {
 
 }
 
-.buttonAccept {
+.subjectProfile__buttonAccept {
     align-self: center
 }
 
-.qualifying {
+.subjectProfile__qualifying {
     margin-bottom: 2rem;
 }
 
-.qualifying-container {
+.subjectProfile__qualifying-container {
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -104,11 +104,11 @@ input[type="file"] {
     display: none;
 }
 
-.custom-file-upload {
+.subjectProfile__custom-file-upload {
     border: none;
 }
 
-.file-upload-container {
+.subjectProfile__file-upload-container {
     margin-top:3rem;
     border: 0.2rem dashed #ccc;
     display: flex;
@@ -118,7 +118,7 @@ input[type="file"] {
     align-self: center;
 }
 
-.download-image {
+.subjectProfile__download-image {
     filter: invert(70%) sepia(90%) hue-rotate(190deg) saturate(300%);
     border-radius: 1rem;
     margin-top: 1rem;

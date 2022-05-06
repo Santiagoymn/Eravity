@@ -17,6 +17,7 @@ import {
 
 } from "react-router-dom";
 import UploadDFPage from './UploadDFPage';
+import UploadResource from './UploadResource';
 
 
 
@@ -42,6 +43,8 @@ function App() {
           <Route path="Subject/:id" element={<SubjectPage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
+          <Route path="UploadResource" element={<UploadResource />} ></Route>
+
         </Routes>
 
       </BrowserRouter>
