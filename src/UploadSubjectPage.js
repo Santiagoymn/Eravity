@@ -113,7 +113,8 @@ function UploadSubjectPage() {
                                                     universityId: universityObject.id,
                                                     proyectRef: urlProyect,
                                                     originalSubjectId: subjectObject.id,
-                                                    timestamp: +new Date
+                                                    timestamp: +new Date,
+                                                    uidRequest: user.uid
                                                 }).catch(error => alert(error.message))
                                                 alert("The subject already exists, the request has been sent to the administrator. Thanks for supporting!");
                                                 return;
