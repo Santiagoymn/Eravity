@@ -39,10 +39,11 @@ function SubjectRevision() {
 			console.log(doc.data().content)
 			if (doc.exists()) {
 				setDocId(doc.id);
+
 				setSubject(doc.data());
 				loadDegree(doc.data().degreeId);
 				loadUniversity(doc.data().universityId);
-				downloadFile(doc.data().projectRef);
+				setUrl(doc.data().projectRef);
 			}
 			else {
 				console.log("No such document!");
@@ -79,18 +80,10 @@ function SubjectRevision() {
 		})
 	}
 
-	const downloadFile = (fileRef) =>{
-		const storage = getStorage();
-		const teachingProject = ref(storage, fileRef);
-		getDownloadURL(teachingProject).then((url =>{
-			setUrl(url);
-		}))
-	}
-
 	const rejectSubject = () => {
 		console.log("aquí")
 		deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
-			alert("Removed Denied Application");
+			alert("Request Denied");
 			window.location.reload();
 		})
 
@@ -98,7 +91,7 @@ function SubjectRevision() {
 	}
 
 	const acceptSubject = () => {
-		updateDoc(doc(db, 'subjects', docId), {
+		updateDoc(doc(db, 'subjects', subject.originalSubjectId), {
 			degreeId: subject.degreeId,
 			subjectId: subject.subjectId,
 			name: subject.name,
@@ -116,7 +109,7 @@ function SubjectRevision() {
 		}).then(() => {
 			console.log("aquí")
 			deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
-				alert("Removed Accepted Application");
+				alert("Request Accepted");
 				window.location.reload();
 			})
 		})
