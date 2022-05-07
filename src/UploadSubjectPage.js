@@ -96,24 +96,31 @@ function UploadSubjectPage() {
                                                 
                                                 alert("The Subject has been added. Thanks for supporting!");
                                         }else{
-                                            uploadProyectAdmin(universityObject.get("name"), degreeObject.get("name"), name.toLowerCase());
-                                            addDoc(collection(db, "subjects_administrator"), {
-                                                degreeId: degreeObject.id,
-                                                subjectId: id,
-                                                name: name.toLowerCase(),
-                                                credits: ects,
-                                                course: year,
-                                                quarter: semester,
-                                                prerequisites: prerequisites.toLowerCase(),
-                                                content: contents.toLowerCase(),
-                                                proyectYear: proyectYear,
-                                                url: url,
-                                                languajes: languajesSelected(),
-                                                universityId: universityObject.id,
-                                                proyectRef: urlProyect,
-                                                timestamp: +new Date
-                                            }).catch(error => alert(error.message))
-                                            alert("The subject already exists, the request has been sent to the administrator. Thanks for supporting!");
+                                            querySnapshot3.forEach((subjectObject) => {
+                                                uploadProyectAdmin(universityObject.get("name"), degreeObject.get("name"), name.toLowerCase());
+                                                addDoc(collection(db, "subjects_administrator"), {
+                                                    degreeId: degreeObject.id,
+                                                    subjectId: id,
+                                                    name: name.toLowerCase(),
+                                                    credits: ects,
+                                                    course: year,
+                                                    quarter: semester,
+                                                    prerequisites: prerequisites.toLowerCase(),
+                                                    content: contents.toLowerCase(),
+                                                    proyectYear: proyectYear,
+                                                    url: url,
+                                                    languajes: languajesSelected(),
+                                                    universityId: universityObject.id,
+                                                    proyectRef: urlProyect,
+                                                    originalSubjectId: subjectObject.id,
+                                                    timestamp: +new Date
+                                                }).catch(error => alert(error.message))
+                                                alert("The subject already exists, the request has been sent to the administrator. Thanks for supporting!");
+                                                return;
+
+
+                                            })
+                                            
                                         }
                                     })
                                 }) 
