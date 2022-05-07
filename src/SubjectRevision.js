@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db } from './firebase';
 import { collection, doc, getDoc, query,getDocs, orderBy, deleteDoc, updateDoc } from "firebase/firestore";
@@ -28,6 +28,8 @@ function SubjectRevision() {
 	const [Url, setUrl] = useState('');
 	const[docId, setDocId] = useState("");
 	
+	let navigate = useNavigate();
+	
 
 	const loadSubject = async () => {
 
@@ -38,6 +40,7 @@ function SubjectRevision() {
 		querySnapshot.forEach((doc) => {
 			console.log(doc.data().content)
 			if (doc.exists()) {
+				console.log("existe");
 				setDocId(doc.id);
 
 				setSubject(doc.data());
@@ -50,6 +53,13 @@ function SubjectRevision() {
 			}
 			
 			})
+
+			if(querySnapshot.empty){
+				alert("No More Applications");
+				navigate("/AdminProfile");
+
+			}
+			
 	}
 
 	const loadDegree = (arr) => {
@@ -110,7 +120,20 @@ function SubjectRevision() {
 			console.log("aquí")
 			deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
 				alert("Request Accepted");
-				window.location.reload();
+			}).then(() => {
+				console.log()
+				getDoc(doc(db, 'users', subject.uidRequest)).then((userObject) => {
+					console.log(subject.uidRequest);
+					console.log(userObject.get("creditos"));
+					console.log(subject.credits);
+					updateDoc(doc(db, 'users', subject.uidRequest), {
+						creditos: Number(userObject.get("creditos")) + Number(subject.credits)
+
+					})
+					
+				}).then(() => {
+					window.location.reload();
+			})
 			})
 		})
 		
