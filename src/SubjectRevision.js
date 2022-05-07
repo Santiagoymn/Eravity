@@ -40,7 +40,6 @@ function SubjectRevision() {
 		querySnapshot.forEach((doc) => {
 			console.log(doc.data().content)
 			if (doc.exists()) {
-				console.log("existe");
 				setDocId(doc.id);
 
 				setSubject(doc.data());
@@ -117,15 +116,10 @@ function SubjectRevision() {
 			proyectRef: subject.proyectRef,
 			timestamp: subject.timestamp
 		}).then(() => {
-			console.log("aquí")
 			deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
 				alert("Request Accepted");
 			}).then(() => {
-				console.log()
 				getDoc(doc(db, 'users', subject.uidRequest)).then((userObject) => {
-					console.log(subject.uidRequest);
-					console.log(userObject.get("creditos"));
-					console.log(subject.credits);
 					updateDoc(doc(db, 'users', subject.uidRequest), {
 						creditos: Number(userObject.get("creditos")) + Number(subject.credits)
 
