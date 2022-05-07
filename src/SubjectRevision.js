@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db } from './firebase';
-import { collection, doc, getDoc, query,getDocs, orderBy } from "firebase/firestore";
+import { collection, doc, getDoc, query,getDocs, orderBy, deleteDoc, updateDoc } from "firebase/firestore";
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
@@ -26,21 +26,23 @@ function SubjectRevision() {
 	const [university, setUniversity] = useState('');
 	const [degree, setDegree] = useState('');
 	const [Url, setUrl] = useState('');
+	const[docId, setDocId] = useState("");
 	
 
 	const loadSubject = async () => {
 
 		const subjectRef = collection(db, "subjects_administrator")
-		const q = query(subjectRef); //, orderBy("timestamp", "desc")
+		const q = query(subjectRef, orderBy("timestamp", "desc")); 
 
 		const querySnapshot = await getDocs(q);
 		querySnapshot.forEach((doc) => {
 			console.log(doc.data().content)
 			if (doc.exists()) {
+				setDocId(doc.id);
 				setSubject(doc.data());
 				loadDegree(doc.data().degreeId);
 				loadUniversity(doc.data().universityId);
-				downloadFile(doc.data().teachingProject);
+				downloadFile(doc.data().projectRef);
 			}
 			else {
 				console.log("No such document!");
@@ -86,10 +88,38 @@ function SubjectRevision() {
 	}
 
 	const rejectSubject = () => {
+		console.log("aquí")
+		deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
+			alert("Removed Denied Application");
+			window.location.reload();
+		})
+
 		
 	}
 
 	const acceptSubject = () => {
+		updateDoc(doc(db, 'subjects', docId), {
+			degreeId: subject.degreeId,
+			subjectId: subject.subjectId,
+			name: subject.name,
+			credits: subject.credits,
+			course: subject.course,
+			quarter: subject.quarter,
+			prerequisites: subject.prerequisites,
+			content: subject.content,
+			proyectYear: subject.proyectYear,
+			url: subject.url,
+			languajes: subject.languajes,
+			universityId: subject.universityId,
+			proyectRef: subject.proyectRef,
+			timestamp: subject.timestamp
+		}).then(() => {
+			console.log("aquí")
+			deleteDoc(doc(db, "subjects_administrator", docId)).then(() => {
+				alert("Removed Accepted Application");
+				window.location.reload();
+			})
+		})
 		
 	}
 

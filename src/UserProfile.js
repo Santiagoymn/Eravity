@@ -13,7 +13,7 @@ import Helmet from 'react-helmet';
 import { doc, getDoc} from "firebase/firestore";
 import AdminProfile from './AdminProfile';
 import { useNavigate } from 'react-router-dom';
-import { logoutAPP } from './Utilities';
+import { checkIfLogged, logoutAPP } from './Utilities';
 
 
 
