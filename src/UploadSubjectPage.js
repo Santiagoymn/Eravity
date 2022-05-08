@@ -51,7 +51,6 @@ function UploadSubjectPage() {
                         getDocs(q2).then((querySnapshot2) => {
                             if(!querySnapshot2.empty){
                                 querySnapshot2.forEach((degreeObject) => { 
-                                    alert(universityObject.id);
                                     const q3 = query(collection(db, "subjects"), where("name", "==", name.toLowerCase()), where("universityId", "==", universityObject.id), where("degreeId", "==", degreeObject.id));
                                     getDocs(q3).then((querySnapshot3) => {
                                         if (querySnapshot3.empty) {
