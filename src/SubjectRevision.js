@@ -185,7 +185,7 @@ function SubjectRevision() {
 
 	<div className="subject__field">
 		<p className="subject__title">name:</p>
-		<p>{subject.name}</p>
+		<p className="subject__info">{subject.name}</p>
 	</div>
 	<div className="subject__field">
 		<div className="subject__field">
@@ -203,11 +203,11 @@ function SubjectRevision() {
 	</div>
 	<div className="subject__field">
 		<p className="subject__title">degree:</p>
-		<p>{degree}</p>
+		<p className="subject__info">{degree}</p>
 	</div>
 	<div className="subject__field">
 		<p className="subject__title">university:</p>
-		<p>{university}</p>
+		<p className="subject__info">{university}</p>
 	</div>
 
 	<div className="subject__title">languages</div>

@@ -12,7 +12,6 @@
     flex-direction: row;
     margin-bottom: 1rem;
     margin-right: 3rem;
-
 }
 
 .subject-info-container {
@@ -21,7 +20,8 @@
     align-items: start !important;
     text-align: start;
     padding: 0 10rem;
-    margin-top: 10rem;
+    margin-top: 4rem;
+
 }
 
 .subject__languagesCB {
@@ -53,12 +53,16 @@
     border: none;
     background-color: #E7ECEF;
     align-self: center;
+    font-size: 1.2rem;
 }
 
 .subject__a {
     align-self: center;
     margin-bottom: 3rem;
+    font-size: 1.5rem;
+    margin-top:2rem;
 }
+
 
 .subject__buttons{
     display: flex;
@@ -115,6 +119,7 @@
     justify-items: center;
     margin-bottom: 2rem;
     align-self: center;
+    padding: 2rem;
 }
 
 .subject__download-image {
@@ -128,3 +133,8 @@
 .my-rating-4{
     margin-left:-8rem;
 }
+
+.subject__info{
+    text-transform: capitalize;
+}
+
