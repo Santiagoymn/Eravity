@@ -47,11 +47,12 @@ function UploadSubjectPage() {
             getDocs(q).then((querySnapshot) => {
                 if(!querySnapshot.empty){
                     querySnapshot.forEach((universityObject) => {
-                        const q2 = query(collection(db, "degrees"), where("name", "==", degree.toLowerCase()));
+                        const q2 = query(collection(db, "degrees"), where("name", "==", degree.toLowerCase()), where("universityId", "==", universityObject.id));
                         getDocs(q2).then((querySnapshot2) => {
                             if(!querySnapshot2.empty){
                                 querySnapshot2.forEach((degreeObject) => { 
-                                    const q3 = query(collection(db, "subjects"), where("name", "==", name.toLowerCase()));
+                                    alert(universityObject.id);
+                                    const q3 = query(collection(db, "subjects"), where("name", "==", name.toLowerCase()), where("universityId", "==", universityObject.id), where("degreeId", "==", degreeObject.id));
                                     getDocs(q3).then((querySnapshot3) => {
                                         if (querySnapshot3.empty) {
                                             uploadProyect(universityObject.get("name"), degreeObject.get("name"), name.toLowerCase());
@@ -72,8 +73,7 @@ function UploadSubjectPage() {
                                                     timestamp: +new Date
                                                 })
                                                 .then(() => {
-                                                    const q4 = query(collection(db, "users"));
-                                                    getDocs(q4).then((querySnapshot4) => {
+                                                    getDocs(collection(db, "users")).then((querySnapshot4) => {
                                                         querySnapshot4.forEach((userObject) => {
                                                             if(userObject.id == auth.currentUser.uid){
                                                                 updateDoc(doc(db, 'users', auth.currentUser.uid), {
@@ -83,8 +83,7 @@ function UploadSubjectPage() {
                                                         })
                                                     })
                                                     .then(() =>{
-                                                        const q5 = query(collection(db, "subjects"), where("name", "==", name.toLowerCase()));
-                                                        getDocs(q5).then((querySnapshot5) => {
+                                                        getDocs(q3).then((querySnapshot5) => {
                                                             querySnapshot5.forEach((subjectObject) => {
                                                                     updateDoc(doc(db, 'degrees', degreeObject.id), {
                                                                     [`subjects.${subjectObject.id}`]: true,
