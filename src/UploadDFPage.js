@@ -3,7 +3,7 @@ import "./uploadDFPageStyle.css";
 import "./generalStyle.css";
 import Helmet from 'react-helmet';
 import { db, auth } from './firebase';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import HeaderNoLogueado from './HeaderNoLogueado';
 import Footer from './Footer';
 import HeaderLogueado from './HeaderLogueado';
@@ -37,7 +37,13 @@ function UploadDFPage() {
                                             universityId: universityObject.id,
                                             years: years,
                                             credits: credits
-                                        }).catch(error => alert(error.message))
+                                        }).then((degreeObject) => {
+                                            updateDoc(doc(db, 'universities', universityObject.id), {
+                                                [`degrees.${degreeObject.id}`]: true,
+                                            })
+                                        })
+                                        
+                                        .catch(error => alert(error.message))
                                         alert("The degree has been added. Thanks for supporting!");
 
                                     } else {

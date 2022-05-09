@@ -302,8 +302,7 @@ function UploadSubjectPage() {
     async function uploadProyect(universityObjectName, degreeObjectName, degreeName){
         const storage = getStorage();
         const storageRef = ref(storage, "ep/"+universityObjectName+"-"+degreeObjectName+"-"+degreeName);
-        //const file = document.getElementById("file-upload").files[0];
-        const file = project;
+        const file = document.getElementById("file-upload").files[0];
 
         uploadBytes(storageRef, file).then((snapshot) => {
             getDownloadURL(storageRef).then((url) => {
