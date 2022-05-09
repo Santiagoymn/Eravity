@@ -1,5 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+.aboutUs__body{
+	margin-top: 0;
+}
 
 .aboutUs__main-container{
 	left: 3%;
@@ -27,6 +30,10 @@
 #aboutUs__up{
 	width: 95%;
 	margin: auto;
+}
+
+#aboutUs__first-paragraph{
+	margin-bottom: 3rem;
 }
 
 #aboutUs__down{
