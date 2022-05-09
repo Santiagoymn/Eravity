@@ -9,6 +9,13 @@ import UploadUniversityForm from './UploadUniversityForm';
 import ContactForm from './ContactForm';
 import UploadSubjectPage from './UploadSubjectPage';
 import SubjectPage from './SubjectPage';
+import UploadDFPage from './UploadDFPage';
+import UserProfile from './UserProfile';
+import AdminProfile from './AdminProfile';
+import SubjectRevision from './SubjectRevision';
+import UploadResource from './UploadResource';
+
+
 
 import {
   BrowserRouter,
@@ -16,11 +23,7 @@ import {
   Route,
 
 } from "react-router-dom";
-import UploadDFPage from './UploadDFPage';
-import UserProfile from './UserProfile';
-import AdminProfile from './AdminProfile';
-import SubjectRevision from './SubjectRevision';
-import UploadResource from './UploadResource';
+import AboutUs from './AboutUs';
 
 
 
@@ -50,6 +53,7 @@ function App() {
           <Route path="ContactUs" element={<ContactForm />} ></Route>
           <Route path="UploadSubjectForm" element={<UploadSubjectPage />} ></Route>
           <Route path="UploadResource" element={<UploadResource />} ></Route>
+          <Route path="AboutUs" element={<AboutUs />} ></Route>
 
 
 
