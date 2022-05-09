@@ -62,6 +62,25 @@ function UploadDFPage() {
         }
     }
 
+    function checkIfLoggedDF(dispatch){
+        onAuthStateChanged(auth, (userAuth) => {
+    
+            if (userAuth) {
+              // user is logged in, send the user's details to redux, store the current user in the state
+              dispatch(
+                login({
+                  email: userAuth.email,
+                  uid: userAuth.uid,
+                  displayName: userAuth.displayName,
+                  photoUrl: userAuth.photoURL,
+                })
+              );
+            } else {
+              dispatch(logout());
+            }
+        });
+    }
+
 
     function validationNameDegree() {
         if (name === "") {
@@ -91,7 +110,7 @@ function UploadDFPage() {
 
     // check at page load if a user is authenticated
   useEffect(() => {
-    checkIfLogged(dispatch);
+    checkIfLoggedDF(dispatch);
     
   }, []);
 

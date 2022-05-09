@@ -46,8 +46,4 @@ async function loadUser(uid) {
 
 }
 
-
-
-
-
 export {checkIfLogged, logoutAPP, loadUser}

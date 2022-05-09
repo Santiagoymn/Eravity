@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
 import HideInfo from './HideInfo';
+import { checkIfLogged } from './Utilities';
 
 
 function DegreeProfilePage() {

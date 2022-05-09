@@ -86,10 +86,10 @@ function AdminProfile() {
     <main className="admin__menu-container">
 	
                 <div id="admin__options">
-			            <div className="admin__command"><Link to="/" class ="TextLink"><p className='admin__p'>University Application</p></Link></div>
-			            <div className="admin__command"><Link to="/" class ="TextLink"><p className='admin__p'>Degree Application</p></Link></div>
-			            <div className="admin__command"><Link to="/SubjectRevision" class ="TextLink"><p className='admin__p'>Subject Application</p></Link></div>
-			            <div className="admin__command"><Link to="/" class ="TextLink"><p className='admin__p'>Contact Forms</p></Link></div>
+			            <div className="admin__command"><Link to="/" class ="admin__TextLink"><p className='admin__p'>University Application</p></Link></div>
+			            <div className="admin__command"><Link to="/" class ="admin__TextLink"><p className='admin__p'>Degree Application</p></Link></div>
+			            <div className="admin__command"><Link to="/SubjectRevision" class ="admin__TextLink"><p className='admin__p'>Subject Application</p></Link></div>
+			            <div className="admin__command"><Link to="/" class ="admin__TextLink"><p className='admin__p'>Contact Forms</p></Link></div>
 		            </div>
                 <div className="userProfile__containerLogout"><input type="submit" onClick={logoutAPP} value="Logout" className="userProfile__buttonLogout" /></div>
 

@@ -37,7 +37,8 @@
     align-items: center;
     margin-top:-10rem;
 }
-.TextLink{
+.admin__TextLink{
     color: black;
     text-decoration: none;
+    margin-top:2rem;
 }
