@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import $ from 'jquery';
 import { db, auth } from './firebase';
 import { doc, getDoc } from "firebase/firestore";
@@ -12,6 +12,7 @@ import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
+import { checkIfLogged, loadUser } from './Utilities';
 import HideInfo from './HideInfo';
 
 
@@ -19,7 +20,15 @@ function DegreeProfilePage() {
     const { id } = useParams();
     const [degree, setDegree] = useState([]);
     const [university, setUniversity] = useState([]);
-    const [subjects, setSubjects] = useState([]);
+    const [subjectY1Q1, setsubjectY1Q1] = useState([]);
+    const [subjectY1Q2, setsubjectY1Q2] = useState([]);
+    const [subjectY2Q1, setsubjectY2Q1] = useState([]);
+    const [subjectY2Q2, setsubjectY2Q2] = useState([]);
+    const [subjectY3Q1, setsubjectY3Q1] = useState([]);
+    const [subjectY3Q2, setsubjectY3Q2] = useState([]);
+    const [subjectY4Q1, setsubjectY4Q1] = useState([]);
+    const [subjectY4Q2, setsubjectY4Q2] = useState([]);
+
 
 
 
@@ -60,17 +69,88 @@ function DegreeProfilePage() {
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
                 if (docSnap.exists()) {
-                    setSubjects(subjects => [...subjects, docSnap.data()])
+
+                    switch(docSnap.data().course) {
+                        case "1":
+                            {
+                                if(docSnap.data().quarter == "1"){
+                                    setsubjectY1Q1(subjectY1Q1 => [...subjectY1Q1,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                                else{
+                                    setsubjectY1Q2(subjectY1Q2 => [...subjectY1Q2,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                            }
+                        case "2":
+                            {
+                                if(docSnap.data().quarter == "1"){
+                                    setsubjectY2Q1(subjectY2Q1 => [...subjectY2Q1,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                                else{
+                                    setsubjectY2Q2(subjectY2Q2 => [...subjectY2Q2,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                            }
+                        case "3":
+                            {
+                                if(docSnap.data().quarter == "1"){
+                                    setsubjectY3Q1(subjectY3Q1 => [...subjectY3Q1,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                                else{
+                                    setsubjectY3Q2(subjectY3Q2 => [...subjectY3Q2,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                            }
+                        case "4":
+                            {
+                                if(docSnap.data().quarter == "1"){
+                                    setsubjectY4Q1(subjectY4Q1 => [...subjectY4Q1,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                                else{
+                                    setsubjectY4Q2(subjectY4Q2 => [...subjectY4Q2,
+                                        {
+                                            id: keys[i][0],
+                                            data: docSnap.data()
+                                        }])
+                                }
+                            }
+                        }
                 }
                 else {
                     console.log("No such document!");
                 }
 
+                
             })
         }
+        
 
     }
-
 
     useEffect(() => {
         loadDegree();
@@ -131,6 +211,41 @@ function DegreeProfilePage() {
                                         <div className="DegreeProfile__text">Year 1</div>
                                     </div>
                                     <div className="DegreeProfile__semesters">
+                                        <div className="rTable DegreeProfile__tableSemester ">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="rTableHeading DegreeProfile__semester">First Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY1Q1.map(() => (subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} class ="UniversityProfile_TextLink">
+											                <div className="rTableCell DegreeProfile__subjects">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjectY1Q2.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div className="DegreeProfile__headerYear">
+                                        <div className="DegreeProfile__text">Year 2</div>
+                                    </div>
+                                    <div className="DegreeProfile__semesters">
                                         <table className="DegreeProfile__tableSemester">
                                             <thead>
                                                 <tr>
@@ -138,9 +253,9 @@ function DegreeProfilePage() {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {subjects.map((subject) => (
-                                                    <tr>
-                                                        <td className="DegreeProfile__subjects">{subject.name}</td>
+                                                {subjectY2Q1.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -152,14 +267,81 @@ function DegreeProfilePage() {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {subjects.map((subject) => (
-                                                    <tr>
-                                                        <td className="DegreeProfile__subjects">{subject.name}</td>
+                                                {subjectY2Q2.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
                                                     </tr>
                                                 ))}
                                             </tbody>
                                         </table>
                                     </div>
+                                    <div className="DegreeProfile__headerYear">
+                                        <div className="DegreeProfile__text">Year 3</div>
+                                    </div>
+                                    <div className="DegreeProfile__semesters">
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjectY3Q1.map(() =>(subject) => (           
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjectY3Q2.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div className="DegreeProfile__headerYear">
+                                        <div className="DegreeProfile__text">Year 4</div>
+                                    </div>
+                                    <div className="DegreeProfile__semesters">
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjectY4Q1.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                        <table className="DegreeProfile__tableSemester">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {subjectY4Q2.map(() =>(subject) => (
+                                                    <tr onClick={redireccion(subject.id)}>
+                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
                                 </article>
                             </Fragment>
                         )

@@ -112,6 +112,7 @@ body {
     align-items: center;
     text-align: center;
     height: 5rem;
+    text-transform: capitalize;
 }
 
 .UniversityProfile__university-info-container {
@@ -121,3 +122,10 @@ body {
     align-items: center;
     top: 10rem;
 }
+
+.rTable { display: table; }
+.rTableRow       { display: table-row; }
+.rTableHeading    { display: table-header-group; }
+.rTableBody    { display: table-row-group; }
+.rTableFoot    { display: table-footer-group; }
+.rTableCell, .rTableHead  { display: table-cell; }
