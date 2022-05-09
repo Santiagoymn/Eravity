@@ -35,19 +35,19 @@ function Register() {
 								})
 							}).then(() => {
 								signOut(auth).then(() =>{
-									alert("Muchas gracias por registrarte, recuerda que debes validar tu email para hacer uso de los servicios de la web");
+									alert("Thank you very much for registering, remember that you must validate your email to use the web services");
 								});
 								
 							});
 						}).catch(error => alert(error.message));
 				} else {
-					alert("La contraseña no cumple los requisitos: Debe de ser entre 8 y 16 caracteres y tener al menos una mayúscula, una minúscula, un dígito y un carácter especial");
+					alert("The password does not meet the requirements: It must be between 8 and 16 characters and have at least one uppercase, one lowercase, one digit and one special character");
 				}
 			} else {
 				alert("The passwords doesn't match");
 			}
 		} else {
-			alert("No es una dirección de correo válida");
+			alert("It is not a valid email address");
 		}
 
 	}
