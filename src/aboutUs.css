@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+.aboutUs__main-container{
+	left: 3%;
+	right: 2%;
+	position: relative;
+	width: 95%;
+	vertical-align: middle;
+	text-align:center;
+}
+
+.aboutUs__subtitle{
+	font-size: 2.5rem;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.aboutUs__paragraph{
+	font-size: 1.225rem;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+}
+
+#aboutUs__up{
+	width: 95%;
+	margin: auto;
+}
+
+#aboutUs__down{
+	width: 95%;
+	margin: auto;
+	margin-top: 5rem;
+	content: "";
+}
+
+#aboutUs__down:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.aboutUs__column{
+	float: left;
+	width: 28%;
+}
+
+.aboutUs__row{
+	padding: 1.25rem 0px;	
+	position: relative;
+	height: auto;
+}
+
+#aboutUs__middle{
+	padding-left: 8%;
+	padding-right: 8%;
+}
