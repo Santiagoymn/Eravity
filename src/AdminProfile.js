@@ -24,7 +24,7 @@ function AdminProfile() {
 
   const ifAdmin = async () => {
 
-    const docRef = doc(db, "users", user.uid)
+    const docRef = doc(db, "users", user?.uid)
     getDoc(docRef).then((docSnap) => {
       if (docSnap.exists()) {
         setAdmin(docSnap.data().admin);

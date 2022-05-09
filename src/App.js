@@ -36,7 +36,6 @@ function App() {
           <Route path="*" element={<div>ERROR 404</div>} />
           <Route path="Register" element={<Register />}></Route>
           <Route path="Login" element={<Login />} ></Route>
-          <Route path="UniversityProfile" element={<UniversityProfilePage />}></Route>
           <Route path="UniversityProfile/:id" element={<UniversityProfilePage />} ></Route>
           <Route path="DegreeProfile" element={<DegreeProfilePage />}></Route>
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>

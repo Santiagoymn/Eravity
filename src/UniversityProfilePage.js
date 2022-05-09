@@ -18,6 +18,7 @@ import {onAuthStateChanged} from 'firebase/auth';
 import './UniversityProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
+import { checkIfLogged } from './Utilities';
 
 function UniversityProfilePage() {
 	const { id } = useParams();

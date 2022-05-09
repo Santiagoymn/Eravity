@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { checkIfLogged } from "./Utilities";
 import { async } from "@firebase/util";
+import { Link } from "react-router-dom";
 
 
 
@@ -39,6 +40,7 @@ function HomePage() {
     const getUniversities = async() => {
         getDocs(query(collection(db, "universities"), orderBy("name"))).then((querySnapshot) => {
             setUniversities(querySnapshot.docs.map(doc => ({
+                id: doc.id,
                 data: doc.data()
             })));
         }).then(() => {
@@ -92,13 +94,14 @@ function HomePage() {
 
                 <div id="HomePage__universidades">
 
-                    {searchResults.map(({ data: { name, country } }) => (
-                        <div className="HomePage__universidadOrigen">
+                    {searchResults.map(({ id, data: { name, country } }) => (
+                        <div className="HomePage__universidadOrigen"><Link to={`/UniversityProfile/${id}`} >
                             <img src="https://recasens.com/wp-content/uploads/2017/02/r_095_pvc_1.jpg" className="HomePage__imagenUniversidad" />
                             <div className="HomePage__textoEncimaImagen">
                                 <p className="HomePage__textoUniversidad">{name}</p>
                                 <p className="HomePage__textoPais">{country}</p>
                             </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
