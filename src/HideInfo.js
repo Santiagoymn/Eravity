@@ -12,8 +12,8 @@ function HideInfo() {
         <div className='HideInfo__notLoggedInContainer'>
             <p className='HideInfo__notLoggedInText'>You must be signed in to access the degrees of the universities</p>
             <div className='HideInfo__buttonContainer'>
-                <Link to="/Login"><input type="submit" value="Sign In" className="HideInfo__buttonAccept" /></Link>
-                <Link to="/Register"><input type="submit" value="Sign Up" className="HideInfo__buttonAccept" /></Link>
+                <Link to="/Login" className='hideLink'><input type="submit" value="Sign In" className="HideInfo__buttonAccept" /></Link>
+                <Link to="/Register" className='hideLink'><input type="submit" value="Sign Up" className="HideInfo__buttonAccept" id="HideInfo__buttonRight"/></Link>
             </div>
         </div >
     )

@@ -28,9 +28,9 @@ function UploadUniversityForm() {
             getDocs(q).then((querySnapshot) => {
             if(querySnapshot.empty){
                 addDoc(collection(db, "universities"), {
-                    name: name,
-                    city: city,
-                    country: country
+                    name: name.toLowerCase(),
+                    city: city.toLowerCase(),
+                    country: country.toLowerCase()
             }).catch(error => alert(error.message))
                 alert("The university has been added. Thanks for supporting!");
             } else {
