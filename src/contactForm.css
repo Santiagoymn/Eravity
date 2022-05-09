@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+.main-container{
+	margin-left: 25%;
+	margin-right: 25%;
+	position: relative;
+	vertical-align: middle;
+	margin-top:-10rem;
+}
+
+.subtitle{
+	font-size: 1.725rem;
+	font-family: Droid Sans;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.column{
+	float: left;
+	width: 45%;
+}
+
+.row{
+	padding: 1rem 0px;	
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+
+.textbox{
+	width: 99%;
+	background: #E7ECEF;
+	border-radius: .725rem;
+	height: 4rem;
+	border: 0;
+	font-size: 2rem;
+	padding-left: 1rem;
+}
+
+#form{
+	content: "";
+}
+
+#form:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#columnPadding{
+	padding-right: 9%;
+}
+
+#rowPadding{
+	padding-bottom: 7rem;
+}
+
+#SubmitBotton{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 3rem;
+}
+
+#botton{
+	height: 5rem;
+	width: 25%;
+	background: #A3CEF1;
+	border-radius: 1rem;
+	font-size:2.5rem;
+}
