@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db, auth } from './firebase';
 import { collection, getDocs, query, orderBy, getDoc, doc } from "firebase/firestore";

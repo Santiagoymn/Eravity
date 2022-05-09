@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import {onAuthStateChanged, signOut} from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -28,7 +29,7 @@ function checkIfLogged(dispatch){
 
 function logoutAPP() {
     signOut(auth).then(() => {
-      navigate("/");
+      useNavigate("/ContactUs");
     }).catch((error) => {
       // An error happened.
     });

@@ -72,8 +72,8 @@ function Login() {
                     console.log(loggedIn());
                     return (
                         <Fragment>
-                            {alert("Already logged")}
-                            {navigate("/Home")}
+                            
+                            {navigate("/")}
                             
                         </Fragment>
 
@@ -90,7 +90,6 @@ function Login() {
                                 <div className="Login__left">
                                     <div className="Login__contentLeft">
                                         <div className="Login__title1">Join us!</div>
-                                        {console.log("Aqui")}
                                         <div className="Login__title2">The easiest way to go on Erasmus</div>
                                     </div>
                                 </div>
