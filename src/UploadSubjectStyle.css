@@ -30,7 +30,7 @@ textarea:focus, input:focus, input[type]:focus {
 }
 .UploadSubject__inputLargeText{
     border-radius: 0.63em;
-    height: 40rem;
+    height: 20rem;
     font-family: 'Droid Sans',serif;
     font-style: normal;
     font-weight: 400;
@@ -44,7 +44,9 @@ textarea:focus, input:focus, input[type]:focus {
     margin-bottom:1.5em;
 
     color: #000000;
+    padding-top: 10rem;
 }
+
 .UploadSubject__firstLineInputs{
     display: flex;
     justify-content: center;

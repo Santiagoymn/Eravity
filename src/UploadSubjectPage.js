@@ -79,9 +79,16 @@ function UploadSubjectPage() {
                                                     getDocs(collection(db, "users")).then((querySnapshot4) => {
                                                         querySnapshot4.forEach((userObject) => {
                                                             if(userObject.id == auth.currentUser.uid){
-                                                                updateDoc(doc(db, 'users', auth.currentUser.uid), {
-                                                                    creditos: Number(userObject.get("creditos")) + Number(ects) ,
-                                                                })
+                                                                if(Number(userObject.get("creditos")) === NaN){
+                                                                    updateDoc(doc(db, 'users', auth.currentUser.uid), {
+                                                                        creditos: Number(userObject.get("creditos")) + Number(ects) ,
+                                                                    })
+                                                                }else{
+                                                                    updateDoc(doc(db, 'users', auth.currentUser.uid), {
+                                                                        creditos: Number(ects) ,
+                                                                    })
+                                                                }
+                                                                
                                                             }
                                                         })
                                                     })
@@ -400,8 +407,8 @@ function UploadSubjectPage() {
                 <div className="UploadSubject__languageDivCB"><input type="checkbox" id="germanCB" className="UploadSubject__languageCB"/><label className='UploadSubject__label' htmlFor="germanCB">german</label></div>
                 <div className="UploadSubject__languageDivCB"><input type="checkbox" id="otherCB" className="UploadSubject__languageCB"/><label className='UploadSubject__label' htmlFor="otherCB">other</label></div>
             </div>
-            <input type="text" onChange={e => setPrerequisites(e.target.value)} placeholder="prerequisites" id="prerequisites" className="UploadSubject__inputLargeText" required/>
-            <input type="text" onChange={e => setContents(e.target.value)} placeholder="contents" id="contents" className="UploadSubject__inputLargeText" required/>
+            <textarea type="text" onChange={e => setPrerequisites(e.target.value)} placeholder="prerequisites" id="prerequisites" className="UploadSubject__inputLargeText" required/>
+            <textarea type="text" onChange={e => setContents(e.target.value)} placeholder="contents" id="contents" className="UploadSubject__inputLargeText" required/>
             
             <div className="UploadSubject__file-upload-container text">
                 <label htmlFor="file-upload" className="UploadSubject__custom-file-upload">
