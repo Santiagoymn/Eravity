@@ -162,7 +162,6 @@ hr {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-<<<<<<< HEAD
 }
 
 .UniversityProfile_TextLink{
@@ -172,7 +171,4 @@ hr {
 
 .UniversityProfile_TextLink > p{
     margin-top:3rem;
-=======
-    margin-right: -6rem;
->>>>>>> 85edc3d882598c16961983f6091aa2febb69db22
 }
