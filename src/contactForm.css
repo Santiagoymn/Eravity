@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
 
-.main-container{
+.contact__main-container{
 	margin-left: 25%;
 	margin-right: 25%;
 	position: relative;
@@ -8,26 +8,25 @@
 	margin-top:-10rem;
 }
 
-.subtitle{
+.contact__subtitle{
 	font-size: 1.725rem;
 	font-family: Droid Sans;
 	font-style: normal;
 	font-weight: 400;
 }
 
-.column{
+.contact__column{
 	float: left;
 	width: 45%;
 }
 
-.row{
+.contact__row{
 	padding: 1rem 0px;	
-	position: relative;
 	height: auto;
 	width: 100%;
 }
 
-.textbox{
+.contact__textbox{
 	width: 99%;
 	background: #E7ECEF;
 	border-radius: .725rem;
@@ -37,28 +36,28 @@
 	padding-left: 1rem;
 }
 
-#form{
+#contact__form{
 	content: "";
 }
 
-#form:after{
+#contact__form:after{
 	content: "";
 	display: table;
 	clear: both;
 }
 
-#columnPadding{
+#contact__columnPadding{
 	padding-right: 9%;
 }
 
 
-#SubmitBotton{
+#contact__SubmitBotton{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-#botton{
+#contact__botton{
 	height: 5rem;
 	width: 25%;
 	background: #A3CEF1;

@@ -68,29 +68,29 @@ function ContactForm() {
 
 			{(() => {return(<HeaderLogueado></HeaderLogueado>)})()}
 	
-            <main className="main-container">
+            <main className="contact__main-container">
 	
-                <form id="form">
-			        <div className="row" id="rowPadding">
-				        <div className="column" id="columnPadding">
-					        <div className="subtitle">First name:</div>
-					        <input value={name} type="text" onChange={e => setName(e.target.value)} className="textbox" name="Name" required/>
+                <form id="contact__form">
+			        <div className="contact__row" id="rowPadding">
+				        <div className="contact__column" id="contact__columnPadding">
+					        <div className="contact__subtitle">First name:</div>
+					        <input value={name} type="text" onChange={e => setName(e.target.value)} className="contact__textbox"  required/>
 				        </div>
-				        <div className="column">
-					        <div className="subtitle">Last name:</div>
-					        <input value={surname} type="text" onChange={e => setSurname(e.target.value)} className="textbox" name="Surname" required/>
+				        <div className="contact__column">
+					        <div className="contact__subtitle">Last name:</div>
+					        <input value={surname} type="text" onChange={e => setSurname(e.target.value)} className="contact__textbox"  required/>
 				        </div>
 			        </div>
-			        <div className="row">
-				        <div className="subtitle">Email:</div>
-				        <input value={email} type="text" onChange={e => setEmail(e.target.value)} className="textbox" name="Email" required/>
+			        <div className="contact__row">
+				        <div className="contact__subtitle">Email:</div>
+				        <input value={email} type="email" onChange={e => setEmail(e.target.value)} className="contact__textbox"  required/>
 			        </div>
-			        <div className="row">
-				        <div className="subtitle">Message:</div>
-				        <input value={message} type="text" onChange={e => setMessage(e.target.value)} className="textbox" name="Message" required/>
+			        <div className="contact__row">
+				        <div className="contact__subtitle">Message:</div>
+				        <input value={message} type="text" onChange={e => setMessage(e.target.value)} className="contact__textbox"  required/>
 			        </div>
-			        <div className="row" id="SubmitBotton">
-				        <input type="submit" onClick={checkForm} value="Send" id="botton"/>
+			        <div className="contact__row" id="contact__SubmitBotton">
+				        <input type="submit" onClick={checkForm} value="Send" id="contact__botton"/>
 			        </div>
 		        </form>
         
