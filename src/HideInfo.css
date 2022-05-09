@@ -27,14 +27,18 @@
     border: none;
     
 }
+
+.hideLink:hover {
+    cursor: hand;
+}
 #HideInfo__buttonRight{
-    margin-left:-40rem;
+    margin-left: 2rem;
 }
 
 .HideInfo__buttonContainer {
     display: flex;
-    justify-content: space-evenly;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .HideInfo__notLoggedInContainer {
