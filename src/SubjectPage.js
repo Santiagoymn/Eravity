@@ -178,7 +178,7 @@ function SubjectPage() {
 										</div>
 										<div className="subjectProfile__field">
 											<p className="subjectProfile__title">year:</p>
-											<p>{subject.projectYear}</p>
+											<p>{subject.proyectYear}</p>
 										</div>
 										<div className="subjectProfile__field">
 											<p className="subjectProfile__title">semester:</p>
@@ -216,7 +216,7 @@ function SubjectPage() {
 									<p className="subjectProfile__title">contents:</p>
 									<textarea className='subjectProfile__textarea' disabled value={subject.content}></textarea>
 
-									<a target="_blank" href={subject.url}>url where the information was obtained</a>
+									<a target="_blank" href={subject.url}>Url where the information was obtained</a>
 
 								</main>
 								<div className="subjectProfile__qualifying-container">
@@ -251,7 +251,7 @@ function SubjectPage() {
 									</div>
 									<div className="subjectProfile__file-upload-container text">
 										<label for="file-upload" className="subjectProfile__custom-file-upload">
-											Download Educational Programm
+											Download Educational Program
 										</label>
 
 										<a href={url} target="_blank" id="file-upload">

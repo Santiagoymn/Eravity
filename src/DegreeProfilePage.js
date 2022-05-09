@@ -20,6 +20,7 @@ function DegreeProfilePage() {
     const { id } = useParams();
     const [degree, setDegree] = useState([]);
     const [university, setUniversity] = useState([]);
+    //const [subjectMatrix, setSubjectMatrix] = useState(Array.from({length: 4},()=> Array.from({length: 5}, () => null)));
     const [subjectY1Q1, setsubjectY1Q1] = useState([]);
     const [subjectY1Q2, setsubjectY1Q2] = useState([]);
     const [subjectY2Q1, setsubjectY2Q1] = useState([]);
@@ -70,6 +71,22 @@ function DegreeProfilePage() {
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
                 if (docSnap.exists()) {
+
+                    /*for( var j=1; j<5; j++){
+                        for( var k=1; k<3; k++){
+                            if(docSnap.data().course == j.toString() && docSnap.data().course == k.toString()){
+                                setSubjectMatrix(subjectMatrix => [...subjectMatrix[j][k],
+                                {
+                                    id: keys[i][0],
+                                    data: docSnap.data()
+                                }])
+                            }
+                            console.log(subjectMatrix[j][k])
+                            
+                         }
+                    }*/
+
+
                     
                     if(docSnap.data().course == "1" && docSnap.data().quarter == "1") {
                         setsubjectY1Q1(subjectY1Q1 => [...subjectY1Q1,
@@ -213,128 +230,143 @@ function DegreeProfilePage() {
                                                 </div>
                                             </div>
                                             <div className="rTableBody">
-                                                {subjectY1Q1.map(() => (subject) => (
+                                                {subjectY1Q1.map((subject) => (
                                                     <div className='rTableRow'>
-                                                        <Link to={`/Subject/${subject.id}`}>
-											                <div className="DegreeProfile__subjects">{subject.data.name}</div>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
 										                </Link>
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY1Q2.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                        <div className="DegreeProfile__tableSemester">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">Second Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY1Q2.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
+                                    
                                     <div className="DegreeProfile__headerYear">
                                         <div className="DegreeProfile__text">Year 2</div>
                                     </div>
                                     <div className="DegreeProfile__semesters">
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY2Q1.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                        <div className="rTable DegreeProfile__tableSemester ">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">First Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY2Q1.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY2Q2.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                            </div>
+                                        </div>
+                                        <div className="DegreeProfile__tableSemester">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">Second Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY2Q2.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="DegreeProfile__headerYear">
                                         <div className="DegreeProfile__text">Year 3</div>
                                     </div>
                                     <div className="DegreeProfile__semesters">
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY3Q1.map(() =>(subject) => (           
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                        <div className="rTable DegreeProfile__tableSemester ">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">First Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY3Q1.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY3Q2.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                            </div>
+                                        </div>
+                                        <div className="DegreeProfile__tableSemester">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">Second Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY3Q2.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="DegreeProfile__headerYear">
                                         <div className="DegreeProfile__text">Year 4</div>
                                     </div>
                                     <div className="DegreeProfile__semesters">
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">First Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY4Q1.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                        <div className="rTable DegreeProfile__tableSemester ">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">First Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY4Q1.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
-                                        <table className="DegreeProfile__tableSemester">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="1" className="DegreeProfile__semester">Second Semester</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {subjectY4Q2.map(() =>(subject) => (
-                                                    <tr onClick={redireccion(subject.id)}>
-                                                        <td className="DegreeProfile__subjects">{subject.data.name}</td>
-                                                    </tr>
+                                            </div>
+                                        </div>
+                                        <div className="DegreeProfile__tableSemester">
+                                            <div className="rTableHeading">
+                                                <div className="rTableRow">
+                                                    <div colspan="1" className="DegreeProfile__semester">Second Semester</div>
+                                                </div>
+                                            </div>
+                                            <div className="rTableBody">
+                                                {subjectY4Q2.map((subject) => (
+                                                    <div className='rTableRow'>
+                                                        <Link to={`/Subject/${subject.id}`} className="DegreeProfile_TextLink">
+											                <div className="DegreeProfile__subjects DegreeProfile_subject">{subject.data.name}</div>
+										                </Link>
+                                                    </div>
                                                 ))}
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
                                     
                                 </article>
