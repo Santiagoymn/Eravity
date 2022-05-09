@@ -40,7 +40,6 @@ function DegreeProfilePage() {
                 setDegree(docSnap.data());
                 loadUniveristy(docSnap.data().universityId);
                 loadSubjects(docSnap.data().subjects);
-                console.log(docSnap.data().subjects);
             }
             else {
                 console.log("No such document!");
@@ -65,88 +64,83 @@ function DegreeProfilePage() {
 
     const loadSubjects = (o) => {
         var keys = Object.keys(o).map((key) => [key]);
+        
 
         for (let i = 0; i < keys.length; i++) {
             const docRef = doc(db, "subjects", keys[i][0]);
             getDoc(docRef).then((docSnap) => {
                 if (docSnap.exists()) {
+                    
+                    if(docSnap.data().course == "1" && docSnap.data().quarter == "1") {
+                        setsubjectY1Q1(subjectY1Q1 => [...subjectY1Q1,
+                            {
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+                        
 
-                    switch(docSnap.data().course) {
-                        case "1":
+                    }
+                    else if(docSnap.data().course == "1" && docSnap.data().quarter == "2") {
+                        setsubjectY1Q2(subjectY1Q2 => [...subjectY1Q2,
                             {
-                                if(docSnap.data().quarter == "1"){
-                                    setsubjectY1Q1(subjectY1Q1 => [...subjectY1Q1,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                                else{
-                                    setsubjectY1Q2(subjectY1Q2 => [...subjectY1Q2,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                            }
-                        case "2":
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+                    }
+                    else if(docSnap.data().course == "2" && docSnap.data().quarter == "1") {
+                        setsubjectY2Q1(subjectY2Q1 => [...subjectY2Q1,
                             {
-                                if(docSnap.data().quarter == "1"){
-                                    setsubjectY2Q1(subjectY2Q1 => [...subjectY2Q1,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                                else{
-                                    setsubjectY2Q2(subjectY2Q2 => [...subjectY2Q2,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                            }
-                        case "3":
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+                    }
+                    else if(docSnap.data().course == "2" && docSnap.data().quarter == "2") {
+                        setsubjectY2Q2(subjectY2Q2 => [...subjectY2Q2,
                             {
-                                if(docSnap.data().quarter == "1"){
-                                    setsubjectY3Q1(subjectY3Q1 => [...subjectY3Q1,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                                else{
-                                    setsubjectY3Q2(subjectY3Q2 => [...subjectY3Q2,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                            }
-                        case "4":
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+                    }
+                    else if(docSnap.data().course == "3" && docSnap.data().quarter == "1") {
+                        setsubjectY3Q1(subjectY3Q1 => [...subjectY3Q1,
                             {
-                                if(docSnap.data().quarter == "1"){
-                                    setsubjectY4Q1(subjectY4Q1 => [...subjectY4Q1,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                                else{
-                                    setsubjectY4Q2(subjectY4Q2 => [...subjectY4Q2,
-                                        {
-                                            id: keys[i][0],
-                                            data: docSnap.data()
-                                        }])
-                                }
-                            }
-                        }
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+                    }
+                    else if(docSnap.data().course == "3" && docSnap.data().quarter == "2") {
+                        setsubjectY3Q2(subjectY3Q2 => [...subjectY3Q2,
+                            {
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+
+                    }
+                    else if(docSnap.data().course == "4" && docSnap.data().quarter == "1") {
+                        setsubjectY4Q1(subjectY4Q1 => [...subjectY4Q1,
+                            {
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+
+                    }
+                    else if(docSnap.data().course == "4" && docSnap.data().quarter == "2") {
+                        setsubjectY4Q2(subjectY4Q2 => [...subjectY4Q2,
+                            {
+                                id: keys[i][0],
+                                data: docSnap.data()
+                            }])
+                    }
+                                
                 }
                 else {
                     console.log("No such document!");
                 }
-
-                
             })
         }
         
@@ -221,7 +215,7 @@ function DegreeProfilePage() {
                                             <div className="rTableBody">
                                                 {subjectY1Q1.map(() => (subject) => (
                                                     <div className='rTableRow'>
-                                                        <Link to={`/Subject/${subject.id}`} class ="UniversityProfile_TextLink">
+                                                        <Link to={`/Subject/${subject.id}`}>
 											                <div className="DegreeProfile__subjects">{subject.data.name}</div>
 										                </Link>
                                                     </div>
