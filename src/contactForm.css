@@ -5,6 +5,7 @@
 	margin-right: 25%;
 	position: relative;
 	vertical-align: middle;
+	margin-top:-10rem;
 }
 
 .subtitle{
@@ -37,7 +38,6 @@
 }
 
 #form{
-	margin-top: 5rem;
 	content: "";
 }
 
@@ -52,7 +52,7 @@
 }
 
 #rowPadding{
-	padding-bottom: 9.225rem;
+	padding-bottom: 7rem;
 }
 
 #SubmitBotton{

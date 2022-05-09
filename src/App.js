@@ -7,6 +7,7 @@ import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
 import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
+import ContactForm from './ContactForm';
 
 import {
   BrowserRouter,
@@ -37,6 +38,8 @@ function App() {
           <Route path="DegreeProfile/:id" element={<DegreeProfilePage />} ></Route>
           <Route path="UploadUniversityForm" element={<UploadUniversityForm />} ></Route>
           <Route path="UploadDegreeForm" element={<UploadDFPage />} ></Route>
+          <Route path="ContactUs" element={<ContactForm />} ></Route>
+
         </Routes>
 
       </BrowserRouter>

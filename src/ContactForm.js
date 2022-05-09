@@ -20,10 +20,20 @@ function ContactForm() {
     const[email,setEmail] = useState("");
 	const[message,setMessage] = useState("");
 
+	function validationCorreo(email) {
+		const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		if (regex.test(email)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	const checkForm = (e) => {
         e.preventDefault();
         if((name != "") && (surname != "") && (email != "") && (message != "")){
-            const q = query(collection(db, "contact_forms"), where("name", "==", name), where("surname", "==", surname), where("email", "==", email), where("message", "==", message));
+			if (validationCorreo(email)){
+				const q = query(collection(db, "contact_forms"), where("name", "==", name), where("surname", "==", surname), where("email", "==", email), where("message", "==", message));
             getDocs(q).then((querySnapshot) => {
             if(querySnapshot.empty){
                 addDoc(collection(db, "contact_forms"), {
@@ -37,6 +47,12 @@ function ContactForm() {
                 alert("Unfortunately, there was a system error. Try again later please.");
             }
             })
+				
+			}
+			else{
+				alert("The email introduced is not an email");
+			}
+        
         }else{
             alert("All fields are required!");
         }
@@ -52,28 +68,28 @@ function ContactForm() {
 
 			{(() => {return(<HeaderLogueado></HeaderLogueado>)})()}
 	
-            <main class="main-container">
+            <main className="main-container">
 	
                 <form id="form">
-			        <div class="row" id="rowPadding">
-				        <div class="column" id="columnPadding">
-					        <h1 class="subtitle">First name:</h1>
-					        <input value={name} type="text" onChange={e => setName(e.target.value)} class="textbox" name="Name" required/>
+			        <div className="row" id="rowPadding">
+				        <div className="column" id="columnPadding">
+					        <div className="subtitle">First name:</div>
+					        <input value={name} type="text" onChange={e => setName(e.target.value)} className="textbox" name="Name" required/>
 				        </div>
-				        <div class="column">
-					        <h1 class="subtitle">Last name:</h1>
-					        <input value={surname} type="text" onChange={e => setSurname(e.target.value)} class="textbox" name="Surname" required/>
+				        <div className="column">
+					        <div className="subtitle">Last name:</div>
+					        <input value={surname} type="text" onChange={e => setSurname(e.target.value)} className="textbox" name="Surname" required/>
 				        </div>
 			        </div>
-			        <div class="row">
-				        <h1 class="subtitle">Email:</h1>
-				        <input value={email} type="text" onChange={e => setEmail(e.target.value)} class="textbox" name="Email" required/>
+			        <div className="row">
+				        <div className="subtitle">Email:</div>
+				        <input value={email} type="text" onChange={e => setEmail(e.target.value)} className="textbox" name="Email" required/>
 			        </div>
-			        <div class="row">
-				        <h1 class="subtitle">Message:</h1>
-				        <input value={message} type="text" onChange={e => setMessage(e.target.value)} class="textbox" name="Message" required/>
+			        <div className="row">
+				        <div className="subtitle">Message:</div>
+				        <input value={message} type="text" onChange={e => setMessage(e.target.value)} className="textbox" name="Message" required/>
 			        </div>
-			        <div class="row" id="SubmitBotton">
+			        <div className="row" id="SubmitBotton">
 				        <input type="submit" onClick={checkForm} value="Send" id="botton"/>
 			        </div>
 		        </form>
@@ -83,3 +99,4 @@ function ContactForm() {
         </body>
     )
 }
+export default ContactForm;
