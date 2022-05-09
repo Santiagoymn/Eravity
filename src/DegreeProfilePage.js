@@ -14,7 +14,6 @@ import { login, logout, selectUser } from './features/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
 import { checkIfLogged, loadUser } from './Utilities';
 import HideInfo from './HideInfo';
-import { checkIfLogged } from './Utilities';
 
 
 function DegreeProfilePage() {

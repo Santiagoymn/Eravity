@@ -36,7 +36,7 @@ function SubjectPage() {
 				setSubject(docSnap.data());
 				loadDegree(docSnap.data().degreeId);
 				loadUniversity(docSnap.data().universityId);
-				setUrl(proyectRef);
+				setUrl(docSnap.data().proyectRef);
 			}
 			else {
 				console.log("No such document!");
@@ -249,13 +249,13 @@ function SubjectPage() {
 										<div className="my-rating-4" data-rating="0">
 										</div>
 									</div>
-									<div className="subjectProfile__file-upload-container text">
-										<label for="file-upload" className="subjectProfile__custom-file-upload">
-											Download Educational Program
+									<div className="subject__file-upload-container text">
+										<label htmlFor="subject__file-upload" className="subject__custom-file-upload">
+											Download Educational Programm
 										</label>
 
-										<a href={url} target="_blank" id="file-upload">
-											<img className="download-image" src={arrowCirle} alt="download" />
+										<a className='subject__a' href={url} target="_blank" id="subject__file-upload"> 
+			 								<img className="subject__download-image" src={arrowCirle} alt="download"/> 
 										</a>
 
 									</div>
