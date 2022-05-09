@@ -61,6 +61,7 @@ body {
     background: #A3CEF1;
     border-radius: 1.25rem;
     border-bottom: 0.15rem solid black;
+    margin-top:3rem;
 }
 
 .DegreeProfile__text {
@@ -88,7 +89,6 @@ body {
     text-align: center;
     background: rgba(231, 236, 239, 0.7);
     border-radius: 20px;
-    width: 453px;
     height: 49px;
     justify-content: center;
     margin-bottom: 1rem;
@@ -112,12 +112,40 @@ body {
     align-items: center;
     text-align: center;
     height: 5rem;
+    text-transform: capitalize;
 }
 
-.UniversityProfile__university-info-container {
+.DegreeProfile__university-info-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     top: 10rem;
+}
+
+.rTable { display: table; }
+.rTableRow       { display: table-row; }
+.rTableHeading    { display: table-header-group; }
+.rTableBody    { display: table-row-group; }
+.rTableFoot    { display: table-footer-group; }
+.rTableCell, .rTableHead  { display: table-cell; }
+
+.DegreeProfile_TextLink{
+    color: black;
+    text-decoration: none;
+}
+
+.DegreeProfile_subject {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #E7ECEF;
+    border-radius: 1rem;
+    height: 4rem;
+    margin-top: 3rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+    padding:0.5rem;
 }

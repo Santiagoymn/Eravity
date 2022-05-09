@@ -160,7 +160,7 @@ function UniversityProfilePage() {
 
 								{degrees.map((degree) => (
 									<div class="uni-degree">
-										<Link to={`/DegreeProfile/${degree.id}`} class ="UniversityProfile_TextLink">
+										<Link to={`/DegreeProfile/${degree.id}`} className ="UniversityProfile_TextLink">
 											<p>{degree.data.name}</p>
 										</Link>
 									</div>

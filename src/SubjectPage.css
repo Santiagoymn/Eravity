@@ -11,6 +11,7 @@
     font-weight: bold;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    text-transform: capitalize;
 }
 
 .subjectProfile__field {
@@ -18,6 +19,11 @@
     flex-direction: row;
     margin-bottom: 1rem;
     margin-right: 3rem;
+
+}
+
+.subjectProfile__field > p{
+    text-transform: capitalize;
 
 }
 
@@ -35,6 +41,7 @@
     grid-template-columns: repeat(3, 15rem);
     justify-items: center;
     margin-bottom: 2rem;
+    text-transform: capitalize;
 }
 
 input[type=checkbox] {
@@ -63,6 +70,7 @@ input[type=checkbox][checked][disabled] {
     border: none;
     background-color: #E7ECEF;
     align-self: center;
+    text-transform: capitalize;
 }
 
 a {
