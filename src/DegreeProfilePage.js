@@ -40,6 +40,7 @@ function DegreeProfilePage() {
                 setDegree(docSnap.data());
                 loadUniveristy(docSnap.data().universityId);
                 loadSubjects(docSnap.data().subjects);
+                console.log(docSnap.data().subjects);
             }
             else {
                 console.log("No such document!");
@@ -214,14 +215,14 @@ function DegreeProfilePage() {
                                         <div className="rTable DegreeProfile__tableSemester ">
                                             <div className="rTableHeading">
                                                 <div className="rTableRow">
-                                                    <div colspan="1" className="rTableHeading DegreeProfile__semester">First Semester</div>
+                                                    <div colspan="1" className="DegreeProfile__semester">First Semester</div>
                                                 </div>
                                             </div>
                                             <div className="rTableBody">
                                                 {subjectY1Q1.map(() => (subject) => (
                                                     <div className='rTableRow'>
                                                         <Link to={`/Subject/${subject.id}`} class ="UniversityProfile_TextLink">
-											                <div className="rTableCell DegreeProfile__subjects">{subject.data.name}</div>
+											                <div className="DegreeProfile__subjects">{subject.data.name}</div>
 										                </Link>
                                                     </div>
                                                 ))}
