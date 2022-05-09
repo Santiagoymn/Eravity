@@ -13,6 +13,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 
 
+
 import './UniversityProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
@@ -159,7 +160,7 @@ function UniversityProfilePage() {
 
 								{degrees.map((degree) => (
 									<div class="uni-degree">
-										<Link to={`/DegreeProfile/${degree.id}`}>
+										<Link to={`/DegreeProfile/${degree.id}`} class ="UniversityProfile_TextLink">
 											<p>{degree.data.name}</p>
 										</Link>
 									</div>
