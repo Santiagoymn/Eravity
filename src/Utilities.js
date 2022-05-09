@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
-import {onAuthStateChanged} from 'firebase/auth';
+import {onAuthStateChanged, signOut} from 'firebase/auth';
 
 
 
@@ -34,8 +34,19 @@ function logoutAPP() {
     });
 }
 
+async function loadUser(uid) {
+  const docRef = doc(db, "users", uid)
+  getDoc(docRef).then((docSnap) => {
+    if (docSnap.exists()) {
+      setCredits(docSnap.data().creditos);
+      console.log(docSnap.data().creditos);
+    }
+  })
+
+}
 
 
 
 
-export {checkIfLogged, logoutAPP}
+
+export {checkIfLogged, logoutAPP, loadUser}

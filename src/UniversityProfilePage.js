@@ -16,7 +16,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import './UniversityProfilePage.css';
 import './assets/jquery.star-rating-svg';
 import './assets/star-rating-svg.css';
-import { checkIfLogged } from './Utilities';
+import { checkIfLogged, loadUser } from './Utilities';
 import HideInfo from './HideInfo';
 
 function UniversityProfilePage() {
@@ -106,7 +106,7 @@ function UniversityProfilePage() {
 		<div>
 
 			{(() => {
-				{ loadUser(user.uid) }
+				
 				if (user) {
 					return (
 						<HeaderLogueado></HeaderLogueado>

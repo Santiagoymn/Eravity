@@ -51,15 +51,11 @@
 	padding-right: 9%;
 }
 
-#rowPadding{
-	padding-bottom: 7rem;
-}
 
 #SubmitBotton{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 3rem;
 }
 
 #botton{
@@ -68,4 +64,5 @@
 	background: #A3CEF1;
 	border-radius: 1rem;
 	font-size:2.5rem;
+	margin-bottom: -10rem;
 }

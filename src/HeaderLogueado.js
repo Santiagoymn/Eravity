@@ -17,9 +17,9 @@ function HeaderLogueado({ navigation }) {
 
                 <nav className="HeaderLogueado__barraNavegacion">
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><a>My subjects</a></li>
-                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Contact Us</a></li>
-                    <li className="HeaderLogueado__apartadoBarraNavegacion"><a>Upload</a></li>
-                    <li><a><img src={cloudUpload} className="HeaderLogueado__imagenUpload"/></a></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><Link to="/ContactUs" className="HeaderLink"><a>Contact Us</a></Link></li>
+                    <li className="HeaderLogueado__apartadoBarraNavegacion"><Link to="/UploadResource" className="HeaderLink"><a>Upload</a></Link></li>
+                    <li><Link to="/UploadResource"><img src={cloudUpload} className="HeaderLogueado__imagenUpload"/></Link></li>
                     <li className="HeaderLogueado__apartadoBarraNavegacion"><Link to="/UserProfile" ><img src={iconoLogin} className="HeaderLogueado__imagenUsuario"/></Link></li>
                 </nav>
             </header>

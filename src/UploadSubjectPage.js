@@ -38,6 +38,7 @@ function UploadSubjectPage() {
     const[contents, setContents] = useState("");
 
     const[urlProyect, setUrlProyect] = useState("");
+    const[project, setProject] = useState();
 
 
     const checkDegree = (e) => {
@@ -54,7 +55,8 @@ function UploadSubjectPage() {
                                     const q3 = query(collection(db, "subjects"), where("name", "==", name.toLowerCase()), where("universityId", "==", universityObject.id), where("degreeId", "==", degreeObject.id));
                                     getDocs(q3).then((querySnapshot3) => {
                                         if (querySnapshot3.empty) {
-                                            uploadProyect(universityObject.get("name"), degreeObject.get("name"), name.toLowerCase());
+                                            uploadProyect(universityObject.get("name"), degreeObject.get("name"), name.toLowerCase()).then(() => {
+                                                console.log(url);
                                                 addDoc(collection(db, "subjects"), {
                                                     degreeId: degreeObject.id,
                                                     subjectId: id,
@@ -71,6 +73,8 @@ function UploadSubjectPage() {
                                                     proyectRef: urlProyect,
                                                     timestamp: +new Date
                                                 })
+                                            })
+                                                
                                                 .then(() => {
                                                     getDocs(collection(db, "users")).then((querySnapshot4) => {
                                                         querySnapshot4.forEach((userObject) => {
@@ -295,16 +299,19 @@ function UploadSubjectPage() {
         return slc;
     }
 
-    function uploadProyect(universityObjectName, degreeObjectName, degreeName){
+    async function uploadProyect(universityObjectName, degreeObjectName, degreeName){
         const storage = getStorage();
         const storageRef = ref(storage, "ep/"+universityObjectName+"-"+degreeObjectName+"-"+degreeName);
-        const file = document.getElementById("file-upload").files[0];
+        //const file = document.getElementById("file-upload").files[0];
+        const file = project;
+
         uploadBytes(storageRef, file).then((snapshot) => {
             getDownloadURL(storageRef).then((url) => {
                 setUrlProyect(url);     
             })
         });
     }
+
 
     function uploadProyectAdmin(universityObjectName, degreeObjectName, degreeName){
         const storage = getStorage();
@@ -403,7 +410,7 @@ function UploadSubjectPage() {
                     <img className="UploadSubject__download-image" src={imagen1} alt="Download image"/>
                 </label>
 
-                <input id="file-upload" type="file"/>
+                <input id="file-upload" type="file" onChange={e => setProject(e.target.value)}/>
              </div>
 
             <input type="text" onChange={e => setProyectYear(e.target.value)} placeholder="Proyect Year" id="proyectYear" className="UploadSubject__inputShortText" required/>

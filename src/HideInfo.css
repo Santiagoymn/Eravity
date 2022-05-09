@@ -25,6 +25,10 @@
     color: #000000;
     align-self: center;
     border: none;
+    
+}
+#HideInfo__buttonRight{
+    margin-left:-40rem;
 }
 
 .HideInfo__buttonContainer {

@@ -10,6 +10,7 @@ import HeaderLogueado from './HeaderLogueado';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
+import { checkIfLogged } from './Utilities';
 
 
 function UploadDFPage() {
@@ -47,7 +48,7 @@ function UploadDFPage() {
                                 return true;
                             })
                         } else {
-                            alert("The University doesn't exist");
+                            alert("The university doesn't exist");
                         }
                     }).catch(error => alert(error.message));
                 } else {
@@ -114,12 +115,12 @@ function UploadDFPage() {
                 <h2>Upload Degree Form</h2>
             </div>
             <form className='uploaddfpage__form'>
-                <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="name" id="name" className="uploaddfpage__inputShortText" required />
-                <input value={universityName} onChange={e => setUniversityName(e.target.value)} type="text" placeholder="university" id="university" className="uploaddfpage__inputShortText" required />
+                <input value={name} onChange={e => setName(e.target.value)} type="text" placeholder="name" className="uploaddfpage__inputShortText" required />
+                <input value={universityName} onChange={e => setUniversityName(e.target.value)} type="text" placeholder="university" className="uploaddfpage__inputShortText" required />
 
                 <div className="uploaddfpage__firstLineInputs">
-                    <input value={years} onChange={e => setYears(e.target.value)} type="number" placeholder="years" id="years" className="uploaddfpage__inputShortText" required />
-                    <input value={credits} onChange={e => setCredits(e.target.value)} type="number" placeholder="ECTS" id="ects" className="uploaddfpage__inputShortText" required />
+                    <input value={years} onChange={e => setYears(e.target.value)} type="number" placeholder="years" className="uploaddfpage__inputShortText" required />
+                    <input value={credits} onChange={e => setCredits(e.target.value)} type="number" placeholder="ECTS" className="uploaddfpage__inputShortText" required />
                 </div>
 
                 <div className="uploaddfpage__buttonAccept"><input type="submit" onClick={checkDegree} className="uploaddfpage__acceptBtn" value="Send" /></div>

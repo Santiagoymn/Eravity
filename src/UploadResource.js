@@ -89,7 +89,7 @@ function UploadResource() {
 			            <div className="upres__command"><Link to="/UploadUniversityForm" class ="TextLink"><p className='upres__p'>Upload University</p></Link></div>
 			            <div className="upres__command"><Link to="/UploadDegreeForm" class ="TextLink"><p className='upres__p'>Upload Degree</p></Link></div>
 			            <div className="upres__command"><Link to="/UploadSubjectForm" class ="TextLink"><p className='upres__p'>Upload Subject</p></Link></div>
-			            <div className="upres__command"><Link to="/" class ="TextLink"><p className='upres__p'>Send contact form</p></Link></div>
+			            <div className="upres__command"><Link to="/ContactUs" class ="TextLink"><p className='upres__p'>Send contact form</p></Link></div>
 		            </div>
                 <div className="upres__containerLogout"><input type="submit" onClick={logoutAPP} value="Logout" class="upres__buttonLogout" className="upres__buttonLogout" /></div>
 
