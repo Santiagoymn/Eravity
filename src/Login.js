@@ -26,7 +26,7 @@ function Login() {
 
                 );
                 alert("Log in succesful!")
-                navigate("/Home")
+                navigate("/")
                 //} else {
                 //   alert("User must be verified first. Check your email");
                 //}
@@ -72,41 +72,44 @@ function Login() {
                     console.log(loggedIn());
                     return (
                         <Fragment>
-                            {alert("Already logged")}
-                            {navigate("/Home")}
+                            
+                            {navigate("/")}
+                            
                         </Fragment>
 
                     )
                 } else {
                     return (
                         <Fragment>
+                            <Helmet>
+                            <script src="https://kit.fontawesome.com/f9a9bc67cc.js" crossorigin="anonymous"></script>
+                            </Helmet>
 
-                            <div className="container">
+                            <div className="Login__container">
 
-                                <div className="left">
-                                    <div className="contentLeft">
-                                        <div className="title1">Join us!</div>
-                                        {console.log("Aqui")}
-                                        <div className="title2">The easiest way to go on Erasmus</div>
+                                <div className="Login__left">
+                                    <div className="Login__contentLeft">
+                                        <div className="Login__title1">Join us!</div>
+                                        <div className="Login__title2">The easiest way to go on Erasmus</div>
                                     </div>
                                 </div>
 
-                                <div className="right">
-                                    <div className="contentRight">
+                                <div className="Login__right">
+                                    <div className="Login__contentRight">
 
-                                        <div className="titlePage"> Eravity </div>
+                                        <div className="Login__titlePage"> Eravity </div>
 
                                         <form className="login">
-                                            <div className="column">
-                                                <div className="login__field" id="top">
+                                            <div className="Login__column">
+                                                <div className="login__field" id="Login__top">
                                                     <div className="login__icon fas fa-user fa-2xl"></div>
                                                     <input value={email} onChange={e => setEmail(e.target.value)} type="text" className="login__input" placeholder="email" required />
                                                 </div>
-                                                <div className="login__field" id="down">
+                                                <div className="login__field" id="Login__down">
                                                     <div className="login__icon fas fa-lock fa-2xl"></div>
                                                     <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="login__input" placeholder="password" required />
                                                 </div>
-                                                <div className="button">
+                                                <div className="Login__button">
                                                     <button id="buttonLogIn" className="button login__submit" type="submit" onClick={loginToApp}>Login</button>
                                                 </div>
                                             </div>

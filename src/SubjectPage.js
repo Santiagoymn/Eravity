@@ -24,7 +24,7 @@ function SubjectPage() {
 	const [subject, setSubject] = useState('');
 	const [university, setUniversity] = useState('');
 	const [degree, setDegree] = useState('');
-	const [Url, setUrl] = useState('');
+	const [url, setUrl] = useState('');
 	const [credits, setCredits] = useState();
 	const [isAdmin, setIsAdmin] = useState();
 
@@ -36,7 +36,7 @@ function SubjectPage() {
 				setSubject(docSnap.data());
 				loadDegree(docSnap.data().degreeId);
 				loadUniversity(docSnap.data().universityId);
-				downloadFile(docSnap.data().teachingProject);
+				setUrl(proyectRef);
 			}
 			else {
 				console.log("No such document!");
@@ -88,6 +88,7 @@ function SubjectPage() {
 		const storage = getStorage();
 		const teachingProject = ref(storage, fileRef);
 		getDownloadURL(teachingProject).then((url => {
+			console.log(url);
 			setUrl(url);
 		}))
 	}
@@ -253,7 +254,7 @@ function SubjectPage() {
 											Download Educational Programm
 										</label>
 
-										<a href={Url} target="_blank" id="file-upload">
+										<a href={url} target="_blank" id="file-upload">
 											<img class="download-image" src={arrowCirle} alt="download" />
 										</a>
 

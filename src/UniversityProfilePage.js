@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import $ from 'jquery';
 import { db, auth } from './firebase';
 import { collection, getDocs, query, orderBy, getDoc, doc } from "firebase/firestore";
@@ -10,6 +10,7 @@ import lupa from './assets/images/lupa.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
+
 
 
 
@@ -159,7 +160,7 @@ function UniversityProfilePage() {
 
 								{degrees.map((degree) => (
 									<div class="uni-degree">
-										<Link to={`/DegreeProfile/${degree.id}`}>
+										<Link to={`/DegreeProfile/${degree.id}`} class ="UniversityProfile_TextLink">
 											<p>{degree.data.name}</p>
 										</Link>
 									</div>

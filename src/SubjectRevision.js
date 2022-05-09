@@ -45,7 +45,7 @@ function SubjectRevision() {
 				setSubject(doc.data());
 				loadDegree(doc.data().degreeId);
 				loadUniversity(doc.data().universityId);
-				setUrl(doc.data().projectRef);
+				setUrl((doc.data().proyectRef));
 			}
 			else {
 				console.log("No such document!");

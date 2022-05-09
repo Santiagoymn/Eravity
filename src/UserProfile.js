@@ -3,17 +3,16 @@ import './userProfileStyle.css';
 import fotoFondo from "./assets/images/gris-claro.jpg";
 import HeaderLogueado from './HeaderLogueado';
 import HeaderNoLogueado from './HeaderNoLogueado';
-import { db, auth } from './firebase';
-import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
+import { auth, db } from './firebase';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import Footer from './Footer';
 import Helmet from 'react-helmet';
 import { doc, getDoc} from "firebase/firestore";
-import AdminProfile from './AdminProfile';
 import { useNavigate } from 'react-router-dom';
 import { checkIfLogged, logoutAPP } from './Utilities';
+import { signOut } from 'firebase/auth';
 
 
 
@@ -44,8 +43,13 @@ function UserProfile() {
   
     }
     
-    
-
+    const logout = async () => {
+      signOut(auth).then(() => {
+        navigate("/");
+      }).catch((error) => {
+        // An error happened.
+      });
+  }
     
 
   // check at page load if a user is authenticated
@@ -102,7 +106,7 @@ function UserProfile() {
           <div className="userProfile__infoEmail">
             <p className="userProfile__emailUsuario">email: {user ? user.email : "Error"}</p>
           </div>
-        </div><div className="userProfile__containerLogout"><input type="submit" onClick={logoutAPP} value="Logout" className="userProfile__buttonLogout" /></div>
+        </div><div className="userProfile__containerLogout"><input type="submit" onClick={logout} value="Logout" className="userProfile__buttonLogout" /></div>
   
 
         <Footer/>

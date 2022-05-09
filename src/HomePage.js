@@ -114,7 +114,7 @@ function HomePage() {
                     if (searchResults.length == 0) {
                         return (
                             <div id="degree-not-found-msg">
-                                <p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
+                                <p>University not found, please <Link to="/UploadUniversityForm">fill</Link> this form to add the university needed</p>
                             </div>
                         )
                     }

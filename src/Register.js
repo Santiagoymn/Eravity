@@ -36,6 +36,7 @@ function Register() {
 							}).then(() => {
 								signOut(auth).then(() =>{
 									alert("Thank you very much for registering, remember that you must validate your email to use the web services");
+									navigate("/");
 								});
 								
 							});

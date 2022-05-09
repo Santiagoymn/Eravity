@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
 
-.container {
+.Login__container {
     width: 100%;
     height: 100%;
     margin-top: -12rem;
 }
 
-.left {
+.Login__left {
     width: 40%;
     height: 100vh;
     background-color: #274C77;
@@ -16,7 +16,7 @@
     display: flex;
 }
 
-.title1 {
+.Login__title1 {
     margin-top: 10rem;
     font-size: 5em;
     font-family: 'Sanchez', serif;
@@ -26,7 +26,7 @@
     text-align: center;
 }
 
-.title2 {
+.Login__title2 {
     margin-top: 5rem;
     font-family: 'Droid Sans', serif;
     font-style: normal;
@@ -38,7 +38,7 @@
     margin-left: 6rem;
 }
 
-.titlePage {
+.Login__titlePage {
     font-size: 5em;
     font-family: 'Sanchez', serif;
     font-style: normal;
@@ -47,7 +47,7 @@
     padding-top: 5rem;
 }
 
-.right {
+.Login__right {
     margin-left: 40%;
     height: 100%;
     background-color: white;
@@ -56,7 +56,7 @@
 }
 
 
-.contentRight {
+.Login__contentRight {
     margin-left: 21%;
     margin-right: 18%;
     vertical-align: middle;
@@ -83,18 +83,18 @@
     height: 3.125rem;
 }
 
-#top {
+#Login__top {
     padding: 2rem 0px 0px;
 }
 
-#down {
+#Login__down {
     padding-top: 2rem;
     padding-right: 0px;
     padding-bottom: 1.5rem;
     padding-left: 0px;
 }
 
-button {
+.Login__button {
     background-color: white;
     margin-top: 2rem;
 }
