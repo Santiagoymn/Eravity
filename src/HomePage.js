@@ -67,12 +67,16 @@ function HomePage() {
 
 
     return (
+
         <div>
+
             <Helmet>
                 <meta charset="UTF-8" />
                 <title>Eravity</title>
             </Helmet>
             {(() => {
+
+                /*{ dispatch(logout()) }*/
                 if (user) {
                     return (
                         <HeaderLogueado></HeaderLogueado>
@@ -83,7 +87,7 @@ function HomePage() {
                     )
                 }
             })()}
-            
+
             <div className="HomePage__homePage">
                 <div className="HomePage__buscador">
                     <div className="HomePage__field" id="HomePage__searchform">
@@ -107,15 +111,15 @@ function HomePage() {
                 </div>
 
                 {(() => {
-                    if(searchResults.length == 0){
+                    if (searchResults.length == 0) {
                         return (
                             <div id="degree-not-found-msg">
                                 <p>University not found, please <a href="#">fill</a> this form to add the university needed</p>
                             </div>
                         )
                     }
-                    else{
-                        
+                    else {
+
                     }
                 })()}
             </div>

@@ -37,18 +37,22 @@
     margin-bottom: 2rem;
 }
 
-input[type=checkbox]{
-    -ms-transform: scale(2); /* IE */
-    -moz-transform: scale(2); /* FF */
-    -webkit-transform: scale(2); /* Safari and Chrome */
-    -o-transform: scale(2); /* Opera */
+input[type=checkbox] {
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
     transform: scale(2);
-    margin-right:1rem;
+    margin-right: 1rem;
 }
 
 input[type=checkbox][checked][disabled] {
     outline: 0.2em solid #274C77;
-    
+
 }
 
 .subjectProfile__textarea {
@@ -123,6 +127,11 @@ a {
     height: auto;
 }
 
-.my-rating-4{
-    margin-left:-8rem;
+.my-rating-4 {
+    margin-left: -8rem;
+}
+
+.NotEnoughContainer {
+    display: flex;
+    justify-content: center;
 }

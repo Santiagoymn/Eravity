@@ -88,14 +88,6 @@
 }
 
 
-
-.UniversityProfile__universidades {
-    position: relative;
-    top: 3rem;
-    display: block;
-    margin-right: 2rem;
-}
-
 .textoEncimaImagen {
     height: 13.0625rem;
     text-align: center;
@@ -170,7 +162,4 @@ hr {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-}
-
-#searchform {
 }

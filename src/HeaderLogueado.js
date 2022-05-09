@@ -1,13 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import './headerLogueadoStyle.css'
-import cloudUpload from "./assets/images/cloudUpload.png"
-import iconoLogin from "./assets/images/iconoLogin.png"
+import './headerLogueadoStyle.css';
+import cloudUpload from "./assets/images/cloudUpload.png";
+import iconoLogin from "./assets/images/iconoLogin.png";
 import { Link } from "react-router-dom";
 
 
-
-function HeaderLogueado( {navigation} ) {
+function HeaderLogueado({ navigation }) {
     return (
         <div>
             <Helmet>

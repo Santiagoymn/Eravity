@@ -5,11 +5,11 @@ import Register from './Register';
 import HomePage from './HomePage';
 import UniversityProfilePage from './UniversityProfilePage';
 import DegreeProfilePage from './DegreeProfilePage'
-import userSlice from './features/userSlice';
 import UploadUniversityForm from './UploadUniversityForm';
 import ContactForm from './ContactForm';
 import UploadSubjectPage from './UploadSubjectPage';
 import SubjectPage from './SubjectPage';
+
 import {
   BrowserRouter,
   Routes,
@@ -25,15 +25,15 @@ import UploadResource from './UploadResource';
 
 
 function App() {
-  //console.log(userSlice.actions);
-  
+
   return (
     <div className="App">
 
       <BrowserRouter>
-
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
+
+          <Route path="" element={<SubjectPage />}></Route>
+          <Route path="/" element={<UniversityProfilePage />}></Route>
           <Route path="Home" element={<HomePage />}></Route>
           <Route path="*" element={<div>ERROR 404</div>} />
           <Route path="Register" element={<Register />}></Route>
