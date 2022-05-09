@@ -1,0 +1,139 @@
+.UploadSubject__form{
+    padding:15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.UploadSubject__inputShortText{
+    background-color: #E7ECEF;
+    height: 3em;
+    margin-bottom:1.5em;
+    border:none;
+    border-radius: 0.63em;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+textarea:focus, input:focus, input[type]:focus {
+    border-color: rgb(213,237,251);
+    box-shadow: 0 1px 1px rgb(175,206,224)
+    inset, 0 0 8px rgb(175,206,224);
+    outline: 0 none;
+}
+.UploadSubject__inputLargeText{
+    border-radius: 0.63em;
+    height: 40rem;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #E7ECEF;
+    border:none;
+    margin-bottom:1.5em;
+
+    color: #000000;
+}
+.UploadSubject__firstLineInputs{
+    display: flex;
+    justify-content: center;
+}
+#name{
+    width:40em;
+    margin-left:5rem;
+}
+.UploadSubject__secondLineInputs{
+    display: flex;
+    justify-content: center;
+}
+
+#year{
+    margin-left:5rem;
+    margin-right:5rem;
+}
+.UploadSubject__label{
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+    margin-left:1rem;
+    align-self: center;
+
+    color: #000000;
+}
+.UploadSubject__languageCB{
+    height:22px;
+    width: 22px;
+    align-self: center;
+}
+.UploadSubject__languageDivCB{
+    position:relative;
+    width: 33%;
+    justify-content: center;
+    height: 3rem;
+    display:inline-block;
+}
+.UploadSubject__languagesCB{
+    margin-left: 20rem;
+    margin-bottom: 2rem;
+
+}
+
+.UploadSubject__qualifying{
+    margin-bottom: 2rem;
+}
+
+.UploadSubject__acceptBtn{
+    position: absolute;
+    width: 261px;
+    height: 105px;
+    background: #A3CEF1;
+    border-radius: 15px;
+    font-family: 'Droid Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+    align-self: center;
+
+}
+.UploadSubject__buttonAccept{
+    align-self:center
+}
+
+.UploadSubject__file-upload-container {
+    border: 0.2rem dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-bottom: 2rem;
+    padding: 20vh 30vw;
+}
+
+.UploadSubject__custom-file-upload {
+    border: none;
+    cursor: pointer;
+}
+
+.UploadSubject__download-image {
+    z-index: 2;
+    background-color: #A3CEF1;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
